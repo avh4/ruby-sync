@@ -1,3 +1,5 @@
+require 'lib/ruby-sync/version'
+
 require 'echoe'
 
 version = RubySync::Version::STRING.dup
@@ -8,8 +10,8 @@ end
 Echoe.new('ruby-sync', version) do |p|
   p.changelog        = "CHANGELOG.rdoc"
 
-  p.author           = "Jamis Buck"
-  p.email            = "jamis@jamisbuck.org"
+  p.author           = "Adam Salter"
+  p.email            = "adam@codebright.net"
 
   p.summary = <<-DESC.strip.gsub(/\n\s+/, " ")
     A full file synchronisation library for ruby, supports
@@ -19,10 +21,7 @@ Echoe.new('ruby-sync', version) do |p|
   p.url              = "http://ruby-sync.rubyforge.org"
   p.need_zip         = true
   p.rdoc_pattern     = /^(lib|README.rdoc|CHANGELOG.rdoc)/
+  p.clean_pattern    = /pkg/
 
-  p.dependencies     = ["net-ssh         >=2.0.0",
-                        "net-sftp        >=2.0.0",
-                        "net-scp         >=1.0.0",
-                        "net-ssh-gateway >=1.0.0",
-                        "highline"]
+  p.dependencies     = ["net-ssh         >=2.0.0"]
 end

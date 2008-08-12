@@ -1,4 +1,6 @@
-CHANGELOG
+CHANGELOG.rdoc
+lib/ruby-sync/version.rb
+lib/ruby-sync.rb
 Manifest
 Rakefile
 README.rdoc
