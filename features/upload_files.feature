@@ -14,6 +14,15 @@ Feature: Upload files
     And I am in a folder with many files
     When I sync the current folder to the ftp server
     Then the ftp folder contents should match the current folder
+    
+  Scenario: Upload files and subfolders
+    Given the remote FTP folder is empty
+    And I am in a folder with files and subfolders
+    When I sync the current folder to the ftp server
+    Then the ftp folder contents should match the current folder
+  
+  
+  
   
   
   

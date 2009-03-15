@@ -38,6 +38,10 @@ Given /^I am in a folder with many files$/ do
   files.size.should == 8
 end
 
+Given /^I am in a folder with files and subfolders$/ do
+  Dir.chdir('test_data/3')
+end
+
 When /^I sync the current folder to the ftp server$/ do
   result = system '../../bin/ruby-sync ./ ftp://localhost:2121'
   result.should == true
