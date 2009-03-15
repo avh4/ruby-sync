@@ -6,6 +6,13 @@ Given /^the remote FTP folder is empty$/ do
   ftp.connect('localhost', 2121)
   ftp.login
   files = ftp.list('.')
-  files.should be_empty
   ftp.close
+  
+  files.should be_empty
+end
+
+Given /^I am in folder with a single file$/ do
+  Dir.chdir('test_data/1')
+  files = Dir.entries('.').select { |f| f != "." and f != '..' }
+  files.size.should == 1
 end
