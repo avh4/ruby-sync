@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+#
+#  Created on 2009-3-14.
+#  Copyright (c) 2009. All rights reserved.
+
+require File.expand_path(File.dirname(__FILE__) + "/../lib/ruby-sync")
+
+require "ruby-sync/cli"
+
+RubySync::CLI.execute(STDOUT, ARGV)
