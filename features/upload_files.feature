@@ -5,13 +5,13 @@ Feature: Upload files
   
   Scenario: Upload a single file
     Given the remote FTP folder is empty
-    And I am in folder with a single file
+    And I am in a folder with a single file (example 1)
     When I sync the current folder to the ftp server
     Then the ftp folder contents should match the current folder
   
   Scenario: Upload many files in a single directory
     Given the remote FTP folder is empty
-    And I am in a folder with many files
+    And I am in a folder with many files (example 2)
     When I sync the current folder to the ftp server
     Then the ftp folder contents should match the current folder
     
