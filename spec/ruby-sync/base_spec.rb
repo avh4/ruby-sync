@@ -3,9 +3,11 @@ require 'net/ftp'
 
 describe RubySync::Base do
   before(:each) do
-    @b = RubySync::Base.new
+    @dir = mock("Filesystem")
+    @b = RubySync::Base.new(@dir)
   end
   it "should send a file over FTP" do
+    @dir.stub!(:files).and_return(['file.txt'])
     @ftp = mock("FTP")
     Net::FTP.should_receive(:new).and_return(@ftp)
     @ftp.should_receive(:connect).with("localhost", 2121)
@@ -14,6 +16,5 @@ describe RubySync::Base do
     @ftp.should_receive(:close)
     
     @b.synchronize
-    
   end
 end
