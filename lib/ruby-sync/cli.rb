@@ -36,7 +36,8 @@ module RubySync
       path = options[:path]
 
       # do stuff
-      puts "To update this executable, look in lib/ruby-sync/cli.rb"      
+      sync = Base.new
+      sync.synchronize
     end
   end
 end

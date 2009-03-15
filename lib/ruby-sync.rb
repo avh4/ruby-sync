@@ -4,3 +4,5 @@ $:.unshift(File.dirname(__FILE__)) unless
 module RubySync
   VERSION = '0.0.1'
 end
+
+require 'ruby-sync/base'
