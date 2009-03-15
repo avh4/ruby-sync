@@ -14,7 +14,9 @@ describe RubySync::CLI, "execute" do
   
   it "should call RubySync" do
     @mock = mock("Base")
-    RubySync::Base.should_receive(:new).and_return(@mock)
+    @dir = mock("Local")
+    RubySync::Sources::Local.should_receive(:new).and_return(@dir)
+    RubySync::Base.should_receive(:new).with(@dir).and_return(@mock)
     @mock.should_receive(:synchronize)
     do_exec
   end

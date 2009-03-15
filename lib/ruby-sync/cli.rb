@@ -36,7 +36,8 @@ module RubySync
       path = options[:path]
 
       # do stuff
-      sync = Base.new
+      local = Sources::Local.new()
+      sync = Base.new(local)
       sync.synchronize
     end
   end

@@ -1,5 +1,5 @@
 module RubySync
-  module Source
+  module Sources
 
     # The ancestor class for all RubySync Source implementations. It provides
     # minimal infrastructure for subclasses to build upon and override.

@@ -1,5 +1,2 @@
-module RubySync
-  class Source
-    
-  end
-end
+require 'ruby-sync/sources/base'
+require 'ruby-sync/sources/local'

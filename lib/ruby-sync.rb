@@ -6,3 +6,4 @@ module RubySync
 end
 
 require 'ruby-sync/base'
+require 'ruby-sync/sources'
