@@ -4,7 +4,7 @@ Feature: Upload files
   I want to upload my files to a remote server via FTP
   
   Scenario: Upload a single file
-    Given my FTP server is running
+    Given the remote FTP folder is empty
     And I am in folder with a single file
     When I sync the current folder to the ftp server
     Then the ftp folder contents should match the current folder
