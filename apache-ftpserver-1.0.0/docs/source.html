@@ -1,0 +1,182 @@
+
+<!--
+   Licensed to the Apache Software Foundation (ASF) under one or more
+   contributor license agreements.  See the NOTICE file distributed with
+   this work for additional information regarding copyright ownership.
+   The ASF licenses this file to You under the Apache License, Version 2.0
+   (the "License"); you may not use this file except in compliance with
+   the License.  You may obtain a copy of the License at
+ 
+        http://www.apache.org/licenses/LICENSE- 2.0
+ 
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+-->
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+  <HEAD>
+    <TITLE>Apache FtpServer - Source</TITLE>
+    <META http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <LINK type="text/css" rel="stylesheet" href="http://mina.apache.org/index.data/style.css">
+    <SCRIPT type="text/javascript" language="javascript">
+      function init() {
+        /* Search form initialization */
+        var form = document.forms['googleSearch'];
+        if (form != null) {
+          form.elements['domains'].value = location.hostname;
+          form.elements['sitesearch'].value = location.hostname;
+        }
+
+      }
+    </SCRIPT>
+  </HEAD>
+  <BODY onload="init()">
+    <DIV id="PageContent" style="padding-bottom: 0px;">
+      <DIV class="pageheader" style="padding: 6px 0px 0px 0px;">
+        <DIV id="apacheLogo" style="width: 100%; text-align: right; position: absolute; top: 33px;">
+          <A href="http://www.apache.org/"><IMG src="http://www.apache.org/images/asf-logo.gif" border="0" alt="The Apache Software Foundation" title="The Apache Software Foundation" hspace="12"></A>
+        </DIV>
+        <DIV id="minaLogo" style="position: absolute; top: 24px; left: 16px;">
+          <A href="http://mina.apache.org/ftpserver"><IMG src="http://mina.apache.org/ftpserver/index.data/logo-300x95.png" border="0" alt="Apache FtpServer" title="Apache FtpServer"></A>
+        </DIV>
+        <DIV class="greynavbar" style="margin: 156px 0px 0px 0px;">
+          <TABLE border="0" cellpadding="2" cellspacing="0" width="100%" style="position: relative; z-index: 10;">
+            <TR>
+              <TD align="left" valign="middle" style="padding-left: 17px;" width="100%" nowrap="">
+                &nbsp;<A href="index.html" title="Apache MINA FtpServer">Apache MINA FtpServer</A>&nbsp;&gt;&nbsp;<A href="index.html" title="Index">Index</A>&nbsp;&gt;&nbsp;<A href="" title="Source">Source</A>
+              </TD>
+              <TD align="right" valign="middle" nowrap="">
+                <FORM name="googleSearch" action="http://www.google.com/search" method="get" style="margin: 0px; padding: 0px;">
+                  <INPUT type="hidden" name="ie" value="UTF-8">
+                  <INPUT type="hidden" name="oe" value="UTF-8">
+                  <INPUT type="hidden" name="domains" value="">
+                  <INPUT type="hidden" name="sitesearch" value="">
+                  <INPUT type="text" name="q" maxlength="255" value="">        
+                  <INPUT type="submit" name="btnG" value="Google Search">
+                </FORM>
+              </TD>
+              <TD align="right" valign="middle" style="padding-right: 8px;" nowrap="">
+                <FORM name="listSearch" action="http://mina.markmail.org/search/" method="get" style="margin: 0px; padding: 0px;">
+                  <INPUT type="text" name="q" maxlength="255" value="">        
+                  <INPUT type="submit" value="Mailing List Search">
+                </FORM>
+              </TD>
+            </TR> 
+          </TABLE>
+        </DIV>
+      </DIV>
+      <DIV id="pageBody" style="clear: both;">
+        <TABLE border="0" cellpadding="0" cellspacing="0" width="100%">
+          <TR>
+            <TD width="192" valign="top" nowrap="">
+              <DIV style="padding: 0px 8px 16px 20px;">
+                
+                                                                                                                                                                                                                                          <H3><A name="Navigation-Overview"></A>Overview</H3>
+
+<UL>
+	<LI><A href="index.html" title="Index">Home</A></LI>
+	<LI><A href="features.html" title="Features">Features</A></LI>
+	<LI><A href="documentation.html" title="Documentation">Documentation</A></LI>
+	<LI><A href="downloads.html" title="Downloads">Downloads</A></LI>
+	<LI><A href="" title="Source">Source</A></LI>
+	<LI><A href="faq.html" title="FAQ">FAQ</A></LI>
+</UL>
+
+
+<H3><A name="Navigation-Community"></A>Community</H3>
+
+<UL>
+	<LI><A href="mailing-lists.html" title="Mailing Lists">Mailing lists</A></LI>
+	<LI><A href="getting-involved.html" title="Getting Involved">Getting Involved</A></LI>
+	<LI><A href="reporting-a-bug.html" title="Reporting a Bug">Reporting a Bug</A></LI>
+	<LI><A href="contributors.html" title="Contributors">Contributors</A></LI>
+	<LI><A href="testimonials.html" title="Testimonials">Testimonials</A></LI>
+</UL>
+
+
+<H3><A name="Navigation-Sponsorship"></A>Sponsorship</H3>
+
+<UL>
+	<LI><SPAN class="nobr"><A href="http://www.apache.org/foundation/thanks.html" title="Visit page outside Confluence" rel="nofollow">Thanks<SUP><IMG class="rendericon" src="http://cwiki.apache.org/confluence/images/icons/linkext7.gif" height="7" width="7" align="absmiddle" alt="" border="0"></SUP></A></SPAN></LI>
+	<LI><SPAN class="nobr"><A href="http://www.apache.org/foundation/sponsorship.html" title="Visit page outside Confluence" rel="nofollow">Sponsorship<SUP><IMG class="rendericon" src="http://cwiki.apache.org/confluence/images/icons/linkext7.gif" height="7" width="7" align="absmiddle" alt="" border="0"></SUP></A></SPAN></LI>
+	<LI><SPAN class="nobr"><A href="http://www.apache.org/foundation/contributing.html" title="Visit page outside Confluence" rel="nofollow">Contributing<SUP><IMG class="rendericon" src="http://cwiki.apache.org/confluence/images/icons/linkext7.gif" height="7" width="7" align="absmiddle" alt="" border="0"></SUP></A></SPAN></LI>
+</UL>
+                                                                                            </DIV>
+             <DIV align="center"><IFRAME src="http://www.apache.org/ads/buttonbar.html" style="border-width:0" frameborder="0" scrolling="no" width="135" height="265"></IFRAME></DIV>
+            </TD>
+            <TD width="100%" valign="top">
+              <DIV class="pagecontent">
+                <H1 style="margin-top: 0px;">
+                  Source
+                </H1>
+                <DIV class="wiki-content">
+                  <H3><A name="Source-Overview"></A>Overview</H3>
+
+<P>This project uses Subversion to manage its source code. Instructions on Subversion use can be found at <SPAN class="nobr"><A href="http://svnbook.red-bean.com/" title="Visit page outside Confluence" rel="nofollow">http://svnbook.red-bean.com/<SUP><IMG class="rendericon" src="http://cwiki.apache.org/confluence/images/icons/linkext7.gif" height="7" width="7" align="absmiddle" alt="" border="0"></SUP></A></SPAN>. If you are on Windows, the excellent <SPAN class="nobr"><A href="http://tortoisesvn.tigris.org/" title="Visit page outside Confluence" rel="nofollow">TortoiseSVN<SUP><IMG class="rendericon" src="http://cwiki.apache.org/confluence/images/icons/linkext7.gif" height="7" width="7" align="absmiddle" alt="" border="0"></SUP></A></SPAN> client is highly recommended.</P>
+
+<H3><A name="Source-WebAccess"></A>Web Access</H3>
+
+<P>The following is a link to the <SPAN class="nobr"><A href="http://svn.apache.org/viewvc/mina/ftpserver" title="Visit page outside Confluence" rel="nofollow">online source repository<SUP><IMG class="rendericon" src="http://cwiki.apache.org/confluence/images/icons/linkext7.gif" height="7" width="7" align="absmiddle" alt="" border="0"></SUP></A></SPAN>.</P>
+
+<H3><A name="Source-Anonymousaccess"></A>Anonymous access</H3>
+
+<P>The source can be checked out anonymously from SVN with this command:</P>
+<DIV class="preformatted"><DIV class="preformattedContent">
+<PRE>$ svn checkout http://svn.apache.org/repos/asf/mina/ftpserver/trunk ftpserver
+</PRE>
+</DIV></DIV>
+
+<H3><A name="Source-Developeraccess"></A>Developer access</H3>
+
+<P>Everyone can access the Subversion repository via HTTPS, but Committers must checkout the Subversion repository via HTTPS.</P>
+<DIV class="preformatted"><DIV class="preformattedContent">
+<PRE>$ svn checkout https://svn.apache.org/repos/asf/mina/ftpserver/trunk ftpserver
+</PRE>
+</DIV></DIV>
+
+<P>To commit changes to the repository, execute the following command to commit your changes (svn will prompt you for your password)</P>
+<DIV class="preformatted"><DIV class="preformattedContent">
+<PRE>$ svn commit --username your-username -m &quot;A message&quot;
+</PRE>
+</DIV></DIV>
+
+<H3><A name="Source-Accessfrombehindafirewall"></A>Access from behind a firewall</H3>
+
+<P>For those users who are stuck behind a corporate firewall which is blocking http access to the Subversion repository, you can try to access it via the developer connection:</P>
+<DIV class="preformatted"><DIV class="preformattedContent">
+<PRE>$ svn checkout https://svn.apache.org/repos/asf/mina/ftpserver/trunk ftpserver
+</PRE>
+</DIV></DIV>
+
+<H3><A name="Source-Accessthroughaproxy"></A>Access through a proxy</H3>
+
+<P>The Subversion client can go through a proxy, if you configure it to do so. First, edit your &quot;servers&quot; configuration file to indicate which proxy to use. The files location depends on your operating system. On Linux or Unix it is located in the directory &quot;~/.subversion&quot;. On Windows it is in &quot;%APPDATA%\Subversion&quot;. (Try &quot;echo %APPDATA%&quot;, note this is a hidden directory.)</P>
+
+<P>There are comments in the file explaining what to do. If you don't have that file, get the latest Subversion client and run any command; this will cause the configuration directory and template files to be created.</P>
+
+<P>Example : Edit the 'servers' file and add something like :</P>
+<DIV class="preformatted"><DIV class="preformattedContent">
+<PRE>[global]
+http-proxy-host = your.proxy.name
+http-proxy-port = 3128
+</PRE>
+</DIV></DIV>
+                </DIV>
+  
+              </DIV>
+            </TD>
+          </TR>
+        </TABLE>
+        <DIV class="footer" style="text-align: center">
+          Copyright &copy; 2004-2008, <A href="http://www.apache.org/">The Apache Software Foundation</A>
+        </DIV>
+      </DIV>
+    </DIV>
+  </BODY>
+</HTML>

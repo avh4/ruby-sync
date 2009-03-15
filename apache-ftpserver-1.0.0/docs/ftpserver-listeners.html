@@ -1,0 +1,261 @@
+
+<!-- 
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+ http://www.apache.org/licenses/LICENSE- 2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License. 
+-->
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+  <HEAD>
+    <LINK type="text/css" rel="stylesheet" href="resources/space.css">
+    <STYLE type="text/css">
+      .footer {
+        background-image:      url('http://cwiki.apache.org/confluence/images/border/border_bottom.gif');
+        background-repeat:     repeat-x;
+        background-position:   left top;
+        padding-top:           4px;
+        color:                 #666;
+      }
+    </STYLE>
+    <SCRIPT type="text/javascript" language="javascript">
+      var hide = null;
+      var show = null;
+      var children = null;
+
+      function init() {
+        /* Search form initialization */
+        var form = document.forms['search'];
+        if (form != null) {
+          form.elements['domains'].value = location.hostname;
+          form.elements['sitesearch'].value = location.hostname;
+        }
+
+        /* Children initialization */
+        hide = document.getElementById('hide');
+        show = document.getElementById('show');
+        children = document.all != null ?
+                   document.all['children'] :
+                   document.getElementById('children');
+        if (children != null) {
+          children.style.display = 'none';
+          show.style.display = 'inline';
+          hide.style.display = 'none';
+        }
+      }
+
+      function showChildren() {
+        children.style.display = 'block';
+        show.style.display = 'none';
+        hide.style.display = 'inline';
+      }
+
+      function hideChildren() {
+        children.style.display = 'none';
+        show.style.display = 'inline';
+        hide.style.display = 'none';
+      }
+    </SCRIPT>
+    <TITLE>FtpServer Listeners</TITLE>
+  <META http-equiv="Content-Type" content="text/html;charset=UTF-8"></HEAD>
+  <BODY onload="init()">
+    <TABLE border="0" cellpadding="2" cellspacing="0" width="100%">
+      <TR class="topBar">
+        <TD align="left" valign="middle" class="topBarDiv" nowrap="">
+          &nbsp;<A href="index.html" title="Apache MINA FtpServer">Apache MINA FtpServer</A>&nbsp;&gt;&nbsp;<A href="index.html" title="Index">Index</A>&nbsp;&gt;&nbsp;<A href="documentation.html" title="Documentation">Documentation</A>&nbsp;&gt;&nbsp;<A href="" title="FtpServer Listeners">FtpServer Listeners</A>
+        </TD>
+      </TR> 
+    </TABLE>
+
+    <DIV id="PageContent">
+      <DIV class="pageheader" style="padding: 6px 0px 0px 0px;">
+        <!-- We'll enable this once we figure out how to access (and save) the logo resource -->
+        <!--img src="/wiki/images/confluence_logo.gif" style="float: left; margin: 4px 4px 4px 10px;" border="0"-->
+        <DIV style="margin: 0px 10px 0px 10px" class="smalltext">Apache MINA FtpServer</DIV>
+        <DIV style="margin: 0px 10px 8px 10px" class="pagetitle">FtpServer Listeners</DIV>
+
+        <DIV class="greynavbar" align="right" style="padding: 2px 10px; margin: 0px;">
+
+        </DIV>
+      </DIV>
+
+      <DIV class="pagecontent">
+        <DIV class="wiki-content">
+          <P>Listeners are the component in FtpServer which is responsible for listening on the network socket and when clients connect create the user session, execute commands and so on. An FtpServer can have multiple listeners at the same time, some examples include:</P>
+<UL>
+	<LI>one listener on port 21 (the default option)</LI>
+	<LI>one cleartext listener on port 21 and one for implicit SSL on port 22</LI>
+	<LI>one cleartext listener in an internal IP address only and one for implicit SSL for the external IP address</LI>
+</UL>
+
+
+<P>Listeners are identified by a name, the default listener is identified by &quot;default&quot;.</P>
+
+<P>The main network configuration is performed on the listeners, for example the port to listen on and SSL configuration. </P>
+
+<H3><A name="FtpServerListeners-Configuration"></A>Configuration</H3>
+
+<UL>
+	<LI>config
+	<UL>
+		<LI>listeners
+		<UL>
+			<LI>&lt;listener name&gt;
+			<UL>
+				<LI>class (org.apache.ftpserver.listener.mina.MinaListener)</LI>
+				<LI>address (&lt;none&gt;)</LI>
+				<LI>port (21)</LI>
+				<LI>implicit-ssl (false)</LI>
+				<LI>ssl</LI>
+				<LI>data-connection
+				<UL>
+					<LI>class (&lt;none&gt;)</LI>
+					<LI>idle-time (10)</LI>
+					<LI>active
+					<UL>
+						<LI>enable (true)</LI>
+						<LI>local-address (&lt;none&gt;)</LI>
+						<LI>local-port (0)</LI>
+						<LI>ip-check (false)</LI>
+					</UL>
+					</LI>
+					<LI>passive
+					<UL>
+						<LI>address (&lt;none&gt;)</LI>
+						<LI>ports (0)</LI>
+					</UL>
+					</LI>
+					<LI>ssl</LI>
+				</UL>
+				</LI>
+			</UL>
+			</LI>
+		</UL>
+		</LI>
+	</UL>
+	</LI>
+</UL>
+
+
+<TABLE class="confluenceTable"><TBODY>
+<TR>
+<TH class="confluenceTh"> Configuration Parameter </TH>
+<TH class="confluenceTh"> Description </TH>
+</TR>
+<TR>
+<TD class="confluenceTd"> config.listeners.&lt;listener name&gt;.class </TD>
+<TD class="confluenceTd"> The listener class
+<UL>
+	<LI>org.apache.ftpserver.listener.mina.MinaListener : High performance listener using asyncronous IO. Requires Java 5</LI>
+	<LI>org.apache.ftpserver.listener.io.IOListener : Listener using blocking IO. Requires Java 1.4</LI>
+</UL>
+</TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> config.listeners.&lt;listener name&gt;.address </TD>
+<TD class="confluenceTd"> FTP server address the listener will bind to </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> config.listeners.&lt;listener name&gt;.port </TD>
+<TD class="confluenceTd"> FTP server port </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> config.listeners.&lt;listener name&gt;.implicit-ssl  </TD>
+<TD class="confluenceTd"> True if the listener should use implicit SSL </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> config.listeners.&lt;listener name&gt;.ssl  </TD>
+<TD class="confluenceTd"> See <SPAN class="nobr"><A href="http://cwiki.apache.org/confluence/pages/createpage.action?spaceKey=FTPSERVER&title=FtpServer%20TLS-SSL%20Support&linkCreation=true&fromPageId=82733" title="Create Page: FtpServer TLS-SSL Support" class="createlink">TLS/SSL configuration<SUP><IMG class="rendericon" src="http://cwiki.apache.org/confluence/images/icons/plus.gif" height="7" width="7" align="absmiddle" alt="" border="0"></SUP></A></SPAN></TD>
+</TR>
+<TR>
+<TH class="confluenceTh"> Data connection configuration </TH>
+<TH class="confluenceTh">&nbsp;</TH>
+</TR>
+<TR>
+<TD class="confluenceTd"> config.listeners.&lt;listener name&gt;.data-connection.class </TD>
+<TD class="confluenceTd"> Required, no default value, normally set to &quot;org.apache.ftpserver.DefaultDataConnectionConfig&quot; </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> config.listeners.&lt;listener name&gt;.data-connection.idle-time </TD>
+<TD class="confluenceTd"> Maximum data connection idle time in second. 0 means no limit. The default value is 10. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> config.listeners.&lt;listener name&gt;.data-connection.active.enable </TD>
+<TD class="confluenceTd"> PORT data connection enabled. The default value is true. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> config.listeners.&lt;listener name&gt;.data-connection.active.local-address </TD>
+<TD class="confluenceTd"> The localhost address used when local port specified in active data transfer. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> config.listeners.&lt;listener name&gt;.data-connection.active.local-port </TD>
+<TD class="confluenceTd"> The local port to be used during active data transfer. According to the specifications, it should be 20. The default value is 0. It means that any free port will be used. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> config.listeners.&lt;listener name&gt;.data-connection.active.ip-check </TD>
+<TD class="confluenceTd"> Check the PORT IP with the client IP. The default value is false. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> config.listeners.&lt;listener name&gt;.data-connection.passive.address </TD>
+<TD class="confluenceTd"> FTP passive (PASV) address The default value is localhost. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> config.listeners.&lt;listener name&gt;.data-connection.passive.ports </TD>
+<TD class="confluenceTd"> See <SPAN class="nobr"><A href="http://cwiki.apache.org/confluence/pages/createpage.action?spaceKey=FTPSERVER&title=FtpServer%20Configure%20passive%20ports&linkCreation=true&fromPageId=82733" title="Create Page: FtpServer Configure passive ports" class="createlink">FtpServer Configure passive ports<SUP><IMG class="rendericon" src="http://cwiki.apache.org/confluence/images/icons/plus.gif" height="7" width="7" align="absmiddle" alt="" border="0"></SUP></A></SPAN>  </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> config.listeners.&lt;listener name&gt;.data-connection.ssl  </TD>
+<TD class="confluenceTd"> See <SPAN class="nobr"><A href="http://cwiki.apache.org/confluence/pages/createpage.action?spaceKey=FTPSERVER&title=FtpServer%20TLS-SSL%20Support&linkCreation=true&fromPageId=82733" title="Create Page: FtpServer TLS-SSL Support" class="createlink">TLS/SSL configuration<SUP><IMG class="rendericon" src="http://cwiki.apache.org/confluence/images/icons/plus.gif" height="7" width="7" align="absmiddle" alt="" border="0"></SUP></A></SPAN> </TD>
+</TR>
+</TBODY></TABLE>
+
+<H4><A name="FtpServerListeners-Examples"></A>Examples</H4>
+
+<H5><A name="FtpServerListeners-Changethelistenerport"></A>Change the listener port</H5>
+<DIV class="preformatted"><DIV class="preformattedContent">
+<PRE>config.listeners.default.port=2021
+</PRE>
+</DIV></DIV>
+
+<H5><A name="FtpServerListeners-Oneinternalandoneexternallistener"></A>One internal and one external listener</H5>
+<DIV class="preformatted"><DIV class="preformattedContent">
+<PRE>config.listeners.internal.address=192.168.10.12
+config.listeners.external.address=245.12.15.18
+</PRE>
+</DIV></DIV>
+
+<H5><A name="FtpServerListeners-UsetheblockingIOlistener"></A>Use the blocking IO listener</H5>
+<DIV class="preformatted"><DIV class="preformattedContent">
+<PRE>config.listeners.default.class=org.apache.ftpserver.listener.io.IOListener
+</PRE>
+</DIV></DIV>
+
+<H5><A name="FtpServerListeners-SupportingSSL"></A>Supporting SSL</H5>
+<DIV class="preformatted"><DIV class="preformattedContent">
+<PRE>config.listeners.default.ssl.class=org.apache.ftpserver.ssl.DefaultSsl
+config.listeners.default.ssl.keystore-file=mykeystore.jks
+config.listeners.default.ssl.keystore-password=secret
+config.listeners.default.ssl.key-password=secret
+</PRE>
+</DIV></DIV>
+        </DIV>
+
+      </DIV>
+    </DIV>
+    <DIV class="footer">
+    </DIV>
+  </BODY>
+</HTML>

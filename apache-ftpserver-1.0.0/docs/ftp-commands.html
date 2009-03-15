@@ -1,0 +1,548 @@
+
+<!--
+   Licensed to the Apache Software Foundation (ASF) under one or more
+   contributor license agreements.  See the NOTICE file distributed with
+   this work for additional information regarding copyright ownership.
+   The ASF licenses this file to You under the Apache License, Version 2.0
+   (the "License"); you may not use this file except in compliance with
+   the License.  You may obtain a copy of the License at
+ 
+        http://www.apache.org/licenses/LICENSE- 2.0
+ 
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+-->
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+  <HEAD>
+    <TITLE>Apache FtpServer - FTP Commands</TITLE>
+    <META http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <LINK type="text/css" rel="stylesheet" href="http://mina.apache.org/index.data/style.css">
+    <SCRIPT type="text/javascript" language="javascript">
+      function init() {
+        /* Search form initialization */
+        var form = document.forms['googleSearch'];
+        if (form != null) {
+          form.elements['domains'].value = location.hostname;
+          form.elements['sitesearch'].value = location.hostname;
+        }
+
+      }
+    </SCRIPT>
+  </HEAD>
+  <BODY onload="init()">
+    <DIV id="PageContent" style="padding-bottom: 0px;">
+      <DIV class="pageheader" style="padding: 6px 0px 0px 0px;">
+        <DIV id="apacheLogo" style="width: 100%; text-align: right; position: absolute; top: 33px;">
+          <A href="http://www.apache.org/"><IMG src="http://www.apache.org/images/asf-logo.gif" border="0" alt="The Apache Software Foundation" title="The Apache Software Foundation" hspace="12"></A>
+        </DIV>
+        <DIV id="minaLogo" style="position: absolute; top: 24px; left: 16px;">
+          <A href="http://mina.apache.org/ftpserver"><IMG src="http://mina.apache.org/ftpserver/index.data/logo-300x95.png" border="0" alt="Apache FtpServer" title="Apache FtpServer"></A>
+        </DIV>
+        <DIV class="greynavbar" style="margin: 156px 0px 0px 0px;">
+          <TABLE border="0" cellpadding="2" cellspacing="0" width="100%" style="position: relative; z-index: 10;">
+            <TR>
+              <TD align="left" valign="middle" style="padding-left: 17px;" width="100%" nowrap="">
+                &nbsp;<A href="index.html" title="Apache MINA FtpServer">Apache MINA FtpServer</A>&nbsp;&gt;&nbsp;<A href="index.html" title="Index">Index</A>&nbsp;&gt;&nbsp;<A href="documentation.html" title="Documentation">Documentation</A>&nbsp;&gt;&nbsp;<A href="" title="FTP Commands">FTP Commands</A>
+              </TD>
+              <TD align="right" valign="middle" nowrap="">
+                <FORM name="googleSearch" action="http://www.google.com/search" method="get" style="margin: 0px; padding: 0px;">
+                  <INPUT type="hidden" name="ie" value="UTF-8">
+                  <INPUT type="hidden" name="oe" value="UTF-8">
+                  <INPUT type="hidden" name="domains" value="">
+                  <INPUT type="hidden" name="sitesearch" value="">
+                  <INPUT type="text" name="q" maxlength="255" value="">        
+                  <INPUT type="submit" name="btnG" value="Google Search">
+                </FORM>
+              </TD>
+              <TD align="right" valign="middle" style="padding-right: 8px;" nowrap="">
+                <FORM name="listSearch" action="http://mina.markmail.org/search/" method="get" style="margin: 0px; padding: 0px;">
+                  <INPUT type="text" name="q" maxlength="255" value="">        
+                  <INPUT type="submit" value="Mailing List Search">
+                </FORM>
+              </TD>
+            </TR> 
+          </TABLE>
+        </DIV>
+      </DIV>
+      <DIV id="pageBody" style="clear: both;">
+        <TABLE border="0" cellpadding="0" cellspacing="0" width="100%">
+          <TR>
+            <TD width="192" valign="top" nowrap="">
+              <DIV style="padding: 0px 8px 16px 20px;">
+                
+                                                                                                                                                                                                                                          <H3><A name="Navigation-Overview"></A>Overview</H3>
+
+<UL>
+	<LI><A href="index.html" title="Index">Home</A></LI>
+	<LI><A href="features.html" title="Features">Features</A></LI>
+	<LI><A href="documentation.html" title="Documentation">Documentation</A></LI>
+	<LI><A href="downloads.html" title="Downloads">Downloads</A></LI>
+	<LI><A href="source.html" title="Source">Source</A></LI>
+	<LI><A href="faq.html" title="FAQ">FAQ</A></LI>
+</UL>
+
+
+<H3><A name="Navigation-Community"></A>Community</H3>
+
+<UL>
+	<LI><A href="mailing-lists.html" title="Mailing Lists">Mailing lists</A></LI>
+	<LI><A href="getting-involved.html" title="Getting Involved">Getting Involved</A></LI>
+	<LI><A href="reporting-a-bug.html" title="Reporting a Bug">Reporting a Bug</A></LI>
+	<LI><A href="contributors.html" title="Contributors">Contributors</A></LI>
+	<LI><A href="testimonials.html" title="Testimonials">Testimonials</A></LI>
+</UL>
+
+
+<H3><A name="Navigation-Sponsorship"></A>Sponsorship</H3>
+
+<UL>
+	<LI><SPAN class="nobr"><A href="http://www.apache.org/foundation/thanks.html" title="Visit page outside Confluence" rel="nofollow">Thanks<SUP><IMG class="rendericon" src="http://cwiki.apache.org/confluence/images/icons/linkext7.gif" height="7" width="7" align="absmiddle" alt="" border="0"></SUP></A></SPAN></LI>
+	<LI><SPAN class="nobr"><A href="http://www.apache.org/foundation/sponsorship.html" title="Visit page outside Confluence" rel="nofollow">Sponsorship<SUP><IMG class="rendericon" src="http://cwiki.apache.org/confluence/images/icons/linkext7.gif" height="7" width="7" align="absmiddle" alt="" border="0"></SUP></A></SPAN></LI>
+	<LI><SPAN class="nobr"><A href="http://www.apache.org/foundation/contributing.html" title="Visit page outside Confluence" rel="nofollow">Contributing<SUP><IMG class="rendericon" src="http://cwiki.apache.org/confluence/images/icons/linkext7.gif" height="7" width="7" align="absmiddle" alt="" border="0"></SUP></A></SPAN></LI>
+</UL>
+                                                                                            </DIV>
+             <DIV align="center"><IFRAME src="http://www.apache.org/ads/buttonbar.html" style="border-width:0" frameborder="0" scrolling="no" width="135" height="265"></IFRAME></DIV>
+            </TD>
+            <TD width="100%" valign="top">
+              <DIV class="pagecontent">
+                <H1 style="margin-top: 0px;">
+                  FTP Commands
+                </H1>
+                <DIV class="wiki-content">
+                  <H2><A name="FTPCommands-FTPCommands"></A>FTP Commands</H2>
+
+<P>This document describes all the FTP commands implemented.</P>
+<H3><A name="FTPCommands-ABOR"></A>ABOR</H3>
+
+<P>Aborts the previous FTP service command and any associated transfer of data.</P>
+
+<H4><A name="FTPCommands-ServerReplies"></A>Server Replies</H4>
+<P>            226 ABOR command successful.</P>
+
+<H3><A name="FTPCommands-ACCT"></A>ACCT</H3>
+
+<P>Provides the user's account. Not used by FtpServer.</P>
+
+<H4><A name="FTPCommands-ServerReplies"></A>Server Replies</H4>
+<P>            202 Command ACCT not implemented.</P>
+
+<H3><A name="FTPCommands-APPE"></A>APPE</H3>
+
+<P>Appends data to the end of a file on the remote host. If the file does not already exist, it is created. This command must be preceded by a PORT or PASV command.</P>
+
+<H4><A name="FTPCommands-ServerReplies"></A>Server Replies</H4>
+<P>            501 Syntax error.<BR>
+            550 Not a plain file.<BR>
+            550 Permission denied.<BR>
+            150 Opening data connection.<BR>
+            425 Cannot open data connection.<BR>
+            426 Data connection error.<BR>
+            551 Error on output file.<BR>
+            226 Transfer complete.</P>
+
+<H3><A name="FTPCommands-AUTH"></A>AUTH</H3>
+
+<P>Establishes SSL encrypted session. Only SSL type is supported.</P>
+
+<H4><A name="FTPCommands-ServerReplies"></A>Server Replies</H4>
+<P>            501 Syntax error.<BR>
+            431 Service is unavailable.<BR>
+            234 AUTH command okay; starting SSL connection.</P>
+
+<H3><A name="FTPCommands-CDUP"></A>CDUP</H3>
+
+<P>Change to parent directory.</P>
+
+<H4><A name="FTPCommands-ServerReplies"></A>Server Replies</H4>
+<P>            250 Command okay.<BR>
+            550 No such directory.</P>
+
+<H3><A name="FTPCommands-CWD"></A>CWD</H3>
+
+<P>Changes the working directory. If directory name is not specified, root directory &#40;/) is assumed.</P>
+
+<H4><A name="FTPCommands-ServerReplies"></A>Server Replies</H4>
+<P>            250 Command okay.<BR>
+            550 No such directory.</P>
+
+<H3><A name="FTPCommands-DELE"></A>DELE</H3>
+
+<P>Deletes the file specified by the provided path.</P>
+
+<H4><A name="FTPCommands-ServerReplies"></A>Server Replies</H4>
+<P>            250 Command okay.<BR>
+            450 No permission to delete.<BR>
+            450 Can't delete file.<BR>
+            550 Not a valid file.<BR>
+            501 Syntax error in parameters or arguments.</P>
+
+<H3><A name="FTPCommands-EPRT"></A>EPRT</H3>
+
+<P>The EPRT command allows for the specification of an extended address for the data connection.  The extended address MUST consist of the network protocol as well as the network and transport addresses.  The format of EPRT is EPRT &#124;&lt;net-prt&gt;&#124;&lt;net-addr&gt;&#124;&lt;tcp-port&gt;&#124;</P>
+
+<H4><A name="FTPCommands-ServerReplies"></A>Server Replies</H4>
+<P>            501 Syntax error.<BR>
+            510 EPRT is disabled.<BR>
+            510 Syntax error.<BR>
+            553 Host unknown.<BR>
+            510 EPRT IP is not same as client IP.<BR>
+            552 Not a valid port number.<BR>
+            200 EPRT command okay.</P>
+
+<H3><A name="FTPCommands-EPSV"></A>EPSV</H3>
+
+<P>The EPSV command requests that a server listen on a data port and wait for a connection.</P>
+
+<H4><A name="FTPCommands-ServerReplies"></A>Server Replies</H4>
+<P>            425 Cannot open passive connection.<BR>
+            229 Entering passive mode (&lt;message&gt;).</P>
+
+<H3><A name="FTPCommands-FEAT"></A>FEAT</H3>
+
+<P>Displays the feature list.</P>
+
+<H4><A name="FTPCommands-ServerReplies"></A>Server Replies</H4>
+<P>            221 List of all the extensions supported.</P>
+
+<H3><A name="FTPCommands-HELP"></A>HELP</H3>
+
+<P>Displays the help information.</P>
+
+<H4><A name="FTPCommands-ServerReplies"></A>Server Replies</H4>
+<P>            214 Help information.</P>
+
+<H3><A name="FTPCommands-LANG"></A>LANG</H3>
+
+<P>A new command &quot;LANG&quot; is added to the FTP command set to allow server-FTP process to determine in which language to present server greetings and the textual part of command responses.</P>
+
+<H4><A name="FTPCommands-ServerReplies"></A>Server Replies</H4>
+<P>            502 Not yet implemented.</P>
+
+<H3><A name="FTPCommands-LIST"></A>LIST</H3>
+
+<P>This command causes a list to be sent from the server to the passive DTP.  If the pathname specifies a directory or other group of files, the server should transfer a list of files                    in the specified directory.  If the pathname specifies a file then the server should send current information on the file.  A null argument implies the user's current working or                    default directory.  The data transfer is over the data connection. This command must be preceded by a PORT or PASV command.</P>
+
+<H4><A name="FTPCommands-ServerReplies"></A>Server Replies</H4>
+<P>            150 Opening data connection.<BR>
+            425 Cannot open data connection.<BR>
+            426 Data connection error.<BR>
+            551 File listing failed.<BR>
+            501 Syntax error.<BR>
+            226 Closing data connection.</P>
+
+<H3><A name="FTPCommands-MDTM"></A>MDTM</H3>
+
+<P>Returns the date and time of when a file was modified.</P>
+
+<H4><A name="FTPCommands-ServerReplies"></A>Server Replies</H4>
+<P>            501 Syntax error.<BR>
+            550 File unavailable.<BR>
+            213 &lt;timestamp&gt;</P>
+
+<H3><A name="FTPCommands-MKD"></A>MKD</H3>
+
+<P>This command causes the directory specified in the pathname to be created as a directory (if the pathname is absolute) or as a subdirectory of the current working directory (if                    the pathname is relative).</P>
+
+<H4><A name="FTPCommands-ServerReplies"></A>Server Replies</H4>
+<P>            501 Syntax error.<BR>
+            550 Not a valid file.<BR>
+            550 Already exists.<BR>
+            550 No permission.<BR>
+            250 Directory created.<BR>
+            550 Cannot create directory.</P>
+
+<H3><A name="FTPCommands-MLSD"></A>MLSD</H3>
+
+<P>Causes a list to be sent from the server to the passive DTP</P>
+
+<H4><A name="FTPCommands-ServerReplies"></A>Server Replies</H4>
+<P>            150 File status okay; about to open data connection.<BR>
+            226 Closing data connection.<BR>
+            425 Can't open data connection.<BR>
+            426 Data connection error.<BR>
+            501 Syntax error in parameters or arguments.<BR>
+            551 File listing failed.</P>
+
+<H3><A name="FTPCommands-MODE"></A>MODE</H3>
+
+<P>Set data transfer mode. The valid values are S and Z.</P>
+
+<H4><A name="FTPCommands-ServerReplies"></A>Server Replies</H4>
+<P>            501 Syntax error.<BR>
+            504 Not implemented for this command.<BR>
+            200 Command okay.</P>
+
+<H3><A name="FTPCommands-NLST"></A>NLST</H3>
+
+<P>This command causes a directory listing to be sent from server to user site. The pathname should specify a directory or other system-specific file group descriptor; a                    null argument implies the current directory.  The server will return a stream of names of files and no other information.</P>
+
+<H4><A name="FTPCommands-ServerReplies"></A>Server Replies</H4>
+<P>            150 Opening data connection.<BR>
+            425 Cannot open data connection.<BR>
+            426 Data connection error.<BR>
+            551 File listing failed.<BR>
+            501 Syntax error.<BR>
+            226 Closing data connection.</P>
+
+<H3><A name="FTPCommands-NOOP"></A>NOOP</H3>
+
+<P>No operation.</P>
+
+<H4><A name="FTPCommands-ServerReplies"></A>Server Replies</H4>
+<P>            200 Command okay.</P>
+
+<H3><A name="FTPCommands-NOOP"></A>NOOP</H3>
+
+<P>Cause the server use optional features for the command specified.</P>
+
+<H4><A name="FTPCommands-ServerReplies"></A>Server Replies</H4>
+<P>            500 Execution failed.<BR>
+            501 Syntax error in parameters or arguments.<BR>
+            502 Command OPTS not implemented for ...<BR>
+            Additional return codes available for different OPTS commands.</P>
+
+<H3><A name="FTPCommands-PASS"></A>PASS</H3>
+
+<P>The argument field is a Telnet string specifying the user's password. This command must be immediately preceded by the USER command.</P>
+
+<H4><A name="FTPCommands-ServerReplies"></A>Server Replies</H4>
+<P>            501 Syntax error.<BR>
+            503 Login with USER first.<BR>
+            202 Already logged-in.<BR>
+            421 Maximum anonymous login limit has been reached.<BR>
+            421 Maximum login limit has been reached.<BR>
+            530 Authentication failed.<BR>
+            230 User logged in, proceed.</P>
+
+<H3><A name="FTPCommands-PASV"></A>PASV</H3>
+
+<P>This command requests the server-DTP to listen on a data port (which is not its default data port) and to wait for a connection rather than initiate one upon receipt of a                    transfer command. The response to this command includes the host and port address this server is listening on.</P>
+
+<H4><A name="FTPCommands-ServerReplies"></A>Server Replies</H4>
+<P>            425 Cannot open passive connection.<BR>
+            227 Entering passive mode (&lt;h1,h2,h3,h4,p1,p2&gt;)</P>
+
+<H3><A name="FTPCommands-PBSZ"></A>PBSZ</H3>
+
+<P>protection buffer size.</P>
+
+<H4><A name="FTPCommands-ServerReplies"></A>Server Replies</H4>
+<P>            200 Command okay.</P>
+
+<H3><A name="FTPCommands-PORT"></A>PORT</H3>
+
+<P>The argument is a HOST-PORT specification for the data port to be used in data connection.  There are defaults for both the user and server data ports, and under normal                    circumstances this command and its reply are not needed.  If this command is used, the argument is the concatenation of a 32-bit internet host address and a 16-bit TCP port address.                    This address information is broken into 8-bit fields and the value of each field is transmitted as a decimal number (in character string representation).  The fields are separated                    by commas.  A port command would be:</P>
+
+<P> PORT h1,h2,h3,h4,p1,p2</P>
+
+<H4><A name="FTPCommands-ServerReplies"></A>Server Replies</H4>
+<P>            501 Syntax error.<BR>
+            510 Syntax error in parameters.<BR>
+            510 Port is disabled.<BR>
+            553 Host unknown.<BR>
+            510 PORT IP mismatch.<BR>
+            552 Invalid port number.<BR>
+            200 Command PORT okay.</P>
+
+<H3><A name="FTPCommands-PROT"></A>PROT</H3>
+
+<P>Data channel protection level. The supported level values are C, P.</P>
+
+<H4><A name="FTPCommands-ServerReplies"></A>Server Replies</H4>
+<P>            501 Syntax error.<BR>
+            431 Security is disabled.<BR>
+            504 Server does not understand the specified protection level.<BR>
+            200 Command PROT okay.</P>
+
+<H3><A name="FTPCommands-PWD"></A>PWD</H3>
+
+<P>This command causes the name of the current working directory to be returned in the reply.</P>
+
+<H4><A name="FTPCommands-ServerReplies"></A>Server Replies</H4>
+<P>            257 &quot;&lt;current directory&gt;&quot;</P>
+
+
+<H3><A name="FTPCommands-QUIT"></A>QUIT</H3>
+
+<P>Closes connection.</P>
+
+<H4><A name="FTPCommands-ServerReplies"></A>Server Replies</H4>
+<P>            200 Goodbye.</P>
+
+<H3><A name="FTPCommands-REIN"></A>REIN</H3>
+
+<P>Flushes a user, without affecting transfers in progress</P>
+
+<H4><A name="FTPCommands-ServerReplies"></A>Server Replies</H4>
+<P>            220 Service ready for new user.</P>
+
+<H3><A name="FTPCommands-REST"></A>REST</H3>
+
+<P>The argument field represents the server marker at which file transfer is to be restarted.  This command does not cause file transfer but skips over the file to the specified                    data checkpoint.  This command shall be immediately followed by the appropriate FTP service command which shall cause file transfer to resume.</P>
+
+<H4><A name="FTPCommands-ServerReplies"></A>Server Replies</H4>
+<P>            501 Syntax error.<BR>
+            501 Not a valid number.<BR>
+            501 Marker cannot be negetive.<BR>
+            350 Restarting at &lt;position&gt;. Send STORE or RETRIEVE to initiate transfer.</P>
+
+<H3><A name="FTPCommands-RETR"></A>RETR</H3>
+
+<P>This command causes the server-DTP to transfer a copy of the file, specified in the pathname, to the server&#45; or user-DTP at the other end of the data connection.  The status and                    contents of the file at the server site shall be unaffected.</P>
+
+<H4><A name="FTPCommands-ServerReplies"></A>Server Replies</H4>
+<P>            501 Syntax error.<BR>
+            550 No such file or directory.<BR>
+            550 Not a plain file.<BR>
+            550 Permission denied.<BR>
+            150 Opening data connection.<BR>
+            425 Cannot open the data connection.<BR>
+            426 Data connection error.<BR>
+            551 Error on input file.<BR>
+            226 Transfer complete.</P>
+
+<H3><A name="FTPCommands-RMD"></A>RMD</H3>
+
+<P>This command causes the directory specified in the pathname to be removed as a directory (if the pathname is absolute) or as a subdirectory of the current working directory (if                    the pathname is relative).</P>
+
+<H4><A name="FTPCommands-ServerReplies"></A>Server Replies</H4>
+<P>            501 Syntax error.<BR>
+            550 No permission.<BR>
+            550 Not a valid directory.<BR>
+            250 Directory removed.<BR>
+            550 Cannot remove directory.</P>
+
+<H3><A name="FTPCommands-RNFR"></A>RNFR</H3>
+
+<P>This command specifies the old pathname of the file which is to be renamed.  This command must be immediately followed by a RNTO command specifying the new file pathname.</P>
+
+<H4><A name="FTPCommands-ServerReplies"></A>Server Replies</H4>
+<P>            501 Syntax error.<BR>
+            550 File unavailable.<BR>
+            350 Requested file action pending further information.</P>
+
+<H3><A name="FTPCommands-RNTO"></A>RNTO</H3>
+
+<P>This command specifies the new pathname of the file specified in the immediately preceding RNFR command.  Together the two commands cause a file to be renamed.</P>
+
+<H4><A name="FTPCommands-ServerReplies"></A>Server Replies</H4>
+<P>            501 Syntax error.<BR>
+            503 Cannot find the file which has to be renamed.<BR>
+            553 Not a valid file name.<BR>
+            553 No permission.<BR>
+            250 Requested file action okay, file renamed.<BR>
+            553 Cannot rename file.</P>
+
+<H3><A name="FTPCommands-SITE"></A>SITE</H3>
+
+<P>Handle Apache FTP Server specific custom commands. Please see the SITE commands page.</P>
+
+<H4><A name="FTPCommands-ServerReplies"></A>Server Replies</H4>
+<P>            200 Command SITE okay.<BR>
+            502 Command SITE not implemented for this argument.<BR>
+            500 Execution failed.<BR>
+            530 Access denied.</P>
+
+<H3><A name="FTPCommands-SIZE"></A>SIZE</H3>
+
+<P>Returns the size of the file in bytes.</P>
+
+<H4><A name="FTPCommands-ServerReplies"></A>Server Replies</H4>
+<P>            501 Syntax error.<BR>
+            550 No such file or directory.<BR>
+            550 Not a plain file.<BR>
+            213 &lt;size&gt;</P>
+
+<H3><A name="FTPCommands-STAT"></A>STAT</H3>
+
+<P>This command shall cause a status response to be sent over the control connection in the form of a reply.</P>
+
+<H4><A name="FTPCommands-ServerReplies"></A>Server Replies</H4>
+<P>            211 Statistics information.</P>
+
+<H3><A name="FTPCommands-STOR"></A>STOR</H3>
+
+<P>This command causes the server-DTP to accept the data transferred via the data connection and to store the data as a file at the server site.  If the file specified in the                    pathname exists at the server site, then its contents shall be replaced by the data being transferred.  A new file is created at the server site if the file specified in the                    pathname does not already exist.</P>
+
+<H4><A name="FTPCommands-ServerReplies"></A>Server Replies</H4>
+<P>            501 Syntax error.<BR>
+            550 Invalid path.<BR>
+            550 Permission denied.<BR>
+            150 Opening data connection.<BR>
+            425 Cannot open the data connection.<BR>
+            426 Data connection error.<BR>
+            551 Error on output file.<BR>
+            226 Transfer complete.</P>
+
+<H3><A name="FTPCommands-STOU"></A>STOU</H3>
+
+<P>This command behaves like STOR except that the resultant file is to be created in the current directory under a name unique to that directory.  The 250 Transfer Started response                    must include the name generated.</P>
+
+<H4><A name="FTPCommands-ServerReplies"></A>Server Replies</H4>
+<P>            550 Unique file name error.<BR>
+            550 Permission denied.<BR>
+            150 Opening data connection.<BR>
+            425 Cannot open the data connection.<BR>
+            250 &lt;file&gt; Transfer started.<BR>
+            426 Data connection error.<BR>
+            551 Error on output file.<BR>
+            226 Transfer complete.</P>
+
+<H3><A name="FTPCommands-STRU"></A>STRU</H3>
+
+<P>The argument is a single Telnet character code specifying file structure. The allowed argument is F.</P>
+
+<H4><A name="FTPCommands-ServerReplies"></A>Server Replies</H4>
+<P>            501 Syntax error.<BR>
+            504 Command not implemented.<BR>
+            200 Command okay.</P>
+
+<H3><A name="FTPCommands-SYST"></A>SYST</H3>
+
+<P>This command is used to find out the type of operating system at the server.</P>
+
+<H4><A name="FTPCommands-ServerReplies"></A>Server Replies</H4>
+<P>            215 UNIX Type: Apache FTP Server</P>
+
+<H3><A name="FTPCommands-TYPE"></A>TYPE</H3>
+
+<P>The argument specifies the representation type. The allowed types are A and I.</P>
+
+<H4><A name="FTPCommands-ServerReplies"></A>Server Replies</H4>
+<P>            501 Syntax error.<BR>
+            504 Command not implemented.<BR>
+            200 Command okay.</P>
+
+<H3><A name="FTPCommands-USER"></A>USER</H3>
+
+<P>The argument field is a Telnet string identifying the user. The user identification is that which is required by the server for access to its file system.  This command will                    normally be the first command transmitted by the user after the control connections are made.</P>
+
+<H4><A name="FTPCommands-ServerReplies"></A>Server Replies</H4>
+<P>            501 Syntax error.<BR>
+            230 Already logged-in.<BR>
+            530 Invalid user name.<BR>
+            530 Anonymous connection is not allowed.<BR>
+            421 Maximum anonymous login limit has been reached.<BR>
+            421 Maximum login limit has been reached.<BR>
+            331 Guest login okay, send your complete e-mail address as password.<BR>
+            331 User name okay, need password.</P>
+                </DIV>
+  
+              </DIV>
+            </TD>
+          </TR>
+        </TABLE>
+        <DIV class="footer" style="text-align: center">
+          Copyright &copy; 2004-2008, <A href="http://www.apache.org/">The Apache Software Foundation</A>
+        </DIV>
+      </DIV>
+    </DIV>
+  </BODY>
+</HTML>

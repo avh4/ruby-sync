@@ -1,0 +1,315 @@
+
+<!--
+   Licensed to the Apache Software Foundation (ASF) under one or more
+   contributor license agreements.  See the NOTICE file distributed with
+   this work for additional information regarding copyright ownership.
+   The ASF licenses this file to You under the Apache License, Version 2.0
+   (the "License"); you may not use this file except in compliance with
+   the License.  You may obtain a copy of the License at
+ 
+        http://www.apache.org/licenses/LICENSE- 2.0
+ 
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+-->
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+  <HEAD>
+    <TITLE>Apache FtpServer - Database user manager</TITLE>
+    <META http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <LINK type="text/css" rel="stylesheet" href="http://mina.apache.org/index.data/style.css">
+    <SCRIPT type="text/javascript" language="javascript">
+      function init() {
+        /* Search form initialization */
+        var form = document.forms['googleSearch'];
+        if (form != null) {
+          form.elements['domains'].value = location.hostname;
+          form.elements['sitesearch'].value = location.hostname;
+        }
+
+      }
+    </SCRIPT>
+  </HEAD>
+  <BODY onload="init()">
+    <DIV id="PageContent" style="padding-bottom: 0px;">
+      <DIV class="pageheader" style="padding: 6px 0px 0px 0px;">
+        <DIV id="apacheLogo" style="width: 100%; text-align: right; position: absolute; top: 33px;">
+          <A href="http://www.apache.org/"><IMG src="http://www.apache.org/images/asf-logo.gif" border="0" alt="The Apache Software Foundation" title="The Apache Software Foundation" hspace="12"></A>
+        </DIV>
+        <DIV id="minaLogo" style="position: absolute; top: 24px; left: 16px;">
+          <A href="http://mina.apache.org/ftpserver"><IMG src="http://mina.apache.org/ftpserver/index.data/logo-300x95.png" border="0" alt="Apache FtpServer" title="Apache FtpServer"></A>
+        </DIV>
+        <DIV class="greynavbar" style="margin: 156px 0px 0px 0px;">
+          <TABLE border="0" cellpadding="2" cellspacing="0" width="100%" style="position: relative; z-index: 10;">
+            <TR>
+              <TD align="left" valign="middle" style="padding-left: 17px;" width="100%" nowrap="">
+                &nbsp;<A href="index.html" title="Apache MINA FtpServer">Apache MINA FtpServer</A>&nbsp;&gt;&nbsp;<A href="index.html" title="Index">Index</A>&nbsp;&gt;&nbsp;<A href="documentation.html" title="Documentation">Documentation</A>&nbsp;&gt;&nbsp;<A href="user-manager.html" title="User Manager">User Manager</A>&nbsp;&gt;&nbsp;<A href="" title="Database user manager">Database user manager</A>
+              </TD>
+              <TD align="right" valign="middle" nowrap="">
+                <FORM name="googleSearch" action="http://www.google.com/search" method="get" style="margin: 0px; padding: 0px;">
+                  <INPUT type="hidden" name="ie" value="UTF-8">
+                  <INPUT type="hidden" name="oe" value="UTF-8">
+                  <INPUT type="hidden" name="domains" value="">
+                  <INPUT type="hidden" name="sitesearch" value="">
+                  <INPUT type="text" name="q" maxlength="255" value="">        
+                  <INPUT type="submit" name="btnG" value="Google Search">
+                </FORM>
+              </TD>
+              <TD align="right" valign="middle" style="padding-right: 8px;" nowrap="">
+                <FORM name="listSearch" action="http://mina.markmail.org/search/" method="get" style="margin: 0px; padding: 0px;">
+                  <INPUT type="text" name="q" maxlength="255" value="">        
+                  <INPUT type="submit" value="Mailing List Search">
+                </FORM>
+              </TD>
+            </TR> 
+          </TABLE>
+        </DIV>
+      </DIV>
+      <DIV id="pageBody" style="clear: both;">
+        <TABLE border="0" cellpadding="0" cellspacing="0" width="100%">
+          <TR>
+            <TD width="192" valign="top" nowrap="">
+              <DIV style="padding: 0px 8px 16px 20px;">
+                
+                                                                                                                                                                                                                                          <H3><A name="Navigation-Overview"></A>Overview</H3>
+
+<UL>
+	<LI><A href="index.html" title="Index">Home</A></LI>
+	<LI><A href="features.html" title="Features">Features</A></LI>
+	<LI><A href="documentation.html" title="Documentation">Documentation</A></LI>
+	<LI><A href="downloads.html" title="Downloads">Downloads</A></LI>
+	<LI><A href="source.html" title="Source">Source</A></LI>
+	<LI><A href="faq.html" title="FAQ">FAQ</A></LI>
+</UL>
+
+
+<H3><A name="Navigation-Community"></A>Community</H3>
+
+<UL>
+	<LI><A href="mailing-lists.html" title="Mailing Lists">Mailing lists</A></LI>
+	<LI><A href="getting-involved.html" title="Getting Involved">Getting Involved</A></LI>
+	<LI><A href="reporting-a-bug.html" title="Reporting a Bug">Reporting a Bug</A></LI>
+	<LI><A href="contributors.html" title="Contributors">Contributors</A></LI>
+	<LI><A href="testimonials.html" title="Testimonials">Testimonials</A></LI>
+</UL>
+
+
+<H3><A name="Navigation-Sponsorship"></A>Sponsorship</H3>
+
+<UL>
+	<LI><SPAN class="nobr"><A href="http://www.apache.org/foundation/thanks.html" title="Visit page outside Confluence" rel="nofollow">Thanks<SUP><IMG class="rendericon" src="http://cwiki.apache.org/confluence/images/icons/linkext7.gif" height="7" width="7" align="absmiddle" alt="" border="0"></SUP></A></SPAN></LI>
+	<LI><SPAN class="nobr"><A href="http://www.apache.org/foundation/sponsorship.html" title="Visit page outside Confluence" rel="nofollow">Sponsorship<SUP><IMG class="rendericon" src="http://cwiki.apache.org/confluence/images/icons/linkext7.gif" height="7" width="7" align="absmiddle" alt="" border="0"></SUP></A></SPAN></LI>
+	<LI><SPAN class="nobr"><A href="http://www.apache.org/foundation/contributing.html" title="Visit page outside Confluence" rel="nofollow">Contributing<SUP><IMG class="rendericon" src="http://cwiki.apache.org/confluence/images/icons/linkext7.gif" height="7" width="7" align="absmiddle" alt="" border="0"></SUP></A></SPAN></LI>
+</UL>
+                                                                                            </DIV>
+             <DIV align="center"><IFRAME src="http://www.apache.org/ads/buttonbar.html" style="border-width:0" frameborder="0" scrolling="no" width="135" height="265"></IFRAME></DIV>
+            </TD>
+            <TD width="100%" valign="top">
+              <DIV class="pagecontent">
+                <H1 style="margin-top: 0px;">
+                  Database user manager
+                </H1>
+                <DIV class="wiki-content">
+                  <P>You can store user user information in a database. JDBC is used to access the database. This user manager has been tested using <SPAN class="nobr"><A href="http://mysql.com/" title="Visit page outside Confluence" rel="nofollow">MySQL<SUP><IMG class="rendericon" src="http://cwiki.apache.org/confluence/images/icons/linkext7.gif" height="7" width="7" align="absmiddle" alt="" border="0"></SUP></A></SPAN>, <SPAN class="nobr"><A href="http://hsqldb.org/" title="Visit page outside Confluence" rel="nofollow">HSQLDB<SUP><IMG class="rendericon" src="http://cwiki.apache.org/confluence/images/icons/linkext7.gif" height="7" width="7" align="absmiddle" alt="" border="0"></SUP></A></SPAN> and <SPAN class="nobr"><A href="http://firebirdsql.org/" title="Visit page outside Confluence" rel="nofollow">FireBird<SUP><IMG class="rendericon" src="http://cwiki.apache.org/confluence/images/icons/linkext7.gif" height="7" width="7" align="absmiddle" alt="" border="0"></SUP></A></SPAN> database. All the user informations are stored in FTP_USER table. An example DDL file for the database is provided in &lt;INSTALL_DIR&gt;/res/ftp-db.sql.</P>
+
+<H3><A name="Databaseusermanager-DatabaseJDBClibraries"></A>Database JDBC libraries</H3>
+
+<P>You must include the required JAR files for your database in the classpath of FtpServer. Typically you would do this by placing the JAR files in &lt;INSTALL_DIR&gt;/common/lib.</P>
+
+<H3><A name="Databaseusermanager-Example"></A>Example</H3>
+
+<DIV class="code"><DIV class="codeContent">
+<PRE class="code-java">&lt;db-user-manager encrypt-passwords=<SPAN class="code-quote">&quot;salted&quot;</SPAN>&gt;
+		&lt;data-source&gt;
+			&lt;beans:bean class=<SPAN class="code-quote">&quot;some.datasoure.class&quot;</SPAN> /&gt;
+		&lt;/data-source&gt;
+		&lt;insert-user&gt;INSERT INTO FTP_USER (userid, userpassword,
+			homedirectory, enableflag, writepermission, idletime, uploadrate,
+			downloadrate) VALUES ('{userid}', '{userpassword}', '{homedirectory}',
+			'{enableflag}', '{writepermission}', {idletime}, {uploadrate},
+			{downloadrate})&lt;/insert-user&gt;
+		&lt;update-user&gt;UPDATE FTP_USER SET
+			userpassword='{userpassword}',homedirectory='{homedirectory}',enableflag={enableflag},writepermission={writepermission},idletime={idletime},uploadrate={uploadrate},downloadrate={downloadrate}
+			WHERE userid='{userid}'&lt;/update-user&gt;
+		&lt;delete-user&gt;DELETE FROM FTP_USER WHERE userid = '{userid}'
+		&lt;/delete-user&gt;
+		&lt;select-user&gt;SELECT userid, userpassword, homedirectory,
+			enableflag, writepermission, idletime, uploadrate, downloadrate FROM
+			FTP_USER WHERE userid = '{userid}'&lt;/select-user&gt;
+		&lt;select-all-users&gt;SELECT userid FROM FTP_USER ORDER BY userid
+		&lt;/select-all-users&gt;
+		&lt;is-admin&gt;SELECT userid FROM FTP_USER WHERE userid='{userid}' AND
+			userid='admin'&lt;/is-admin&gt;
+		&lt;authenticate&gt;SELECT userpassword from FTP_USER WHERE userid='{userid}'&lt;/authenticate&gt;
+	&lt;/db-user-manager&gt;</PRE>
+</DIV></DIV>
+
+<H3><A name="Databaseusermanager-ConfigurationParameters"></A>Configuration Parameters</H3>
+
+<H3><A name="Databaseusermanager-dbusermanagerelement"></A>db-user-manager element</H3>
+
+<TABLE class="confluenceTable"><TBODY>
+<TR>
+<TH class="confluenceTh"> Attribute </TH>
+<TH class="confluenceTh"> Description </TH>
+<TH class="confluenceTh"> Required </TH>
+<TH class="confluenceTh"> Default value </TH>
+</TR>
+<TR>
+<TD class="confluenceTd"> encrypt-passwords </TD>
+<TD class="confluenceTd"> It indicates how to stored password are encrypted. Possible values are &quot;clear&quot; for clear text, &quot;md5&quot; for hashed using MD5 or &quot;salted&quot; for hashed salted passwords (including multiple hash iterations). &quot;salted&quot; is encouraged. </TD>
+<TD class="confluenceTd"> No </TD>
+<TD class="confluenceTd"> md5 </TD>
+</TR>
+</TBODY></TABLE>
+
+<TABLE class="confluenceTable"><TBODY>
+<TR>
+<TH class="confluenceTh"> Child element </TH>
+<TH class="confluenceTh"> Description </TH>
+<TH class="confluenceTh"> Required </TH>
+<TH class="confluenceTh"> Default value </TH>
+</TR>
+<TR>
+<TD class="confluenceTd"> data-source </TD>
+<TD class="confluenceTd"> The data source configured using the regular Spring bean element </TD>
+<TD class="confluenceTd"> Yes </TD>
+<TD class="confluenceTd">&nbsp;</TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> insert-user </TD>
+<TD class="confluenceTd"> The SQL statement to insert a new user. All the dynamic values will be replaced during runtime. </TD>
+<TD class="confluenceTd"> Yes </TD>
+<TD class="confluenceTd">&nbsp;</TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> update-user </TD>
+<TD class="confluenceTd"> The SQL statement to update a user. All the dynamic values will be replaced during runtime. </TD>
+<TD class="confluenceTd"> Yes </TD>
+<TD class="confluenceTd">&nbsp;</TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> delete-user </TD>
+<TD class="confluenceTd"> The SQL statement to delete a user. All the dynamic values will be replaced during runtime. </TD>
+<TD class="confluenceTd"> Yes </TD>
+<TD class="confluenceTd">&nbsp;</TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> select-user </TD>
+<TD class="confluenceTd"> The SQL statement to select a user. All the dynamic values will be replaced during runtime. </TD>
+<TD class="confluenceTd"> Yes </TD>
+<TD class="confluenceTd">&nbsp;</TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> select-all-users </TD>
+<TD class="confluenceTd"> The SQL statement to select all users. All the dynamic values will be replaced during runtime. </TD>
+<TD class="confluenceTd"> Yes </TD>
+<TD class="confluenceTd">&nbsp;</TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> is-admin </TD>
+<TD class="confluenceTd"> The SQL statement to find whether an user is admin or not. All the dynamic values will be replaced during runtime. </TD>
+<TD class="confluenceTd"> Yes </TD>
+<TD class="confluenceTd">&nbsp;</TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> authenticate </TD>
+<TD class="confluenceTd"> The SQL statement to authenticate a user. All the dynamic values will be replaced during runtime. </TD>
+<TD class="confluenceTd"> Yes </TD>
+<TD class="confluenceTd">&nbsp;</TD>
+</TR>
+</TBODY></TABLE>
+
+<H3><A name="Databaseusermanager-Datasourceconfiguration"></A>Data source configuration</H3>
+<P>The data source must be configured as described by the database provider. You can also use the general purpose <SPAN class="nobr"><A href="http://jakarta.apache.org/commons/dbcp/apidocs/org/apache/commons/dbcp/BasicDataSource.html" title="Visit page outside Confluence" rel="nofollow">BasicDataSource<SUP><IMG class="rendericon" src="http://cwiki.apache.org/confluence/images/icons/linkext7.gif" height="7" width="7" align="absmiddle" alt="" border="0"></SUP></A></SPAN> provided by the <SPAN class="nobr"><A href="http://jakarta.apache.org/commons/dbcp/" title="Visit page outside Confluence" rel="nofollow">Apache Commons DBCP project<SUP><IMG class="rendericon" src="http://cwiki.apache.org/confluence/images/icons/linkext7.gif" height="7" width="7" align="absmiddle" alt="" border="0"></SUP></A></SPAN>.</P>
+
+<H4><A name="Databaseusermanager-ExampleusingtheBasicDataSourcetoconnecttoMySQL"></A>Example using the BasicDataSource to connect to MySQL</H4>
+<DIV class="code"><DIV class="codeContent">
+<PRE class="code-java">&lt;data-source&gt;
+			&lt;beans:bean class=<SPAN class="code-quote">&quot;org.apache.commons.dbcp.BasicDataSource&quot;</SPAN>&gt;
+  			  &lt;beans:property name=<SPAN class="code-quote">&quot;driverClassName&quot;</SPAN> value=<SPAN class="code-quote">&quot;com.mysql.jdbc.Driver&quot;</SPAN> /&gt;
+  			  &lt;beans:property name=<SPAN class="code-quote">&quot;url&quot;</SPAN> value=<SPAN class="code-quote">&quot;jdbc:mysql:<SPAN class="code-comment">//localhost/ftpd&quot;</SPAN> /&gt;
+</SPAN>  			  &lt;beans:property name=<SPAN class="code-quote">&quot;username&quot;</SPAN> value=<SPAN class="code-quote">&quot;myuser&quot;</SPAN> /&gt;
+  			  &lt;beans:property name=<SPAN class="code-quote">&quot;password&quot;</SPAN> value=<SPAN class="code-quote">&quot;secret&quot;</SPAN> /&gt;
+			&lt;/beans:bean&gt;
+		&lt;/data-source&gt;</PRE>
+</DIV></DIV>
+
+<H4><A name="Databaseusermanager-FTPUSERTableStructure"></A>FTP_USER Table Structure</H4>
+
+<TABLE class="confluenceTable"><TBODY>
+<TR>
+<TH class="confluenceTh"> Column </TH>
+<TH class="confluenceTh"> Type </TH>
+<TH class="confluenceTh"> Default value </TH>
+</TR>
+<TR>
+<TD class="confluenceTd"> userid </TD>
+<TD class="confluenceTd"> VARCHAR(64), Primary key </TD>
+<TD class="confluenceTd">&nbsp;</TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> userpassword </TD>
+<TD class="confluenceTd"> VARCHAR(64) </TD>
+<TD class="confluenceTd">&nbsp;</TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> homedirectory </TD>
+<TD class="confluenceTd"> VARCHAR(128) </TD>
+<TD class="confluenceTd">&nbsp;</TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> enableflag </TD>
+<TD class="confluenceTd"> BOOLEAN </TD>
+<TD class="confluenceTd"> TRUE </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> writepermission </TD>
+<TD class="confluenceTd"> BOOLEAN </TD>
+<TD class="confluenceTd"> FALSE </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> idletime </TD>
+<TD class="confluenceTd"> INT </TD>
+<TD class="confluenceTd"> 0 </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> uploadrate </TD>
+<TD class="confluenceTd"> INT </TD>
+<TD class="confluenceTd"> 0 </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> downloadrate </TD>
+<TD class="confluenceTd"> INT </TD>
+<TD class="confluenceTd"> 0 </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> maxloginnumber </TD>
+<TD class="confluenceTd"> INT </TD>
+<TD class="confluenceTd"> 0 </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> maxloginperip </TD>
+<TD class="confluenceTd"> INT </TD>
+<TD class="confluenceTd"> 0 </TD>
+</TR>
+</TBODY></TABLE>
+                </DIV>
+  
+              </DIV>
+            </TD>
+          </TR>
+        </TABLE>
+        <DIV class="footer" style="text-align: center">
+          Copyright &copy; 2004-2008, <A href="http://www.apache.org/">The Apache Software Foundation</A>
+        </DIV>
+      </DIV>
+    </DIV>
+  </BODY>
+</HTML>

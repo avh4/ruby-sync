@@ -1,0 +1,488 @@
+
+<!--
+   Licensed to the Apache Software Foundation (ASF) under one or more
+   contributor license agreements.  See the NOTICE file distributed with
+   this work for additional information regarding copyright ownership.
+   The ASF licenses this file to You under the Apache License, Version 2.0
+   (the "License"); you may not use this file except in compliance with
+   the License.  You may obtain a copy of the License at
+ 
+        http://www.apache.org/licenses/LICENSE- 2.0
+ 
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+-->
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+  <HEAD>
+    <TITLE>Apache FtpServer - draft-twine-ftpmd5-00</TITLE>
+    <META http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <LINK type="text/css" rel="stylesheet" href="http://mina.apache.org/index.data/style.css">
+    <SCRIPT type="text/javascript" language="javascript">
+      function init() {
+        /* Search form initialization */
+        var form = document.forms['googleSearch'];
+        if (form != null) {
+          form.elements['domains'].value = location.hostname;
+          form.elements['sitesearch'].value = location.hostname;
+        }
+
+      }
+    </SCRIPT>
+  </HEAD>
+  <BODY onload="init()">
+    <DIV id="PageContent" style="padding-bottom: 0px;">
+      <DIV class="pageheader" style="padding: 6px 0px 0px 0px;">
+        <DIV id="apacheLogo" style="width: 100%; text-align: right; position: absolute; top: 33px;">
+          <A href="http://www.apache.org/"><IMG src="http://www.apache.org/images/asf-logo.gif" border="0" alt="The Apache Software Foundation" title="The Apache Software Foundation" hspace="12"></A>
+        </DIV>
+        <DIV id="minaLogo" style="position: absolute; top: 24px; left: 16px;">
+          <A href="http://mina.apache.org/ftpserver"><IMG src="http://mina.apache.org/ftpserver/index.data/logo-300x95.png" border="0" alt="Apache FtpServer" title="Apache FtpServer"></A>
+        </DIV>
+        <DIV class="greynavbar" style="margin: 156px 0px 0px 0px;">
+          <TABLE border="0" cellpadding="2" cellspacing="0" width="100%" style="position: relative; z-index: 10;">
+            <TR>
+              <TD align="left" valign="middle" style="padding-left: 17px;" width="100%" nowrap="">
+                &nbsp;<A href="index.html" title="Apache MINA FtpServer">Apache MINA FtpServer</A>&nbsp;&gt;&nbsp;<A href="index.html" title="Index">Index</A>&nbsp;&gt;&nbsp;<A href="documentation.html" title="Documentation">Documentation</A>&nbsp;&gt;&nbsp;<A href="" title="draft-twine-ftpmd5-00">draft-twine-ftpmd5-00</A>
+              </TD>
+              <TD align="right" valign="middle" nowrap="">
+                <FORM name="googleSearch" action="http://www.google.com/search" method="get" style="margin: 0px; padding: 0px;">
+                  <INPUT type="hidden" name="ie" value="UTF-8">
+                  <INPUT type="hidden" name="oe" value="UTF-8">
+                  <INPUT type="hidden" name="domains" value="">
+                  <INPUT type="hidden" name="sitesearch" value="">
+                  <INPUT type="text" name="q" maxlength="255" value="">        
+                  <INPUT type="submit" name="btnG" value="Google Search">
+                </FORM>
+              </TD>
+              <TD align="right" valign="middle" style="padding-right: 8px;" nowrap="">
+                <FORM name="listSearch" action="http://mina.markmail.org/search/" method="get" style="margin: 0px; padding: 0px;">
+                  <INPUT type="text" name="q" maxlength="255" value="">        
+                  <INPUT type="submit" value="Mailing List Search">
+                </FORM>
+              </TD>
+            </TR> 
+          </TABLE>
+        </DIV>
+      </DIV>
+      <DIV id="pageBody" style="clear: both;">
+        <TABLE border="0" cellpadding="0" cellspacing="0" width="100%">
+          <TR>
+            <TD width="192" valign="top" nowrap="">
+              <DIV style="padding: 0px 8px 16px 20px;">
+                
+                                                                                                                                                                                                                                          <H3><A name="Navigation-Overview"></A>Overview</H3>
+
+<UL>
+	<LI><A href="index.html" title="Index">Home</A></LI>
+	<LI><A href="features.html" title="Features">Features</A></LI>
+	<LI><A href="documentation.html" title="Documentation">Documentation</A></LI>
+	<LI><A href="downloads.html" title="Downloads">Downloads</A></LI>
+	<LI><A href="source.html" title="Source">Source</A></LI>
+	<LI><A href="faq.html" title="FAQ">FAQ</A></LI>
+</UL>
+
+
+<H3><A name="Navigation-Community"></A>Community</H3>
+
+<UL>
+	<LI><A href="mailing-lists.html" title="Mailing Lists">Mailing lists</A></LI>
+	<LI><A href="getting-involved.html" title="Getting Involved">Getting Involved</A></LI>
+	<LI><A href="reporting-a-bug.html" title="Reporting a Bug">Reporting a Bug</A></LI>
+	<LI><A href="contributors.html" title="Contributors">Contributors</A></LI>
+	<LI><A href="testimonials.html" title="Testimonials">Testimonials</A></LI>
+</UL>
+
+
+<H3><A name="Navigation-Sponsorship"></A>Sponsorship</H3>
+
+<UL>
+	<LI><SPAN class="nobr"><A href="http://www.apache.org/foundation/thanks.html" title="Visit page outside Confluence" rel="nofollow">Thanks<SUP><IMG class="rendericon" src="http://cwiki.apache.org/confluence/images/icons/linkext7.gif" height="7" width="7" align="absmiddle" alt="" border="0"></SUP></A></SPAN></LI>
+	<LI><SPAN class="nobr"><A href="http://www.apache.org/foundation/sponsorship.html" title="Visit page outside Confluence" rel="nofollow">Sponsorship<SUP><IMG class="rendericon" src="http://cwiki.apache.org/confluence/images/icons/linkext7.gif" height="7" width="7" align="absmiddle" alt="" border="0"></SUP></A></SPAN></LI>
+	<LI><SPAN class="nobr"><A href="http://www.apache.org/foundation/contributing.html" title="Visit page outside Confluence" rel="nofollow">Contributing<SUP><IMG class="rendericon" src="http://cwiki.apache.org/confluence/images/icons/linkext7.gif" height="7" width="7" align="absmiddle" alt="" border="0"></SUP></A></SPAN></LI>
+</UL>
+                                                                                            </DIV>
+             <DIV align="center"><IFRAME src="http://www.apache.org/ads/buttonbar.html" style="border-width:0" frameborder="0" scrolling="no" width="135" height="265"></IFRAME></DIV>
+            </TD>
+            <TD width="100%" valign="top">
+              <DIV class="pagecontent">
+                <H1 style="margin-top: 0px;">
+                  draft-twine-ftpmd5-00
+                </H1>
+                <DIV class="wiki-content">
+                  <DIV class="preformatted"><DIV class="preformattedContent">
+<PRE>INTERNET-DRAFT                                   JRTwine Software, LLC
+draft-twine-ftpmd5-00.txt                                    May, 2002
+
+
+              The 'MD5' and &quot;MMD5&quot; FTP Command Extensions
+
+Status of This Document
+
+   This document is an Internet-Draft and is subject to all provisions
+   of Section 10 of RFC2026.
+
+   Internet-Drafts are working documents of the Internet Engineering
+   Task Force (IETF), its areas, and its working groups.  Note that
+   other groups may also distribute working documents as
+   Internet-Drafts.
+
+   Internet-Drafts are draft documents valid for a maximum of six
+   months and may be updated, replaced, or obsoleted by other
+   documents at any time.  It is inappropriate to use 
+   Internet-Drafts as reference material or to cite them other than as
+   &quot;work in progress.&quot;
+     
+   The list of current Internet-Drafts can be accessed at
+   http://www.ietf.org/1id-abstracts.html
+
+   The list of Internet-Draft Shadow Directories can be accessed at
+   http://www.ietf.org/shadow.html
+
+
+Abstract
+
+   This document specifies two additions to the File Transfer Protocol
+   (FTP).  These additions (new Server commands) would give FTP 
+   Servers the ability to generate (or otherwise obtain) and return 
+   MD5 checksums for the files it has available for transfer.
+
+   It is the author's belief that this would provide a great benefit
+   to the Internet community, because it would allow automated
+   transfer agents, as well as Web Browsers and other
+   &quot;click-to-download&quot; applications to be able to automatically verify
+   the data of a downloaded file, and hence be able to detect any data
+   tampering and/or corruption that may occurred while &quot;on the wire&quot;,
+   or possibly while the file was on the Server (a virus infection).
+
+
+Copyright Notice
+
+   This document is in the public domain.  Any and all copyright
+   protection that might apply in any jurisdiction is expressly
+   disclaimed.  
+
+
+Comments
+   
+   Comments should be directed to James R. Twine (jtwine@jrtwine.com).
+
+J.Twine                      Internet-Draft                   [Page 1]
+
+INTERNET-DRAFT   The 'MD5' and &quot;MMD5&quot; FTP Command Extensions   May 2002
+
+Table of Contents
+
+        Abstract . . . . . . . . . . . . . . . . . . . . . . . . . . 1
+        Table of Contents  . . . . . . . . . . . . . . . . . . . . . 2
+   1.   Introduction . . . . . . . . . . . . . . . . . . . . . . . . 3
+   2.   Rational . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+   3.   Server Requirements  . . . . . . . . . . . . . . . . . . . . 3
+   3.1   Command Format (MD5)  . . . . . . . . . . . . . . . . . . . 4
+   3.1.1  MD5 Examples . . . . . . . . . . . . . . . . . . . . . . . 4
+   3.2   Command Format (MMD5) . . . . . . . . . . . . . . . . . . . 5
+   3.2.1  MMD5 Examples  . . . . . . . . . . . . . . . . . . . . . . 5
+   4.   References . . . . . . . . . . . . . . . . . . . . . . . . . 6
+   5.   Author's Address . . . . . . . . . . . . . . . . . . . . . . 6
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+J.Twine                      Internet-Draft                   [Page 2]
+
+INTERNET-DRAFT   The 'MD5' and &quot;MMD5&quot; FTP Command Extensions   May 2002
+
+1.  Introduction
+
+    This Draft is being distributed to members of the Internet
+    community in order to solicit their reactions to the proposals
+    contained in it.
+
+
+2.  Rational
+
+   FTP is still very much in use on the Internet.  These days, some
+   servers make available files that contain the checksums for some of
+   the files that are available.  These available checksums allow
+   users to be able to verify the content of the files that they have
+   downloaded.
+
+   However, this introduces some additional overhead: these MD5
+   checksums must be manually generated, put into a file, the file
+   placed where it can be accessed.  Then, users must manually
+   download the file containing the checksum, generate an MD5 checksum
+   from the file they just downloaded, and (usually) visually compare
+   the two checksums to determine the validity of the file.
+
+   Having these tasks automated, by making the MD5 checksums available
+   directly from the FTP Server proper, and having file-transfer
+   implementations use them, alleviates some of the user intervention
+   that would otherwise be required.
+
+
+3.  Server Requirements
+
+   FTP Servers would have to implement a new server-side command,
+   called &quot;MD5&quot;, this command would normally generate and return a
+   MD5 for the specified file.
+
+   Optionally, the FTP Server could also implement the &quot;MMD5&quot; command,
+   which is used to obtain MD5 checksums for multiple files using a
+   single request.
+
+   (These commands impose no specific or additional syntax on the 
+   formatting of a filepath, they use the Server's existing 
+   conventions.)
+	
+   The Server implementation is also free to use some form of
+   caching to keep the generated MD5 checksums, so that the MD5
+   checksum values do not have to be regenerated over and over again
+   when requested.
+
+   This also allows the Server implementations to maintain some level
+   of security: the Server can expose administrative commands that
+   regenerate the cache of MD5 checksums on command, thus allowing
+   for &quot;known good&quot; checksums to be kept, and would be insensitive to
+   things like the file becoming corrupted or otherwise tampered with
+   after the &quot;known good&quot; MD5 checksum was generated.
+
+
+J.Twine                      Internet-Draft                   [Page 3]
+
+INTERNET-DRAFT   The 'MD5' and &quot;MMD5&quot; FTP Command Extensions   May 2002
+
+   A Server implementation could even take that approach one step
+   further: by generating additional MD5 checksums &quot;on the fly&quot; and
+   comparing them to the &quot;known good&quot; values that were stored earlier,
+   the Server would now have the ability to detect file corruption
+   and/or tampering earlier than the user would normally discover.
+
+   The command would support a full or relative path, so that a
+   directory change would not be necessary in order to obtain the
+   MD5 checksum of a particular file.  Of course, the command
+   should normally be restricted to the directory tree and/or files
+   that the connected user would normally have access to.
+
+
+3.1 Command Format (MD5)
+
+   The &quot;MD5&quot; command is used to obtain a MD5 checksum for a single
+   file, and is specified as follows:
+
+      MD5 [Filepath]
+
+   Possible responses to this command would normally include:
+
+      251 [FilePath] E67DED2886048D308532042B777D53CF
+      500 Command Not Recognized
+      502 Command Not Implemented
+      504 Command Not Implemented for the Specified Argument
+
+   (Note that the returned MD5 checksum is in UPPERCASE.)
+
+   A successful response of &quot;251&quot; would contain the specified 
+   filepath (verbatim) followed by a space (or some amount of 
+   whitespace), and then followed by the MD5 checksum value in
+   ASCII format.
+
+   An error return of &quot;500&quot; would be for an obvious reason: the FTP 
+   Server does not recognize the &quot;MD5&quot; command.
+
+   An error return of &quot;502&quot; would be appropriate if the FTP Server
+   regocnized the command, but did not support it, or the FTP Server
+   administrator disabled it.
+
+   An error return of &quot;504&quot; would be appropriate if the user requested
+   an MD5 checksum for a directory (for example).
+
+3.1.1 MD5 Examples
+
+   This first example demonstrates a request for a MD5 checksum of a 
+   single file (&quot;C&gt;&quot; is Client input, and &quot;S&gt;&quot; is Server response):
+   
+      C&gt; MD5 filename.ext
+	  S&gt; 251 filename.ext E67DED2886048D308532042B777D53CF
+	  
+   This second example demonstrates a request for a MD5 checksum of a
+   directory:
+
+J.Twine                      Internet-Draft                   [Page 4]
+
+INTERNET-DRAFT   The 'MD5' and &quot;MMD5&quot; FTP Command Extensions   May 2002
+
+	  C&gt; MD5 &quot;..&quot;
+	  S&gt; 504 Command Not Implemented for the Specified Argument
+
+
+   This third example demonstrates a request for a MD5 checksum of a
+   file using a relative path:
+      
+	  C&gt; MD5 &quot;../SomeDir/A File.txt&quot;
+	  S&gt; 251 &quot;../SomeDir/A File.txt&quot; 604E67DED8D308B777D53CF532042288
+
+
+3.2 Command Format (MMD5)
+
+   The &quot;MMD5&quot; command is used to obtain MD5 checksums for multiple
+   files by a single request.  Filepaths are comma separated, and are
+   specified as follows (it is to be considered valid to specify a 
+   single filepath with with MMD5 command):
+
+      MMD5 [Filepath1], [Filepath2] [...]
+
+   Possible responses to this command would normally include:
+
+      252 [FilePath1] E67DED2886048D308532042B777D53CF,[Filepath2]
+	       308536048D20E67D77D53CFED28842B7 [...]
+      500 Command Not Recognized
+      502 Command Not Implemented
+      504 Command Not Implemented for the Specified Argument
+
+   A successful response of &quot;252&quot; would contain comma separated 
+   &quot;groups&quot; of MD5 checksum information.  Each group would contain the
+   specified filepath (verbatim) followed by a space (or some amount
+   of whitespace) followed by the MD5 checksum value in
+   ASCII format.
+
+   An error return of &quot;500&quot; would be the same as described for the &quot;MD5&quot; 
+   command.
+   
+   An error return of &quot;502&quot; would be appropriate if the &quot;MMD5&quot; command
+   was not implemented or disabled.
+
+   An error return of &quot;504&quot; would be the same as described form the &quot;MD5&quot;
+   command, with this exception: of any of the specified filepaths were
+   invalid, the server would return this error code (i.e. it would 
+   no MD5 checksums at all). 
+
+
+3.2.1 MMD5 Examples
+
+   This first example demonstrates a request for a MD5 checksum of a 
+   single file:
+
+      C&gt; MMD5 filename.ext
+	  S&gt; 251 filename.ext E67DED2886048D308532042B777D53CF
+
+
+J.Twine                      Internet-Draft                   [Page 5]
+
+INTERNET-DRAFT   The 'MD5' and &quot;MMD5&quot; FTP Command Extensions   May 2002
+   
+   This second example demonstrates a request for the MD5 checksums 
+   for two files:
+      
+	  C&gt; MMD5 filename.ext, &quot;../SomeDir/A File.txt&quot;
+	  S&gt; 252 filename.ext E67DED2886048D308532042B777D53CF, 
+	     &quot;../SomeDir/A File.txt&quot; 604E67DED8D308B777D53CF532042288
+
+
+   This third example demonstrates a request for the MD5 checksums of
+   a file and a directory:
+      
+	  C&gt; MD5 filename.ext, &quot;..&quot;
+	  S&gt; 504 Command Not Implemented for the Specified Argument
+
+
+4.  References
+
+   [1]  Postel, J., Reynolds J., &quot;Instructions to RFC Authors&quot;,
+        RFC 2223, October 1997
+
+   [2]  Postel, J., Reynolds J., &quot;FILE TRANSFER PROTOCOL (FTP)&quot;,
+        RFC 959, October 1958
+
+   [3]  Rivest, R., &quot;The MD5 Message-Digest Algorithm&quot;, RFC 1321,
+        April 1992
+
+   [4]  Various, &quot;Guidelines to Authors of Internet-Drafts&quot;, 
+        http://www.ietf.org/ietf/1id-guidelines.txt
+
+
+4.  Author's Address
+
+   James R. Twine
+   JRTwine Software, LLC
+   379 Shirley Hill Road
+   Goffstown, NH, 03045 
+   (USA)
+
+   Phone: +1 603-644-1307
+   EMail: jtwine@jrtwine.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+J.Twine                      Internet-Draft                   [Page 6]
+
+  
+</PRE>
+</DIV></DIV>
+                </DIV>
+  
+              </DIV>
+            </TD>
+          </TR>
+        </TABLE>
+        <DIV class="footer" style="text-align: center">
+          Copyright &copy; 2004-2008, <A href="http://www.apache.org/">The Apache Software Foundation</A>
+        </DIV>
+      </DIV>
+    </DIV>
+  </BODY>
+</HTML>

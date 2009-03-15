@@ -1,0 +1,605 @@
+
+<!--
+   Licensed to the Apache Software Foundation (ASF) under one or more
+   contributor license agreements.  See the NOTICE file distributed with
+   this work for additional information regarding copyright ownership.
+   The ASF licenses this file to You under the Apache License, Version 2.0
+   (the "License"); you may not use this file except in compliance with
+   the License.  You may obtain a copy of the License at
+ 
+        http://www.apache.org/licenses/LICENSE- 2.0
+ 
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+-->
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+  <HEAD>
+    <TITLE>Apache FtpServer - Apache FtpServer 1.0.0-RC1 release</TITLE>
+    <META http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <LINK type="text/css" rel="stylesheet" href="http://mina.apache.org/index.data/style.css">
+    <SCRIPT type="text/javascript" language="javascript">
+      function init() {
+        /* Search form initialization */
+        var form = document.forms['googleSearch'];
+        if (form != null) {
+          form.elements['domains'].value = location.hostname;
+          form.elements['sitesearch'].value = location.hostname;
+        }
+
+      }
+    </SCRIPT>
+  </HEAD>
+  <BODY onload="init()">
+    <DIV id="PageContent" style="padding-bottom: 0px;">
+      <DIV class="pageheader" style="padding: 6px 0px 0px 0px;">
+        <DIV id="apacheLogo" style="width: 100%; text-align: right; position: absolute; top: 33px;">
+          <A href="http://www.apache.org/"><IMG src="http://www.apache.org/images/asf-logo.gif" border="0" alt="The Apache Software Foundation" title="The Apache Software Foundation" hspace="12"></A>
+        </DIV>
+        <DIV id="minaLogo" style="position: absolute; top: 24px; left: 16px;">
+          <A href="http://mina.apache.org/ftpserver"><IMG src="http://mina.apache.org/ftpserver/index.data/logo-300x95.png" border="0" alt="Apache FtpServer" title="Apache FtpServer"></A>
+        </DIV>
+        <DIV class="greynavbar" style="margin: 156px 0px 0px 0px;">
+          <TABLE border="0" cellpadding="2" cellspacing="0" width="100%" style="position: relative; z-index: 10;">
+            <TR>
+              <TD align="left" valign="middle" style="padding-left: 17px;" width="100%" nowrap="">
+                &nbsp;<A href="index.html" title="Apache MINA FtpServer">Apache MINA FtpServer</A>&nbsp;&gt;&nbsp;<A href="index.html" title="Index">Index</A>&nbsp;&gt;&nbsp;<A href="downloads.html" title="Downloads">Downloads</A>&nbsp;&gt;&nbsp;<A href="" title="Apache FtpServer 1.0.0-RC1 release">Apache FtpServer 1.0.0-RC1 release</A>
+              </TD>
+              <TD align="right" valign="middle" nowrap="">
+                <FORM name="googleSearch" action="http://www.google.com/search" method="get" style="margin: 0px; padding: 0px;">
+                  <INPUT type="hidden" name="ie" value="UTF-8">
+                  <INPUT type="hidden" name="oe" value="UTF-8">
+                  <INPUT type="hidden" name="domains" value="">
+                  <INPUT type="hidden" name="sitesearch" value="">
+                  <INPUT type="text" name="q" maxlength="255" value="">        
+                  <INPUT type="submit" name="btnG" value="Google Search">
+                </FORM>
+              </TD>
+              <TD align="right" valign="middle" style="padding-right: 8px;" nowrap="">
+                <FORM name="listSearch" action="http://mina.markmail.org/search/" method="get" style="margin: 0px; padding: 0px;">
+                  <INPUT type="text" name="q" maxlength="255" value="">        
+                  <INPUT type="submit" value="Mailing List Search">
+                </FORM>
+              </TD>
+            </TR> 
+          </TABLE>
+        </DIV>
+      </DIV>
+      <DIV id="pageBody" style="clear: both;">
+        <TABLE border="0" cellpadding="0" cellspacing="0" width="100%">
+          <TR>
+            <TD width="192" valign="top" nowrap="">
+              <DIV style="padding: 0px 8px 16px 20px;">
+                
+                                                                                                                                                                                                                                          <H3><A name="Navigation-Overview"></A>Overview</H3>
+
+<UL>
+	<LI><A href="index.html" title="Index">Home</A></LI>
+	<LI><A href="features.html" title="Features">Features</A></LI>
+	<LI><A href="documentation.html" title="Documentation">Documentation</A></LI>
+	<LI><A href="downloads.html" title="Downloads">Downloads</A></LI>
+	<LI><A href="source.html" title="Source">Source</A></LI>
+	<LI><A href="faq.html" title="FAQ">FAQ</A></LI>
+</UL>
+
+
+<H3><A name="Navigation-Community"></A>Community</H3>
+
+<UL>
+	<LI><A href="mailing-lists.html" title="Mailing Lists">Mailing lists</A></LI>
+	<LI><A href="getting-involved.html" title="Getting Involved">Getting Involved</A></LI>
+	<LI><A href="reporting-a-bug.html" title="Reporting a Bug">Reporting a Bug</A></LI>
+	<LI><A href="contributors.html" title="Contributors">Contributors</A></LI>
+	<LI><A href="testimonials.html" title="Testimonials">Testimonials</A></LI>
+</UL>
+
+
+<H3><A name="Navigation-Sponsorship"></A>Sponsorship</H3>
+
+<UL>
+	<LI><SPAN class="nobr"><A href="http://www.apache.org/foundation/thanks.html" title="Visit page outside Confluence" rel="nofollow">Thanks<SUP><IMG class="rendericon" src="http://cwiki.apache.org/confluence/images/icons/linkext7.gif" height="7" width="7" align="absmiddle" alt="" border="0"></SUP></A></SPAN></LI>
+	<LI><SPAN class="nobr"><A href="http://www.apache.org/foundation/sponsorship.html" title="Visit page outside Confluence" rel="nofollow">Sponsorship<SUP><IMG class="rendericon" src="http://cwiki.apache.org/confluence/images/icons/linkext7.gif" height="7" width="7" align="absmiddle" alt="" border="0"></SUP></A></SPAN></LI>
+	<LI><SPAN class="nobr"><A href="http://www.apache.org/foundation/contributing.html" title="Visit page outside Confluence" rel="nofollow">Contributing<SUP><IMG class="rendericon" src="http://cwiki.apache.org/confluence/images/icons/linkext7.gif" height="7" width="7" align="absmiddle" alt="" border="0"></SUP></A></SPAN></LI>
+</UL>
+                                                                                            </DIV>
+             <DIV align="center"><IFRAME src="http://www.apache.org/ads/buttonbar.html" style="border-width:0" frameborder="0" scrolling="no" width="135" height="265"></IFRAME></DIV>
+            </TD>
+            <TD width="100%" valign="top">
+              <DIV class="pagecontent">
+                <H1 style="margin-top: 0px;">
+                  Apache FtpServer 1.0.0-RC1 release
+                </H1>
+                <DIV class="wiki-content">
+                  <H2><A name="ApacheFtpServer1.0.0-RC1release-NewFeaturesin1.0.0RC1"></A>New Features in 1.0.0-RC1</H2>
+
+<P>This release mainly contains bug fixes and minor enhancements from the previous release.</P>
+
+<H2><A name="ApacheFtpServer1.0.0-RC1release-GettingtheBinaryDistributions"></A>Getting the Binary Distributions</H2>
+
+<TABLE class="confluenceTable"><TBODY>
+<TR>
+<TH class="confluenceTh">Description</TH>
+<TH class="confluenceTh">Download Link</TH>
+<TH class="confluenceTh">PGP Signature file of download</TH>
+</TR>
+<TR>
+<TD class="confluenceTd">Windows Distribution</TD>
+<TD class="confluenceTd"> <SPAN class="nobr"><A href="http://www.apache.org/dyn/closer.cgi/mina/ftpserver/1.0.0-RC1/ftpserver-1.0.0-RC1.zip" title="Visit page outside Confluence" rel="nofollow">ftpserver-1.0.0-RC1.zip<SUP><IMG class="rendericon" src="http://cwiki.apache.org/confluence/images/icons/linkext7.gif" height="7" width="7" align="absmiddle" alt="" border="0"></SUP></A></SPAN> </TD>
+<TD class="confluenceTd"> <SPAN class="nobr"><A href="http://www.apache.org/dist/mina/ftpserver/1.0.0-RC1/ftpserver-1.0.0-RC1.zip.asc" title="Visit page outside Confluence" rel="nofollow">ftpserver-1.0.0-RC1.zip.asc<SUP><IMG class="rendericon" src="http://cwiki.apache.org/confluence/images/icons/linkext7.gif" height="7" width="7" align="absmiddle" alt="" border="0"></SUP></A></SPAN></TD>
+</TR>
+<TR>
+<TD class="confluenceTd">Unix/Linux/Cygwin Distribution</TD>
+<TD class="confluenceTd"> <SPAN class="nobr"><A href="http://www.apache.org/dyn/closer.cgi/mina/ftpserver/1.0.0-RC1/ftpserver-1.0.0-RC1.tar.gz" title="Visit page outside Confluence" rel="nofollow">ftpserver-1.0.0-RC1.tar.gz<SUP><IMG class="rendericon" src="http://cwiki.apache.org/confluence/images/icons/linkext7.gif" height="7" width="7" align="absmiddle" alt="" border="0"></SUP></A></SPAN> </TD>
+<TD class="confluenceTd"> <SPAN class="nobr"><A href="http://www.apache.org/dist/mina/ftpserver/1.0.0-RC1/ftpserver-1.0.0-RC1.tar.gz.asc" title="Visit page outside Confluence" rel="nofollow">ftpserver-1.0.0-RC1.tar.gz.asc<SUP><IMG class="rendericon" src="http://cwiki.apache.org/confluence/images/icons/linkext7.gif" height="7" width="7" align="absmiddle" alt="" border="0"></SUP></A></SPAN></TD>
+</TR>
+</TBODY></TABLE>
+
+<H2><A name="ApacheFtpServer1.0.0-RC1release-GettingtheBinariesusingMaven2"></A>Getting the Binaries using Maven 2</H2>
+
+<P>To use this release in your maven project, the proper dependency configuration that you should use in your <SPAN class="nobr"><A href="http://maven.apache.org/guides/introduction/introduction-to-the-pom.html" title="Visit page outside Confluence" rel="nofollow">Maven POM<SUP><IMG class="rendericon" src="http://cwiki.apache.org/confluence/images/icons/linkext7.gif" height="7" width="7" align="absmiddle" alt="" border="0"></SUP></A></SPAN> is:</P>
+
+<DIV class="code"><DIV class="codeContent">
+<PRE class="code-xml"><SPAN class="code-tag">&lt;dependency&gt;</SPAN>
+  <SPAN class="code-tag">&lt;groupId&gt;</SPAN>org.apache.ftpserver<SPAN class="code-tag">&lt;/groupId&gt;</SPAN>
+  <SPAN class="code-tag">&lt;artifactId&gt;</SPAN>ftpserver-core<SPAN class="code-tag">&lt;/artifactId&gt;</SPAN>
+  <SPAN class="code-tag">&lt;version&gt;</SPAN>1.0.0-RC1<SPAN class="code-tag">&lt;/version&gt;</SPAN>
+<SPAN class="code-tag">&lt;/dependency&gt;</SPAN></PRE>
+</DIV></DIV>
+
+<DIV></DIV>
+
+<H2><A name="ApacheFtpServer1.0.0-RC1release-GettingtheSourceCode"></A>Getting the Source Code</H2>
+
+<H3><A name="ApacheFtpServer1.0.0-RC1release-SourceDistributions"></A>Source Distributions</H3>
+
+<TABLE class="confluenceTable"><TBODY>
+<TR>
+<TH class="confluenceTh">Description</TH>
+<TH class="confluenceTh">Download Link</TH>
+<TH class="confluenceTh">PGP Signature file of download</TH>
+</TR>
+<TR>
+<TD class="confluenceTd">Source for Windows</TD>
+<TD class="confluenceTd"> <SPAN class="nobr"><A href="http://www.apache.org/dyn/closer.cgi/mina/ftpserver/1.0.0-RC1/ftpserver-1.0.0-RC1-src.zip" title="Visit page outside Confluence" rel="nofollow">ftpserver-1.0.0-RC1-src.zip<SUP><IMG class="rendericon" src="http://cwiki.apache.org/confluence/images/icons/linkext7.gif" height="7" width="7" align="absmiddle" alt="" border="0"></SUP></A></SPAN></TD>
+<TD class="confluenceTd"> <SPAN class="nobr"><A href="http://www.apache.org/dist/mina/ftpserver/1.0.0-RC1/ftpserver-1.0.0-RC1-src.zip.asc" title="Visit page outside Confluence" rel="nofollow">ftpserver-1.0.0-RC1-src.zip.asc<SUP><IMG class="rendericon" src="http://cwiki.apache.org/confluence/images/icons/linkext7.gif" height="7" width="7" align="absmiddle" alt="" border="0"></SUP></A></SPAN></TD>
+</TR>
+<TR>
+<TD class="confluenceTd">Source for Unix/Linux/Cygwin</TD>
+<TD class="confluenceTd"> <SPAN class="nobr"><A href="http://www.apache.org/dyn/closer.cgi/mina/ftpserver/1.0.0-RC1/ftpserver-1.0.0-RC1-src.tar.gz" title="Visit page outside Confluence" rel="nofollow">ftpserver-1.0.0-RC1-src.tar.gz<SUP><IMG class="rendericon" src="http://cwiki.apache.org/confluence/images/icons/linkext7.gif" height="7" width="7" align="absmiddle" alt="" border="0"></SUP></A></SPAN></TD>
+<TD class="confluenceTd"> <SPAN class="nobr"><A href="http://www.apache.org/dist/mina/ftpserver/1.0.0-RC1/ftpserver-1.0.0-RC1-src.tar.gz.asc" title="Visit page outside Confluence" rel="nofollow">ftpserver-1.0.0-RC1-src.tar.gz.asc<SUP><IMG class="rendericon" src="http://cwiki.apache.org/confluence/images/icons/linkext7.gif" height="7" width="7" align="absmiddle" alt="" border="0"></SUP></A></SPAN></TD>
+</TR>
+</TBODY></TABLE>
+
+<H3><A name="ApacheFtpServer1.0.0-RC1release-SVNTagCheckout"></A>SVN Tag Checkout</H3>
+
+<DIV class="code"><DIV class="codeContent">
+<PRE class="code-java">svn co http:<SPAN class="code-comment">//svn.apache.org/repos/asf/mina/ftpserver/tags/1.0.0-RC1</SPAN></PRE>
+</DIV></DIV>
+
+<H2><A name="ApacheFtpServer1.0.0-RC1release-Changelog"></A>Changelog</H2>
+<P>For a more detailed view of new features and bug fixes, see the <SPAN class="nobr"><A href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=10571&styleName=Html&version=12313542" title="Visit page outside Confluence" rel="nofollow">release notes<SUP><IMG class="rendericon" src="http://cwiki.apache.org/confluence/images/icons/linkext7.gif" height="7" width="7" align="absmiddle" alt="" border="0"></SUP></A></SPAN></P>
+
+<P><A name="jiraissues">
+    <TABLE width="100%" cellspacing="0" class="grid">
+        <TR>
+            <TH colspan="3" style="text-align: left;">
+                                    <A href="http://cwiki.apache.org/confluence/admin/autoexport/rebuild-start.action?acro.refresh=true#jiraissues"><IMG src="http://cwiki.apache.org/confluence/images/icons/refresh_16.png" height="16" width="16" border="0" align="right" title="refresh"></A>
+                                <A href="http://issues.apache.org/jira/sr/jira.issueviews:searchrequest-xml/temp/SearchRequest.xml?pid=10571&fixfor=12313542&sorter%2Ffield=issuekey&sorter%2Forder=DESC">ASF JIRA</A>
+                <SPAN class="smalltext">(35 issues)</SPAN>
+            </TH>
+        </TR>
+        <TR>
+                        <TH style="text-align: left;">
+                T                                                                                                                                                                            </TH>
+                        <TH style="text-align: left;">
+                                Key                                                                                                                                                            </TH>
+                        <TH style="text-align: left;">
+                                                Summary                                                                                                                                            </TH>
+                    </TR>
+                                            <TR class="rowNormal">
+                                                            <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-261"><IMG src="http://issues.apache.org/jira/images/icons/bug.gif" alt="Bug" border="0"></A>
+                                    </TD>
+                                <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-261">FTPSERVER-261</A>
+                                    </TD>
+                                <TD>
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-261">Remove directories stats returned incorrectly</A>
+                                    </TD>
+                            </TR>
+                                    <TR class="rowAlternate">
+                                                            <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-259"><IMG src="http://issues.apache.org/jira/images/icons/bug.gif" alt="Bug" border="0"></A>
+                                    </TD>
+                                <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-259">FTPSERVER-259</A>
+                                    </TD>
+                                <TD>
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-259">Connection statistics not updated</A>
+                                    </TD>
+                            </TR>
+                                    <TR class="rowNormal">
+                                                            <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-258"><IMG src="http://issues.apache.org/jira/images/icons/bug.gif" alt="Bug" border="0"></A>
+                                    </TD>
+                                <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-258">FTPSERVER-258</A>
+                                    </TD>
+                                <TD>
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-258">User's maxIdleTime doesn't work</A>
+                                    </TD>
+                            </TR>
+                                    <TR class="rowAlternate">
+                                                            <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-257"><IMG src="http://issues.apache.org/jira/images/icons/bug.gif" alt="Bug" border="0"></A>
+                                    </TD>
+                                <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-257">FTPSERVER-257</A>
+                                    </TD>
+                                <TD>
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-257">WriteRequest doesn't override toString()</A>
+                                    </TD>
+                            </TR>
+                                    <TR class="rowNormal">
+                                                            <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-256"><IMG src="http://issues.apache.org/jira/images/icons/bug.gif" alt="Bug" border="0"></A>
+                                    </TD>
+                                <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-256">FTPSERVER-256</A>
+                                    </TD>
+                                <TD>
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-256">LastAccessTime of ftp session is null</A>
+                                    </TD>
+                            </TR>
+                                    <TR class="rowAlternate">
+                                                            <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-255"><IMG src="http://issues.apache.org/jira/images/icons/bug.gif" alt="Bug" border="0"></A>
+                                    </TD>
+                                <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-255">FTPSERVER-255</A>
+                                    </TD>
+                                <TD>
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-255">WriteToClosedSessionException</A>
+                                    </TD>
+                            </TR>
+                                    <TR class="rowNormal">
+                                                            <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-254"><IMG src="http://issues.apache.org/jira/images/icons/bug.gif" alt="Bug" border="0"></A>
+                                    </TD>
+                                <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-254">FTPSERVER-254</A>
+                                    </TD>
+                                <TD>
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-254">DataConnectionConfigurationFactory incorrect method name: setPassiveExernalAddress</A>
+                                    </TD>
+                            </TR>
+                                    <TR class="rowAlternate">
+                                                            <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-252"><IMG src="http://issues.apache.org/jira/images/icons/newfeature.gif" alt="New Feature" border="0"></A>
+                                    </TD>
+                                <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-252">FTPSERVER-252</A>
+                                    </TD>
+                                <TD>
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-252">Maintain a session ID for every client session and make it available via an API call</A>
+                                    </TD>
+                            </TR>
+                                    <TR class="rowNormal">
+                                                            <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-250"><IMG src="http://issues.apache.org/jira/images/icons/bug.gif" alt="Bug" border="0"></A>
+                                    </TD>
+                                <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-250">FTPSERVER-250</A>
+                                    </TD>
+                                <TD>
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-250">java.net.BindException: Address already in use</A>
+                                    </TD>
+                            </TR>
+                                    <TR class="rowAlternate">
+                                                            <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-249"><IMG src="http://issues.apache.org/jira/images/icons/bug.gif" alt="Bug" border="0"></A>
+                                    </TD>
+                                <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-249">FTPSERVER-249</A>
+                                    </TD>
+                                <TD>
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-249">DBUserManager doesn't close Connections leading to pool exhaustion.</A>
+                                    </TD>
+                            </TR>
+                                    <TR class="rowNormal">
+                                                            <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-248"><IMG src="http://issues.apache.org/jira/images/icons/bug.gif" alt="Bug" border="0"></A>
+                                    </TD>
+                                <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-248">FTPSERVER-248</A>
+                                    </TD>
+                                <TD>
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-248">Ftplets not destroyed when server shuts down</A>
+                                    </TD>
+                            </TR>
+                                    <TR class="rowAlternate">
+                                                            <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-247"><IMG src="http://issues.apache.org/jira/images/icons/improvement.gif" alt="Improvement" border="0"></A>
+                                    </TD>
+                                <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-247">FTPSERVER-247</A>
+                                    </TD>
+                                <TD>
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-247">Add DataConnectionConfiguration.isImplicitSsl</A>
+                                    </TD>
+                            </TR>
+                                    <TR class="rowNormal">
+                                                            <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-246"><IMG src="http://issues.apache.org/jira/images/icons/bug.gif" alt="Bug" border="0"></A>
+                                    </TD>
+                                <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-246">FTPSERVER-246</A>
+                                    </TD>
+                                <TD>
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-246">data-connection idle-timeout not parsed by XML config</A>
+                                    </TD>
+                            </TR>
+                                    <TR class="rowAlternate">
+                                                            <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-244"><IMG src="http://issues.apache.org/jira/images/icons/bug.gif" alt="Bug" border="0"></A>
+                                    </TD>
+                                <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-244">FTPSERVER-244</A>
+                                    </TD>
+                                <TD>
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-244">Automatically do SSL on passive ports, if Session is implict FTPS</A>
+                                    </TD>
+                            </TR>
+                                    <TR class="rowNormal">
+                                                            <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-243"><IMG src="http://issues.apache.org/jira/images/icons/improvement.gif" alt="Improvement" border="0"></A>
+                                    </TD>
+                                <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-243">FTPSERVER-243</A>
+                                    </TD>
+                                <TD>
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-243">Implicit SSL option should be specified on the SSLConfiguration, not the Listener itself.</A>
+                                    </TD>
+                            </TR>
+                                    <TR class="rowAlternate">
+                                                            <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-242"><IMG src="http://issues.apache.org/jira/images/icons/bug.gif" alt="Bug" border="0"></A>
+                                    </TD>
+                                <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-242">FTPSERVER-242</A>
+                                    </TD>
+                                <TD>
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-242">DbUserManager Operates on closed result ret</A>
+                                    </TD>
+                            </TR>
+                                    <TR class="rowNormal">
+                                                            <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-241"><IMG src="http://issues.apache.org/jira/images/icons/bug.gif" alt="Bug" border="0"></A>
+                                    </TD>
+                                <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-241">FTPSERVER-241</A>
+                                    </TD>
+                                <TD>
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-241">Socket file descriptors leak leading to &quot;Too Many Files Open&quot; using FTP/S</A>
+                                    </TD>
+                            </TR>
+                                    <TR class="rowAlternate">
+                                                            <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-239"><IMG src="http://issues.apache.org/jira/images/icons/improvement.gif" alt="Improvement" border="0"></A>
+                                    </TD>
+                                <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-239">FTPSERVER-239</A>
+                                    </TD>
+                                <TD>
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-239">Data connection should default to the control connection SSL when using the API</A>
+                                    </TD>
+                            </TR>
+                                    <TR class="rowNormal">
+                                                            <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-238"><IMG src="http://issues.apache.org/jira/images/icons/bug.gif" alt="Bug" border="0"></A>
+                                    </TD>
+                                <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-238">FTPSERVER-238</A>
+                                    </TD>
+                                <TD>
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-238">PROT and PBSZ commands should be allowed before/after login</A>
+                                    </TD>
+                            </TR>
+                                    <TR class="rowAlternate">
+                                                            <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-237"><IMG src="http://issues.apache.org/jira/images/icons/improvement.gif" alt="Improvement" border="0"></A>
+                                    </TD>
+                                <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-237">FTPSERVER-237</A>
+                                    </TD>
+                                <TD>
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-237">Upgrade to MINA 2.0.0-M4</A>
+                                    </TD>
+                            </TR>
+                                    <TR class="rowNormal">
+                                                            <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-236"><IMG src="http://issues.apache.org/jira/images/icons/improvement.gif" alt="Improvement" border="0"></A>
+                                    </TD>
+                                <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-236">FTPSERVER-236</A>
+                                    </TD>
+                                <TD>
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-236">DefaultFtpHandler catches WriteToCloseSessionException on failure to deliver &quot;221 Goodbye&quot;, logs it as an error</A>
+                                    </TD>
+                            </TR>
+                                    <TR class="rowAlternate">
+                                                            <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-235"><IMG src="http://issues.apache.org/jira/images/icons/bug.gif" alt="Bug" border="0"></A>
+                                    </TD>
+                                <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-235">FTPSERVER-235</A>
+                                    </TD>
+                                <TD>
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-235">Documentation and code do not match for db user manager</A>
+                                    </TD>
+                            </TR>
+                                    <TR class="rowNormal">
+                                                            <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-234"><IMG src="http://issues.apache.org/jira/images/icons/improvement.gif" alt="Improvement" border="0"></A>
+                                    </TD>
+                                <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-234">FTPSERVER-234</A>
+                                    </TD>
+                                <TD>
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-234">TYPE command with no argument</A>
+                                    </TD>
+                            </TR>
+                                    <TR class="rowAlternate">
+                                                            <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-233"><IMG src="http://issues.apache.org/jira/images/icons/bug.gif" alt="Bug" border="0"></A>
+                                    </TD>
+                                <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-233">FTPSERVER-233</A>
+                                    </TD>
+                                <TD>
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-233">MKD command should not create all the parent directories</A>
+                                    </TD>
+                            </TR>
+                                    <TR class="rowNormal">
+                                                            <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-232"><IMG src="http://issues.apache.org/jira/images/icons/bug.gif" alt="Bug" border="0"></A>
+                                    </TD>
+                                <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-232">FTPSERVER-232</A>
+                                    </TD>
+                                <TD>
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-232">MFMT command always returns a 2XX reply even if the date could not be set</A>
+                                    </TD>
+                            </TR>
+                                    <TR class="rowAlternate">
+                                                            <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-231"><IMG src="http://issues.apache.org/jira/images/icons/bug.gif" alt="Bug" border="0"></A>
+                                    </TD>
+                                <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-231">FTPSERVER-231</A>
+                                    </TD>
+                                <TD>
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-231">MFMT Commad does not work on file/path names that have one or more white spaces</A>
+                                    </TD>
+                            </TR>
+                                    <TR class="rowNormal">
+                                                            <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-230"><IMG src="http://issues.apache.org/jira/images/icons/bug.gif" alt="Bug" border="0"></A>
+                                    </TD>
+                                <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-230">FTPSERVER-230</A>
+                                    </TD>
+                                <TD>
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-230">MFMT Command reply should include a message</A>
+                                    </TD>
+                            </TR>
+                                    <TR class="rowAlternate">
+                                                            <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-229"><IMG src="http://issues.apache.org/jira/images/icons/improvement.gif" alt="Improvement" border="0"></A>
+                                    </TD>
+                                <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-229">FTPSERVER-229</A>
+                                    </TD>
+                                <TD>
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-229">MFMT Command - Code Enhancement</A>
+                                    </TD>
+                            </TR>
+                                    <TR class="rowNormal">
+                                                            <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-228"><IMG src="http://issues.apache.org/jira/images/icons/bug.gif" alt="Bug" border="0"></A>
+                                    </TD>
+                                <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-228">FTPSERVER-228</A>
+                                    </TD>
+                                <TD>
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-228">LIST command on a non-existent directory should result in an error</A>
+                                    </TD>
+                            </TR>
+                                    <TR class="rowAlternate">
+                                                            <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-227"><IMG src="http://issues.apache.org/jira/images/icons/bug.gif" alt="Bug" border="0"></A>
+                                    </TD>
+                                <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-227">FTPSERVER-227</A>
+                                    </TD>
+                                <TD>
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-227">RMD command should not delete the current working directory or the any parent of current working directory</A>
+                                    </TD>
+                            </TR>
+                                    <TR class="rowNormal">
+                                                            <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-226"><IMG src="http://issues.apache.org/jira/images/icons/bug.gif" alt="Bug" border="0"></A>
+                                    </TD>
+                                <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-226">FTPSERVER-226</A>
+                                    </TD>
+                                <TD>
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-226">DELE command deletes directories</A>
+                                    </TD>
+                            </TR>
+                                    <TR class="rowAlternate">
+                                                            <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-111"><IMG src="http://issues.apache.org/jira/images/icons/bug.gif" alt="Bug" border="0"></A>
+                                    </TD>
+                                <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-111">FTPSERVER-111</A>
+                                    </TD>
+                                <TD>
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-111">Data channel cannot be opened in active mode</A>
+                                    </TD>
+                            </TR>
+                                    <TR class="rowNormal">
+                                                            <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-109"><IMG src="http://issues.apache.org/jira/images/icons/bug.gif" alt="Bug" border="0"></A>
+                                    </TD>
+                                <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-109">FTPSERVER-109</A>
+                                    </TD>
+                                <TD>
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-109">Disallow reuse of IP addres and port</A>
+                                    </TD>
+                            </TR>
+                                    <TR class="rowAlternate">
+                                                            <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-105"><IMG src="http://issues.apache.org/jira/images/icons/improvement.gif" alt="Improvement" border="0"></A>
+                                    </TD>
+                                <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-105">FTPSERVER-105</A>
+                                    </TD>
+                                <TD>
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-105">Problems with MySQL 5.0.x with SQL Statements in Config file</A>
+                                    </TD>
+                            </TR>
+                                    <TR class="rowNormal">
+                                                            <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-79"><IMG src="http://issues.apache.org/jira/images/icons/bug.gif" alt="Bug" border="0"></A>
+                                    </TD>
+                                <TD nowrap="true">
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-79">FTPSERVER-79</A>
+                                    </TD>
+                                <TD>
+                                            <A href="http://issues.apache.org/jira/browse/FTPSERVER-79">Incorrect port provided for the SSL wrapper socket?</A>
+                                    </TD>
+                            </TR>
+            </TABLE>
+</P>
+
+                </DIV>
+  
+              </DIV>
+            </TD>
+          </TR>
+        </TABLE>
+        <DIV class="footer" style="text-align: center">
+          Copyright &copy; 2004-2008, <A href="http://www.apache.org/">The Apache Software Foundation</A>
+        </DIV>
+      </DIV>
+    </DIV>
+  </BODY>
+</HTML>

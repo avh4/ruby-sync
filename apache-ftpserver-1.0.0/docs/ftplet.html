@@ -1,0 +1,642 @@
+
+<!--
+   Licensed to the Apache Software Foundation (ASF) under one or more
+   contributor license agreements.  See the NOTICE file distributed with
+   this work for additional information regarding copyright ownership.
+   The ASF licenses this file to You under the Apache License, Version 2.0
+   (the "License"); you may not use this file except in compliance with
+   the License.  You may obtain a copy of the License at
+ 
+        http://www.apache.org/licenses/LICENSE- 2.0
+ 
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+-->
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+  <HEAD>
+    <TITLE>Apache FtpServer - Ftplet</TITLE>
+    <META http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <LINK type="text/css" rel="stylesheet" href="http://mina.apache.org/index.data/style.css">
+    <SCRIPT type="text/javascript" language="javascript">
+      function init() {
+        /* Search form initialization */
+        var form = document.forms['googleSearch'];
+        if (form != null) {
+          form.elements['domains'].value = location.hostname;
+          form.elements['sitesearch'].value = location.hostname;
+        }
+
+      }
+    </SCRIPT>
+  </HEAD>
+  <BODY onload="init()">
+    <DIV id="PageContent" style="padding-bottom: 0px;">
+      <DIV class="pageheader" style="padding: 6px 0px 0px 0px;">
+        <DIV id="apacheLogo" style="width: 100%; text-align: right; position: absolute; top: 33px;">
+          <A href="http://www.apache.org/"><IMG src="http://www.apache.org/images/asf-logo.gif" border="0" alt="The Apache Software Foundation" title="The Apache Software Foundation" hspace="12"></A>
+        </DIV>
+        <DIV id="minaLogo" style="position: absolute; top: 24px; left: 16px;">
+          <A href="http://mina.apache.org/ftpserver"><IMG src="http://mina.apache.org/ftpserver/index.data/logo-300x95.png" border="0" alt="Apache FtpServer" title="Apache FtpServer"></A>
+        </DIV>
+        <DIV class="greynavbar" style="margin: 156px 0px 0px 0px;">
+          <TABLE border="0" cellpadding="2" cellspacing="0" width="100%" style="position: relative; z-index: 10;">
+            <TR>
+              <TD align="left" valign="middle" style="padding-left: 17px;" width="100%" nowrap="">
+                &nbsp;<A href="index.html" title="Apache MINA FtpServer">Apache MINA FtpServer</A>&nbsp;&gt;&nbsp;<A href="index.html" title="Index">Index</A>&nbsp;&gt;&nbsp;<A href="documentation.html" title="Documentation">Documentation</A>&nbsp;&gt;&nbsp;<A href="" title="Ftplet">Ftplet</A>
+              </TD>
+              <TD align="right" valign="middle" nowrap="">
+                <FORM name="googleSearch" action="http://www.google.com/search" method="get" style="margin: 0px; padding: 0px;">
+                  <INPUT type="hidden" name="ie" value="UTF-8">
+                  <INPUT type="hidden" name="oe" value="UTF-8">
+                  <INPUT type="hidden" name="domains" value="">
+                  <INPUT type="hidden" name="sitesearch" value="">
+                  <INPUT type="text" name="q" maxlength="255" value="">        
+                  <INPUT type="submit" name="btnG" value="Google Search">
+                </FORM>
+              </TD>
+              <TD align="right" valign="middle" style="padding-right: 8px;" nowrap="">
+                <FORM name="listSearch" action="http://mina.markmail.org/search/" method="get" style="margin: 0px; padding: 0px;">
+                  <INPUT type="text" name="q" maxlength="255" value="">        
+                  <INPUT type="submit" value="Mailing List Search">
+                </FORM>
+              </TD>
+            </TR> 
+          </TABLE>
+        </DIV>
+      </DIV>
+      <DIV id="pageBody" style="clear: both;">
+        <TABLE border="0" cellpadding="0" cellspacing="0" width="100%">
+          <TR>
+            <TD width="192" valign="top" nowrap="">
+              <DIV style="padding: 0px 8px 16px 20px;">
+                
+                                                                                                                                                                                                                                          <H3><A name="Navigation-Overview"></A>Overview</H3>
+
+<UL>
+	<LI><A href="index.html" title="Index">Home</A></LI>
+	<LI><A href="features.html" title="Features">Features</A></LI>
+	<LI><A href="documentation.html" title="Documentation">Documentation</A></LI>
+	<LI><A href="downloads.html" title="Downloads">Downloads</A></LI>
+	<LI><A href="source.html" title="Source">Source</A></LI>
+	<LI><A href="faq.html" title="FAQ">FAQ</A></LI>
+</UL>
+
+
+<H3><A name="Navigation-Community"></A>Community</H3>
+
+<UL>
+	<LI><A href="mailing-lists.html" title="Mailing Lists">Mailing lists</A></LI>
+	<LI><A href="getting-involved.html" title="Getting Involved">Getting Involved</A></LI>
+	<LI><A href="reporting-a-bug.html" title="Reporting a Bug">Reporting a Bug</A></LI>
+	<LI><A href="contributors.html" title="Contributors">Contributors</A></LI>
+	<LI><A href="testimonials.html" title="Testimonials">Testimonials</A></LI>
+</UL>
+
+
+<H3><A name="Navigation-Sponsorship"></A>Sponsorship</H3>
+
+<UL>
+	<LI><SPAN class="nobr"><A href="http://www.apache.org/foundation/thanks.html" title="Visit page outside Confluence" rel="nofollow">Thanks<SUP><IMG class="rendericon" src="http://cwiki.apache.org/confluence/images/icons/linkext7.gif" height="7" width="7" align="absmiddle" alt="" border="0"></SUP></A></SPAN></LI>
+	<LI><SPAN class="nobr"><A href="http://www.apache.org/foundation/sponsorship.html" title="Visit page outside Confluence" rel="nofollow">Sponsorship<SUP><IMG class="rendericon" src="http://cwiki.apache.org/confluence/images/icons/linkext7.gif" height="7" width="7" align="absmiddle" alt="" border="0"></SUP></A></SPAN></LI>
+	<LI><SPAN class="nobr"><A href="http://www.apache.org/foundation/contributing.html" title="Visit page outside Confluence" rel="nofollow">Contributing<SUP><IMG class="rendericon" src="http://cwiki.apache.org/confluence/images/icons/linkext7.gif" height="7" width="7" align="absmiddle" alt="" border="0"></SUP></A></SPAN></LI>
+</UL>
+                                                                                            </DIV>
+             <DIV align="center"><IFRAME src="http://www.apache.org/ads/buttonbar.html" style="border-width:0" frameborder="0" scrolling="no" width="135" height="265"></IFRAME></DIV>
+            </TD>
+            <TD width="100%" valign="top">
+              <DIV class="pagecontent">
+                <H1 style="margin-top: 0px;">
+                  Ftplet
+                </H1>
+                <DIV class="wiki-content">
+                  <H2><A name="Ftplet-Overview"></A>Overview</H2>
+
+<P>The Ftplet API is a simple API used to handle different FtpServer notifications. Apache FtpServer is a Ftplet container, allowing administrators to deploy Ftplet to carry out a variety of complex FTP event handler tasks.</P>
+
+<P>Implementing a custom Ftplet is generally a simple task, most of whose complexity lies in coding the actual work to be done by the Ftplet. This is largely due to the simplicity of the Ftplet interface and the fact that a DefaultFtplet class is provided as part of the Ftplet package.</P>
+
+<P>The Ftplet interface supports two lifecycle methods to provide initialization (the init() method) and shutdown (the destroy() method). Main processing is done in different notification methods, which take a FtpSession object and a FtpRequest object. All the notification methods return FtpletResult object to indicate the future action.</P>
+
+<P>There will be one instance of Ftplet object. Notification methods will be called from different connections running in different threads. So Ftplet implementation has to be thread-safe. Each connection will have its own request (FtpRequest) and session (FtpRequest) objects. </P>
+
+<H2><A name="Ftplet-MainClasses"></A>Main Classes</H2>
+
+<H3><A name="Ftplet-FtpletResult"></A>FtpletResult</H3>
+
+<P>This class encapsulates the return values of the ftplet methods. There are four static FtpletResult values.</P>
+<UL>
+	<LI><B>DEFAULT</B> : This return value indicates that the next ftplet method will be called. If no other ftplet is available, the FtpServer will process the request.</LI>
+	<LI><B>NO_FTPLET</B> : This return value indicates that the other ftplet methods will not be called but the FtpServer will continue processing this request.</LI>
+	<LI><B>SKIP</B> : It indicates that the server will skip everything. No further processing will be done for this request.</LI>
+	<LI><B>DISCONNECT</B> : It indicates that the server will skip and disconnect the client. No other request from the same client will be served.</LI>
+</UL>
+
+
+<P> So, DEFAULT &lt; NO_FTPLET &lt; SKIP &gt; DISCONNECT. If the Ftplet returns null, DEFAULT is assumed.</P>
+
+<H3><A name="Ftplet-FtpSession"></A>FtpSession</H3>
+<P>The session object is kept for the entire user session. So the attributes set by <EM>setAttribute()</EM> will be always available later unless that attribute is removed. Different session will have different FtpSession objects. From here we can get user information, data streams, user file system view etc.</P>
+
+<P>Ftplets can use this to send custom codes and messages to client.</P>
+
+<H3><A name="Ftplet-FtpRequest"></A>FtpRequest</H3>
+
+<P>Provides the client request information to a ftplet. Contains the FTP command and argument.</P>
+
+<H3><A name="Ftplet-Ftplet"></A>Ftplet</H3>
+
+<P>There will be only one instance of Ftplet. During startup the Ftplets will be initialized. The initialization sequence is same as the Ftplet sequence in the configuration. Then all notification methods will be called and when the FtpServer goes down, the Ftplet will be destroyed. The following method describes all the notification methods.</P>
+
+<TABLE class="confluenceTable"><TBODY>
+<TR>
+<TH class="confluenceTh"> Method </TH>
+<TH class="confluenceTh"> Description </TH>
+</TR>
+<TR>
+<TD class="confluenceTd"> onConnect </TD>
+<TD class="confluenceTd"> Client connect notification method. This is the first method FtpServer will call. If it returns SKIP, IP restriction check, connection limit check will not be performed and the server will not send the welcome message (220). </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onDisconnect </TD>
+<TD class="confluenceTd"> Client disconnect notification method. This is the last method FtpServer will call. Whatever it returns, the client connection will be closed. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> beforeCommand </TD>
+<TD class="confluenceTd"> Called before the server invoke the command.  </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> afterCommand </TD>
+<TD class="confluenceTd"> Called after the server as invoked the command. </TD>
+</TR>
+</TBODY></TABLE>
+
+<H3><A name="Ftplet-DefaultFtplet"></A>DefaultFtplet</H3>
+
+<P>DefaultFtplet provides some convenience methods for common FTP commands. Users can easily extend the DefaultFtplet class and choose what methods to override and handle. </P>
+
+<TABLE class="confluenceTable"><TBODY>
+<TR>
+<TH class="confluenceTh"> Method </TH>
+<TH class="confluenceTh"> Description </TH>
+</TR>
+<TR>
+<TD class="confluenceTd"> onLogin </TD>
+<TD class="confluenceTd"> Client login notification method. This will be called after the user authentication. In this case the FtpServer has already sent the login OK (230) reply. This is called during FTP PASS request. The FTP session will be disconnected in the return value is FtpletResult.DISCONNECT. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onDeleteStart </TD>
+<TD class="confluenceTd"> Before file deletion this method will be called. Before this FtpServer will not check anything like file existence or permission. The requested file name can be get from request argument. We can get the file object from the request file system view. This is called in DELE FTP command. The method should send some responses (like 250, 450, 550) in case of SKIP return value. In this case, the server will skip the command processing and the ftplet has to send appropriate response values. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onDeleteEnd </TD>
+<TD class="confluenceTd"> This method will be called after the file deletion, successful or not. In this case the FtpServer has already sent the reply message. This is called in DELE FTP command. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onUploadStart </TD>
+<TD class="confluenceTd"> This method will be called before the file upload. The file name can be get from the request argument. We can get the data input stream from request. This will be called before the permission check. This is called during STOR command. If the method returns SKIP, it has to send responses before and after processing. For example, before opening the data input stream, the method has to notify the client with a response code 150. Similarly, after the data transfer, the method has to notify the client with a response code 226. In case of any error, the method should send different response codes like 450, 425, 426, 551. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onUploadEnd </TD>
+<TD class="confluenceTd"> This notification method will be called to indicate that the file transfer is successful and the server has send the replies. In case of any error this method will not be called. This is called in STOR command. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onDownloadStart </TD>
+<TD class="confluenceTd"> This is file download request notification method called during RETR command. This will be called before the file download. We can get the file name argument from request. Similarly, the data output stream can be get from the request. This will be called before the file existance and permissoin check. If the method returns SKIP, it has to send responses before and after processing. For example, before opening the data output stream, the method has to notify the client with a response code 150. Similarly, after the data transfer, the method has to notify the client with a response code 226. In case of any error, the method should send different response codes like 450, 425, 426, 551. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onDownloadEnd </TD>
+<TD class="confluenceTd"> This notification method will be called to indicate that the file transfer is successful and the server has send the replies in RETR command.  </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onRmdirStart </TD>
+<TD class="confluenceTd"> Before directory deletion this method will be called during RMD command. Before this FtpServer will not check anything like directory existance or permission. The requested directory name can be get from request argument. If the method returns the SKIP, it has to send appropriate response codes to clients like 250, 450,                              550. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onRmdirEnd </TD>
+<TD class="confluenceTd"> This method will be called after the invocation of the RMD command. In this case the FtpServer has already sent the reply message. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onMkdirStart </TD>
+<TD class="confluenceTd"> Before directory creation this method will be called during MKD command. Before this FtpServer will not check anything like directory existance or permission. The requested directory name can be get from request argument. If it returns SKIP, it has to send appropriate response codes to clients like 250, 550. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onMkdirEnd </TD>
+<TD class="confluenceTd"> This method will be called if the directory creation is successful in MKD command. In this case the FtpServer has already sent the reply message.  </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onAppendStart </TD>
+<TD class="confluenceTd"> This is file append request notification method called in APPE command. The file name can be get from the request argument. We can get the data input stream from request. This will be called before the permission check. If the method returns SKIP, it has to send responses before and after processing. For example, before opening the data input stream, the method has to notify the client with a response code 150. Similarly, after the data transfer, the method has to notify the client with a response                              code 226. In case of any error, the method should send different response codes like 450, 425, 426, 551. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onAppendEnd </TD>
+<TD class="confluenceTd"> This is file append success notification method called in APPE command.  </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onUploadUniqueStart </TD>
+<TD class="confluenceTd"> This is unique file create request notification method called in STOU command. We can get the data input stream from request. This will be called before the permission check. If the method returns SKIP, it has to send responses before and after processing. For example, before opening the data input stream, the method has                              to notify the client with a response code 150. Similarly, after the data transfer, the method has to notify the client with a response code 226. In case of any error, the method should send different response codes like 450, 425, 426, 551. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onUploadUniqueEnd </TD>
+<TD class="confluenceTd"> This is unique file create success notification method called in STOU command. This notification method will be called to indicate the the server has send the replies.  </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onRenameStart </TD>
+<TD class="confluenceTd"> This is file rename start notification method called in RNTO command. This will be called before the file existance or permission check. The &quot;rename from&quot; file object can be get from request object. If it returns SKIP, it has to send appropriate response codes like 503, 553, 250. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onRenameEnd </TD>
+<TD class="confluenceTd"> This is file rename success notification method called in RNFR command. This will be called before the file existance or permission check. The &quot;rename from&quot; file object an be get from request object. This notification method will be called after the invocation of the RNTO command and the server has send the reply message.  </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onSite </TD>
+<TD class="confluenceTd"> This is SITE command start notification method. It gives a chance to implement custom SITE command. If this method returns SKIP or DISCONNECT, the existing SITE commands will not be executed. </TD>
+</TR>
+</TBODY></TABLE>
+
+<H3><A name="Ftplet-ResponseCodes"></A>Response Codes</H3>
+
+<P>This section gives an overview on different response codes which might be useful in developing custom ftplet. These commands might be used when the ftplet method return value is SKIP.</P>
+<TABLE class="confluenceTable"><TBODY>
+<TR>
+<TH class="confluenceTh"> Method </TH>
+<TH class="confluenceTh"> Response Code </TH>
+<TH class="confluenceTh"> Description </TH>
+</TR>
+<TR>
+<TD class="confluenceTd"> onConnect </TD>
+<TD class="confluenceTd"> 220 </TD>
+<TD class="confluenceTd"> Service ready for new user. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onConnect </TD>
+<TD class="confluenceTd"> 530 </TD>
+<TD class="confluenceTd"> No server access from the IP. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onConnect </TD>
+<TD class="confluenceTd"> 530 </TD>
+<TD class="confluenceTd"> Maximum server connection has been reached. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onDisconnect </TD>
+<TD class="confluenceTd"> <BR clear="all"> </TD>
+<TD class="confluenceTd"> <BR clear="all"> </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onLogin </TD>
+<TD class="confluenceTd"> <BR clear="all"> </TD>
+<TD class="confluenceTd"> <BR clear="all"> </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onDeleteStart </TD>
+<TD class="confluenceTd"> 250 </TD>
+<TD class="confluenceTd"> Requested file action okay </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onDeleteStart </TD>
+<TD class="confluenceTd"> 450 </TD>
+<TD class="confluenceTd"> No permission to delete. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onDeleteStart </TD>
+<TD class="confluenceTd"> 550 </TD>
+<TD class="confluenceTd"> Not a valid file. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onDeleteStart </TD>
+<TD class="confluenceTd"> 450 </TD>
+<TD class="confluenceTd"> Can't delete file. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onDeleteEnd </TD>
+<TD class="confluenceTd"> <BR clear="all"> </TD>
+<TD class="confluenceTd"> <BR clear="all"> </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onUploadStart </TD>
+<TD class="confluenceTd"> 150 </TD>
+<TD class="confluenceTd"> File status okay; about to open data connection. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onUploadStart </TD>
+<TD class="confluenceTd"> 226 </TD>
+<TD class="confluenceTd"> Transfer complete. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onUploadStart </TD>
+<TD class="confluenceTd"> 550 </TD>
+<TD class="confluenceTd"> Invalid path. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onUploadStart </TD>
+<TD class="confluenceTd"> 550 </TD>
+<TD class="confluenceTd"> Permission denied. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onUploadStart </TD>
+<TD class="confluenceTd"> 425 </TD>
+<TD class="confluenceTd"> Can't open data connection. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onUploadStart </TD>
+<TD class="confluenceTd"> 426 </TD>
+<TD class="confluenceTd"> Data connection error. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onUploadStart </TD>
+<TD class="confluenceTd"> 551 </TD>
+<TD class="confluenceTd"> Error on output file. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onUploadEnd </TD>
+<TD class="confluenceTd"> <BR clear="all"> </TD>
+<TD class="confluenceTd"> <BR clear="all"> </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onDownloadStart </TD>
+<TD class="confluenceTd"> 150 </TD>
+<TD class="confluenceTd"> File status okay; about to open data connection. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onDownloadStart </TD>
+<TD class="confluenceTd"> 226 </TD>
+<TD class="confluenceTd"> Transfer complete. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onDownloadStart </TD>
+<TD class="confluenceTd"> 550 </TD>
+<TD class="confluenceTd"> No such file or directory. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onDownloadStart </TD>
+<TD class="confluenceTd"> 550 </TD>
+<TD class="confluenceTd"> Not a plain file. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onDownloadStart </TD>
+<TD class="confluenceTd"> 550 </TD>
+<TD class="confluenceTd"> Permission denied. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onDownloadStart </TD>
+<TD class="confluenceTd"> 425 </TD>
+<TD class="confluenceTd"> Can't open data connection. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onDownloadStart </TD>
+<TD class="confluenceTd"> 426 </TD>
+<TD class="confluenceTd"> Data connection error. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onDownloadStart </TD>
+<TD class="confluenceTd"> 551 </TD>
+<TD class="confluenceTd"> Error on input file. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onDownloadEnd </TD>
+<TD class="confluenceTd"> <BR clear="all"> </TD>
+<TD class="confluenceTd"> <BR clear="all"> </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onRmdirStart </TD>
+<TD class="confluenceTd"> 250 </TD>
+<TD class="confluenceTd"> Directory removed. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onRmdirStart </TD>
+<TD class="confluenceTd"> 550 </TD>
+<TD class="confluenceTd"> Not a valid directory. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onRmdirStart </TD>
+<TD class="confluenceTd"> 550 </TD>
+<TD class="confluenceTd"> Permission denied. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onRmdirStart </TD>
+<TD class="confluenceTd"> 550 </TD>
+<TD class="confluenceTd"> Can't remove directory. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onRmdirEnd </TD>
+<TD class="confluenceTd"> <BR clear="all"> </TD>
+<TD class="confluenceTd"> <BR clear="all"> </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onMkdirStart </TD>
+<TD class="confluenceTd"> 250 </TD>
+<TD class="confluenceTd"> Directory created. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onMkdirStart </TD>
+<TD class="confluenceTd"> 550 </TD>
+<TD class="confluenceTd"> Not a valid file. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onMkdirStart </TD>
+<TD class="confluenceTd"> 550 </TD>
+<TD class="confluenceTd"> Permission denied </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onMkdirStart </TD>
+<TD class="confluenceTd"> 550 </TD>
+<TD class="confluenceTd"> Directory already exists. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onMkdirStart </TD>
+<TD class="confluenceTd"> 550 </TD>
+<TD class="confluenceTd"> Can't create directory. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onMkdirEnd </TD>
+<TD class="confluenceTd"> <BR clear="all"> </TD>
+<TD class="confluenceTd"> <BR clear="all"> </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onAppendStart </TD>
+<TD class="confluenceTd"> 150 </TD>
+<TD class="confluenceTd"> File status okay; about to open data connection. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onAppendStart </TD>
+<TD class="confluenceTd"> 226 </TD>
+<TD class="confluenceTd"> Transfer complete. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onAppendStart </TD>
+<TD class="confluenceTd"> 550 </TD>
+<TD class="confluenceTd"> Not a plain file. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onAppendStart </TD>
+<TD class="confluenceTd"> 550 </TD>
+<TD class="confluenceTd"> Permission denied. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onAppendStart </TD>
+<TD class="confluenceTd"> 425 </TD>
+<TD class="confluenceTd"> Can't open data connection. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onAppendStart </TD>
+<TD class="confluenceTd"> 426 </TD>
+<TD class="confluenceTd"> Data connection error. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onAppendStart </TD>
+<TD class="confluenceTd"> 551 </TD>
+<TD class="confluenceTd"> Error on output file. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onAppendEnd </TD>
+<TD class="confluenceTd"> <BR clear="all"> </TD>
+<TD class="confluenceTd"> <BR clear="all"> </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onUploadUniqueStart </TD>
+<TD class="confluenceTd"> 150 </TD>
+<TD class="confluenceTd"> File status okay; about to open data connection. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onUploadUniqueStart </TD>
+<TD class="confluenceTd"> 250 </TD>
+<TD class="confluenceTd"> filename: Transfer started. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onUploadUniqueStart </TD>
+<TD class="confluenceTd"> 226 </TD>
+<TD class="confluenceTd"> filename: Transfer complete. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onUploadUniqueStart </TD>
+<TD class="confluenceTd"> 550 </TD>
+<TD class="confluenceTd"> Unique file name error. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onUploadUniqueStart </TD>
+<TD class="confluenceTd"> 550 </TD>
+<TD class="confluenceTd"> Permission denied. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onUploadUniqueStart </TD>
+<TD class="confluenceTd"> 425 </TD>
+<TD class="confluenceTd"> Can't open data connection. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onUploadUniqueStart </TD>
+<TD class="confluenceTd"> 426 </TD>
+<TD class="confluenceTd"> Data connection error. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onUploadUniqueStart </TD>
+<TD class="confluenceTd"> 551 </TD>
+<TD class="confluenceTd"> Error on output file. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onUploadUniqueEnd </TD>
+<TD class="confluenceTd"> <BR clear="all"> </TD>
+<TD class="confluenceTd"> <BR clear="all"> </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onRenameStart </TD>
+<TD class="confluenceTd"> 250 </TD>
+<TD class="confluenceTd"> Requested file action okay, file renamed. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onRenameStart </TD>
+<TD class="confluenceTd"> 503 </TD>
+<TD class="confluenceTd"> Can't find the file which has to be renamed. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onRenameStart </TD>
+<TD class="confluenceTd"> 553 </TD>
+<TD class="confluenceTd"> Not a valid file name. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onRenameStart </TD>
+<TD class="confluenceTd"> 553 </TD>
+<TD class="confluenceTd"> Permission denied. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onRenameStart </TD>
+<TD class="confluenceTd"> 553 </TD>
+<TD class="confluenceTd"> No such file or directory. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onRenameStart </TD>
+<TD class="confluenceTd"> 553 </TD>
+<TD class="confluenceTd"> Can't rename file. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onRenameEnd </TD>
+<TD class="confluenceTd"> <BR clear="all"> </TD>
+<TD class="confluenceTd"> <BR clear="all"> </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onSite </TD>
+<TD class="confluenceTd"> 200 </TD>
+<TD class="confluenceTd"> Command SITE okay. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onSite </TD>
+<TD class="confluenceTd"> 530 </TD>
+<TD class="confluenceTd"> Permission denied. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onSite </TD>
+<TD class="confluenceTd"> 502 </TD>
+<TD class="confluenceTd"> Not implemented. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> onSite </TD>
+<TD class="confluenceTd"> 500 </TD>
+<TD class="confluenceTd"> Execution failed. </TD>
+</TR>
+</TBODY></TABLE>
+<H3><A name="Ftplet-Configuration"></A>Configuration</H3>
+
+<P>Ftplet will get the Ftplet specific configuration as the init() method argument.</P>
+
+<H3><A name="Ftplet-Implementation"></A>Implementation</H3>
+
+<P>Ftplets are regular POJOs. If running the server as embedded they can be added to the FtpletContainer as normal instances of the object. If using the XML configuration, they are configured and Spring beans within the <EM>ftplets</EM> element. Here's an example:</P>
+
+<DIV class="code"><DIV class="codeContent">
+<PRE class="code-java">&lt;ftplets&gt; 
+  &lt;ftplet name=<SPAN class="code-quote">&quot;ftplet1&quot;</SPAN>&gt; 
+    &lt;beans:bean class=<SPAN class="code-quote">&quot;org.apache.ftpserver.examples.MyFtplet&quot;</SPAN>&gt; 
+      &lt;beans:property name=<SPAN class="code-quote">&quot;foo&quot;</SPAN> value=<SPAN class="code-quote">&quot;123&quot;</SPAN> /&gt; 
+    &lt;/beans:bean&gt; 
+  &lt;/ftplet&gt; 
+&lt;/ftplets&gt;</PRE>
+</DIV></DIV>
+
+<H2><A name="Ftplet-Deployment"></A>Deployment</H2>
+
+<P>The Ftplet must be added to Apache FtpServer classpath so that the Ftplet can be loaded. There are three ways you can do that.</P>
+<OL>
+	<LI>Modify your system CLASSPATH environment variable to include your ftplet classes.</LI>
+	<LI>Copy your ftplet class files (unpacked) in the common/classes bdirectory of the FtpServer installation.</LI>
+	<LI>Place a jar file containing the custom ftplet class files in the common/lib subdirectory of the FtpServer installation.</LI>
+</OL>
+
+                </DIV>
+  
+              </DIV>
+            </TD>
+          </TR>
+        </TABLE>
+        <DIV class="footer" style="text-align: center">
+          Copyright &copy; 2004-2008, <A href="http://www.apache.org/">The Apache Software Foundation</A>
+        </DIV>
+      </DIV>
+    </DIV>
+  </BODY>
+</HTML>

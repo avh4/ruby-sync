@@ -1,0 +1,402 @@
+
+<!--
+   Licensed to the Apache Software Foundation (ASF) under one or more
+   contributor license agreements.  See the NOTICE file distributed with
+   this work for additional information regarding copyright ownership.
+   The ASF licenses this file to You under the Apache License, Version 2.0
+   (the "License"); you may not use this file except in compliance with
+   the License.  You may obtain a copy of the License at
+ 
+        http://www.apache.org/licenses/LICENSE- 2.0
+ 
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+-->
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+  <HEAD>
+    <TITLE>Apache FtpServer - Listeners</TITLE>
+    <META http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <LINK type="text/css" rel="stylesheet" href="http://mina.apache.org/index.data/style.css">
+    <SCRIPT type="text/javascript" language="javascript">
+      function init() {
+        /* Search form initialization */
+        var form = document.forms['googleSearch'];
+        if (form != null) {
+          form.elements['domains'].value = location.hostname;
+          form.elements['sitesearch'].value = location.hostname;
+        }
+
+      }
+    </SCRIPT>
+  </HEAD>
+  <BODY onload="init()">
+    <DIV id="PageContent" style="padding-bottom: 0px;">
+      <DIV class="pageheader" style="padding: 6px 0px 0px 0px;">
+        <DIV id="apacheLogo" style="width: 100%; text-align: right; position: absolute; top: 33px;">
+          <A href="http://www.apache.org/"><IMG src="http://www.apache.org/images/asf-logo.gif" border="0" alt="The Apache Software Foundation" title="The Apache Software Foundation" hspace="12"></A>
+        </DIV>
+        <DIV id="minaLogo" style="position: absolute; top: 24px; left: 16px;">
+          <A href="http://mina.apache.org/ftpserver"><IMG src="http://mina.apache.org/ftpserver/index.data/logo-300x95.png" border="0" alt="Apache FtpServer" title="Apache FtpServer"></A>
+        </DIV>
+        <DIV class="greynavbar" style="margin: 156px 0px 0px 0px;">
+          <TABLE border="0" cellpadding="2" cellspacing="0" width="100%" style="position: relative; z-index: 10;">
+            <TR>
+              <TD align="left" valign="middle" style="padding-left: 17px;" width="100%" nowrap="">
+                &nbsp;<A href="index.html" title="Apache MINA FtpServer">Apache MINA FtpServer</A>&nbsp;&gt;&nbsp;<A href="index.html" title="Index">Index</A>&nbsp;&gt;&nbsp;<A href="documentation.html" title="Documentation">Documentation</A>&nbsp;&gt;&nbsp;<A href="" title="Listeners">Listeners</A>
+              </TD>
+              <TD align="right" valign="middle" nowrap="">
+                <FORM name="googleSearch" action="http://www.google.com/search" method="get" style="margin: 0px; padding: 0px;">
+                  <INPUT type="hidden" name="ie" value="UTF-8">
+                  <INPUT type="hidden" name="oe" value="UTF-8">
+                  <INPUT type="hidden" name="domains" value="">
+                  <INPUT type="hidden" name="sitesearch" value="">
+                  <INPUT type="text" name="q" maxlength="255" value="">        
+                  <INPUT type="submit" name="btnG" value="Google Search">
+                </FORM>
+              </TD>
+              <TD align="right" valign="middle" style="padding-right: 8px;" nowrap="">
+                <FORM name="listSearch" action="http://mina.markmail.org/search/" method="get" style="margin: 0px; padding: 0px;">
+                  <INPUT type="text" name="q" maxlength="255" value="">        
+                  <INPUT type="submit" value="Mailing List Search">
+                </FORM>
+              </TD>
+            </TR> 
+          </TABLE>
+        </DIV>
+      </DIV>
+      <DIV id="pageBody" style="clear: both;">
+        <TABLE border="0" cellpadding="0" cellspacing="0" width="100%">
+          <TR>
+            <TD width="192" valign="top" nowrap="">
+              <DIV style="padding: 0px 8px 16px 20px;">
+                
+                                                                                                                                                                                                                                          <H3><A name="Navigation-Overview"></A>Overview</H3>
+
+<UL>
+	<LI><A href="index.html" title="Index">Home</A></LI>
+	<LI><A href="features.html" title="Features">Features</A></LI>
+	<LI><A href="documentation.html" title="Documentation">Documentation</A></LI>
+	<LI><A href="downloads.html" title="Downloads">Downloads</A></LI>
+	<LI><A href="source.html" title="Source">Source</A></LI>
+	<LI><A href="faq.html" title="FAQ">FAQ</A></LI>
+</UL>
+
+
+<H3><A name="Navigation-Community"></A>Community</H3>
+
+<UL>
+	<LI><A href="mailing-lists.html" title="Mailing Lists">Mailing lists</A></LI>
+	<LI><A href="getting-involved.html" title="Getting Involved">Getting Involved</A></LI>
+	<LI><A href="reporting-a-bug.html" title="Reporting a Bug">Reporting a Bug</A></LI>
+	<LI><A href="contributors.html" title="Contributors">Contributors</A></LI>
+	<LI><A href="testimonials.html" title="Testimonials">Testimonials</A></LI>
+</UL>
+
+
+<H3><A name="Navigation-Sponsorship"></A>Sponsorship</H3>
+
+<UL>
+	<LI><SPAN class="nobr"><A href="http://www.apache.org/foundation/thanks.html" title="Visit page outside Confluence" rel="nofollow">Thanks<SUP><IMG class="rendericon" src="http://cwiki.apache.org/confluence/images/icons/linkext7.gif" height="7" width="7" align="absmiddle" alt="" border="0"></SUP></A></SPAN></LI>
+	<LI><SPAN class="nobr"><A href="http://www.apache.org/foundation/sponsorship.html" title="Visit page outside Confluence" rel="nofollow">Sponsorship<SUP><IMG class="rendericon" src="http://cwiki.apache.org/confluence/images/icons/linkext7.gif" height="7" width="7" align="absmiddle" alt="" border="0"></SUP></A></SPAN></LI>
+	<LI><SPAN class="nobr"><A href="http://www.apache.org/foundation/contributing.html" title="Visit page outside Confluence" rel="nofollow">Contributing<SUP><IMG class="rendericon" src="http://cwiki.apache.org/confluence/images/icons/linkext7.gif" height="7" width="7" align="absmiddle" alt="" border="0"></SUP></A></SPAN></LI>
+</UL>
+                                                                                            </DIV>
+             <DIV align="center"><IFRAME src="http://www.apache.org/ads/buttonbar.html" style="border-width:0" frameborder="0" scrolling="no" width="135" height="265"></IFRAME></DIV>
+            </TD>
+            <TD width="100%" valign="top">
+              <DIV class="pagecontent">
+                <H1 style="margin-top: 0px;">
+                  Listeners
+                </H1>
+                <DIV class="wiki-content">
+                  <P>Listeners are the component in FtpServer which is responsible for listening on the network socket and when clients connect create the user session, execute commands and so on. An FtpServer can have multiple listeners at the same time, some examples include:</P>
+<UL>
+	<LI>one listener on port 21 (the default option)</LI>
+	<LI>one cleartext listener on port 21 and one for implicit SSL on port 22</LI>
+	<LI>one cleartext listener in an internal IP address only and one for implicit SSL for the external IP address</LI>
+</UL>
+
+
+<P>Listeners are identified by a name, the default listener is identified by &quot;default&quot;. </P>
+
+<P>The main network configuration is performed on the listeners, for example the port to listen on and SSL configuration. </P>
+
+<P>Within the XML configuration format, all listeners are configured in the &quot;listeners&quot; element. A XML configuration example can therefore look like:</P>
+<DIV class="code"><DIV class="codeContent">
+<PRE class="code-java">&lt;listeners&gt;
+            &lt;nio-listener name=<SPAN class="code-quote">&quot;<SPAN class="code-keyword">default</SPAN>&quot;</SPAN> port=<SPAN class="code-quote">&quot;2222&quot;</SPAN> implicit-ssl=<SPAN class="code-quote">&quot;<SPAN class="code-keyword">true</SPAN>&quot;</SPAN> idle-timeout=<SPAN class="code-quote">&quot;60&quot;</SPAN> local-address=<SPAN class="code-quote">&quot;1.2.3.4&quot;</SPAN>&gt;
+                &lt;ssl&gt;
+                    &lt;keystore file=<SPAN class="code-quote">&quot;mykeystore.jks&quot;</SPAN> password=<SPAN class="code-quote">&quot;secret&quot;</SPAN> key-password=<SPAN class="code-quote">&quot;otherSecret&quot;</SPAN> /&gt;
+                    &lt;truststore file=<SPAN class="code-quote">&quot;mytruststore.jks&quot;</SPAN> password=<SPAN class="code-quote">&quot;secret&quot;</SPAN>/&gt;
+                &lt;/ssl&gt;
+                &lt;data-connection idle-timeout=<SPAN class="code-quote">&quot;60&quot;</SPAN>&gt;
+                    &lt;active enabled=<SPAN class="code-quote">&quot;<SPAN class="code-keyword">true</SPAN>&quot;</SPAN> local-address=<SPAN class="code-quote">&quot;1.2.3.4&quot;</SPAN> local-port=<SPAN class="code-quote">&quot;2323&quot;</SPAN> ip-check=<SPAN class="code-quote">&quot;<SPAN class="code-keyword">true</SPAN>&quot;</SPAN>/&gt;
+                    &lt;passive ports=<SPAN class="code-quote">&quot;123-125&quot;</SPAN> address=<SPAN class="code-quote">&quot;1.2.3.4&quot;</SPAN> external-address=<SPAN class="code-quote">&quot;1.2.3.4&quot;</SPAN> /&gt;
+                &lt;/data-connection&gt;
+                &lt;blacklist&gt;1.2.3.0/16, 1.2.4.0/16, 1.2.3.4&lt;/blacklist&gt;              
+            &lt;/nio-listener&gt;
+        &lt;/listeners&gt;</PRE>
+</DIV></DIV>
+
+<H3><A name="Listeners-niolistenerelement"></A>nio-listener element</H3>
+<P>The listener shipped with FtpServer is called &quot;nio-listener&quot; since it is based Java NIO for performance and scalability.</P>
+
+<TABLE class="confluenceTable"><TBODY>
+<TR>
+<TH class="confluenceTh"> Attribute </TH>
+<TH class="confluenceTh"> Description </TH>
+<TH class="confluenceTh"> Required </TH>
+<TH class="confluenceTh"> Default value </TH>
+</TR>
+<TR>
+<TD class="confluenceTd"> name </TD>
+<TD class="confluenceTd"> The listener name, if &quot;default&quot; it will override the settings on the default listener </TD>
+<TD class="confluenceTd"> Yes </TD>
+<TD class="confluenceTd">&nbsp;</TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> port </TD>
+<TD class="confluenceTd"> The port on which the listener will accept connections </TD>
+<TD class="confluenceTd"> No </TD>
+<TD class="confluenceTd"> 21 </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> local-address </TD>
+<TD class="confluenceTd"> Server address the listener will bind to </TD>
+<TD class="confluenceTd"> No </TD>
+<TD class="confluenceTd"> All available </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> implicit-ssl </TD>
+<TD class="confluenceTd"> True if the listener should use implicit SSL </TD>
+<TD class="confluenceTd"> No </TD>
+<TD class="confluenceTd"> false </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> idle-timeout </TD>
+<TD class="confluenceTd"> The number of seconds before an inactive client is disconnected </TD>
+<TD class="confluenceTd"> No </TD>
+<TD class="confluenceTd"> 300 </TD>
+</TR>
+</TBODY></TABLE>
+
+<H3><A name="Listeners-sslelement"></A>ssl element</H3>
+<P>Required for listeners that should provide FTPS support.</P>
+
+<TABLE class="confluenceTable"><TBODY>
+<TR>
+<TH class="confluenceTh"> Attribute </TH>
+<TH class="confluenceTh"> Description </TH>
+<TH class="confluenceTh"> Required </TH>
+<TH class="confluenceTh"> Default value </TH>
+</TR>
+<TR>
+<TD class="confluenceTd"> protocol </TD>
+<TD class="confluenceTd"> The SSL protocol to use. Supported values are &quot;SSL&quot; and &quot;TLS&quot; </TD>
+<TD class="confluenceTd"> No </TD>
+<TD class="confluenceTd"> TLS </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> client-authentication </TD>
+<TD class="confluenceTd"> Should client authentication be performed? Supported values are &quot;NEED&quot;, &quot;WANT&quot; and &quot;NONE&quot; </TD>
+<TD class="confluenceTd"> No </TD>
+<TD class="confluenceTd"> NONE </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> enabled-ciphersuites </TD>
+<TD class="confluenceTd"> A comma seperated list of cipher suites to enable for this connection. The exact cipher suites that can be used depends on the Java version used, <SPAN class="nobr"><A href="http://java.sun.com/j2se/1.5.0/docs/guide/security/jsse/JSSERefGuide.html#AppA" title="Visit page outside Confluence" rel="nofollow">here<SUP><IMG class="rendericon" src="http://cwiki.apache.org/confluence/images/icons/linkext7.gif" height="7" width="7" align="absmiddle" alt="" border="0"></SUP></A></SPAN> are the names for Sun's JSSE provider. </TD>
+<TD class="confluenceTd"> No </TD>
+<TD class="confluenceTd"> All cipher suites are enabled </TD>
+</TR>
+</TBODY></TABLE>
+
+<H3><A name="Listeners-keystoreelement"></A>keystore element</H3>
+<P>This element is required if the ssl element is provided. It provides configuration for the key store used for finding the private key and server certificate for the FTP server.</P>
+
+<TABLE class="confluenceTable"><TBODY>
+<TR>
+<TH class="confluenceTh"> Attribute </TH>
+<TH class="confluenceTh"> Description </TH>
+<TH class="confluenceTh"> Required </TH>
+<TH class="confluenceTh"> Default value </TH>
+</TR>
+<TR>
+<TD class="confluenceTd"> file </TD>
+<TD class="confluenceTd"> Path to the key store file </TD>
+<TD class="confluenceTd"> Yes </TD>
+<TD class="confluenceTd">&nbsp;</TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> password </TD>
+<TD class="confluenceTd"> The password for the key store </TD>
+<TD class="confluenceTd"> Yes </TD>
+<TD class="confluenceTd">&nbsp;</TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> key-password </TD>
+<TD class="confluenceTd"> Password for the key within the key store </TD>
+<TD class="confluenceTd"> No </TD>
+<TD class="confluenceTd"> Key store password </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> key-alias </TD>
+<TD class="confluenceTd"> Alias of the key to use within the key store </TD>
+<TD class="confluenceTd"> No </TD>
+<TD class="confluenceTd"> Uses first key found </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> type </TD>
+<TD class="confluenceTd"> Key store type </TD>
+<TD class="confluenceTd"> No </TD>
+<TD class="confluenceTd"> JRE key store default type, normally JKS </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> algorithm </TD>
+<TD class="confluenceTd"> Key store algorithm </TD>
+<TD class="confluenceTd"> No </TD>
+<TD class="confluenceTd"> SunX509 </TD>
+</TR>
+</TBODY></TABLE>
+
+<H3><A name="Listeners-truststoreelement"></A>truststore element</H3>
+<P>This element provides configuration for the trust store used for locating trusted certificates.</P>
+
+<TABLE class="confluenceTable"><TBODY>
+<TR>
+<TH class="confluenceTh"> Attribute </TH>
+<TH class="confluenceTh"> Description </TH>
+<TH class="confluenceTh"> Required </TH>
+<TH class="confluenceTh"> Default value </TH>
+</TR>
+<TR>
+<TD class="confluenceTd"> file </TD>
+<TD class="confluenceTd"> Path to the trust store file </TD>
+<TD class="confluenceTd"> Yes </TD>
+<TD class="confluenceTd">&nbsp;</TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> password </TD>
+<TD class="confluenceTd"> The password for the trust store </TD>
+<TD class="confluenceTd"> No </TD>
+<TD class="confluenceTd"> Certificates can be read without password </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> type </TD>
+<TD class="confluenceTd"> Trust store type </TD>
+<TD class="confluenceTd"> No </TD>
+<TD class="confluenceTd"> JRE key store default type, normally JKS </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> algorithm </TD>
+<TD class="confluenceTd"> Trust store algorithm </TD>
+<TD class="confluenceTd"> No </TD>
+<TD class="confluenceTd"> SunX509 </TD>
+</TR>
+</TBODY></TABLE>
+
+<H3><A name="Listeners-dataconnectionelement"></A>data-connection element</H3>
+<P>This element provides configuration for the data connection.</P>
+
+<TABLE class="confluenceTable"><TBODY>
+<TR>
+<TH class="confluenceTh"> Attribute </TH>
+<TH class="confluenceTh"> Description </TH>
+<TH class="confluenceTh"> Required </TH>
+<TH class="confluenceTh"> Default value </TH>
+</TR>
+<TR>
+<TD class="confluenceTd"> idle-timeout </TD>
+<TD class="confluenceTd"> Number of seconds before an idle data connection is closed </TD>
+<TD class="confluenceTd"> No </TD>
+<TD class="confluenceTd"> 300 </TD>
+</TR>
+</TBODY></TABLE>
+
+<H3><A name="Listeners-activeelement"></A>active element</H3>
+<P>This element provides configuration for active data connections.</P>
+
+<TABLE class="confluenceTable"><TBODY>
+<TR>
+<TH class="confluenceTh"> Attribute </TH>
+<TH class="confluenceTh"> Description </TH>
+<TH class="confluenceTh"> Required </TH>
+<TH class="confluenceTh"> Default value </TH>
+</TR>
+<TR>
+<TD class="confluenceTd"> enabled </TD>
+<TD class="confluenceTd"> False if active data connections should not be allowed </TD>
+<TD class="confluenceTd"> No </TD>
+<TD class="confluenceTd"> true </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> local-address </TD>
+<TD class="confluenceTd"> The local address the server will use when creating a data connection </TD>
+<TD class="confluenceTd"> No </TD>
+<TD class="confluenceTd"> Any available </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> local-port </TD>
+<TD class="confluenceTd"> The local prt the server will use when creating a data connection </TD>
+<TD class="confluenceTd"> No </TD>
+<TD class="confluenceTd"> Any available </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> ip-check </TD>
+<TD class="confluenceTd"> Should the server check that the IP address for the data connection is the same as for the control socket? </TD>
+<TD class="confluenceTd"> No </TD>
+<TD class="confluenceTd"> false </TD>
+</TR>
+</TBODY></TABLE>
+
+<H3><A name="Listeners-passiveelement"></A>passive element</H3>
+<P>This element provides configuration for passive data connections.</P>
+
+<TABLE class="confluenceTable"><TBODY>
+<TR>
+<TH class="confluenceTh"> Attribute </TH>
+<TH class="confluenceTh"> Description </TH>
+<TH class="confluenceTh"> Required </TH>
+<TH class="confluenceTh"> Default value </TH>
+</TR>
+<TR>
+<TD class="confluenceTd"> ports </TD>
+<TD class="confluenceTd"> The ports on which the server is allowed to accept passive data connections, see <A href="configure-passive-ports.html" title="Configure passive ports">Configure passive ports</A> for details </TD>
+<TD class="confluenceTd"> No </TD>
+<TD class="confluenceTd"> Any available port </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> address </TD>
+<TD class="confluenceTd"> The address on which the server will listen to passive data connections </TD>
+<TD class="confluenceTd"> No </TD>
+<TD class="confluenceTd"> The same address as the control socket for the session </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> external-address </TD>
+<TD class="confluenceTd"> The address the server will claim to be listening on in the PASV reply. Useful when the server is behind a NAT firewall and the client sees a different address than the server is using </TD>
+<TD class="confluenceTd"> No </TD>
+<TD class="confluenceTd">&nbsp;</TD>
+</TR>
+</TBODY></TABLE>
+
+<H3><A name="Listeners-blacklistelement"></A>blacklist element</H3>
+<P>This element provides a list of black listed IP addresses and networks in <SPAN class="nobr"><A href="http://en.wikipedia.org/wiki/CIDR" title="Visit page outside Confluence" rel="nofollow">CIDR notation<SUP><IMG class="rendericon" src="http://cwiki.apache.org/confluence/images/icons/linkext7.gif" height="7" width="7" align="absmiddle" alt="" border="0"></SUP></A></SPAN>.</P>
+                </DIV>
+  
+              </DIV>
+            </TD>
+          </TR>
+        </TABLE>
+        <DIV class="footer" style="text-align: center">
+          Copyright &copy; 2004-2008, <A href="http://www.apache.org/">The Apache Software Foundation</A>
+        </DIV>
+      </DIV>
+    </DIV>
+  </BODY>
+</HTML>

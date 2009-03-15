@@ -1,0 +1,144 @@
+
+<!-- 
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+ http://www.apache.org/licenses/LICENSE- 2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License. 
+-->
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+  <HEAD>
+    <LINK type="text/css" rel="stylesheet" href="resources/space.css">
+    <STYLE type="text/css">
+      .footer {
+        background-image:      url('http://cwiki.apache.org/confluence/images/border/border_bottom.gif');
+        background-repeat:     repeat-x;
+        background-position:   left top;
+        padding-top:           4px;
+        color:                 #666;
+      }
+    </STYLE>
+    <SCRIPT type="text/javascript" language="javascript">
+      var hide = null;
+      var show = null;
+      var children = null;
+
+      function init() {
+        /* Search form initialization */
+        var form = document.forms['search'];
+        if (form != null) {
+          form.elements['domains'].value = location.hostname;
+          form.elements['sitesearch'].value = location.hostname;
+        }
+
+        /* Children initialization */
+        hide = document.getElementById('hide');
+        show = document.getElementById('show');
+        children = document.all != null ?
+                   document.all['children'] :
+                   document.getElementById('children');
+        if (children != null) {
+          children.style.display = 'none';
+          show.style.display = 'inline';
+          hide.style.display = 'none';
+        }
+      }
+
+      function showChildren() {
+        children.style.display = 'block';
+        show.style.display = 'none';
+        hide.style.display = 'inline';
+      }
+
+      function hideChildren() {
+        children.style.display = 'none';
+        show.style.display = 'inline';
+        hide.style.display = 'none';
+      }
+    </SCRIPT>
+    <TITLE>Installing as a Windows service</TITLE>
+  <META http-equiv="Content-Type" content="text/html;charset=UTF-8"></HEAD>
+  <BODY onload="init()">
+    <TABLE border="0" cellpadding="2" cellspacing="0" width="100%">
+      <TR class="topBar">
+        <TD align="left" valign="middle" class="topBarDiv" nowrap="">
+          &nbsp;<A href="index.html" title="Apache FTPServer Project">Apache FTPServer Project</A>&nbsp;&gt;&nbsp;<A href="index.html" title="Index">Index</A>&nbsp;&gt;&nbsp;<A href="documentation.html" title="Documentation">Documentation</A>&nbsp;&gt;&nbsp;<A href="installation.html" title="Installation">Installation</A>&nbsp;&gt;&nbsp;<A href="" title="Installing as a Windows service">Installing as a Windows service</A>
+        </TD>
+      </TR> 
+    </TABLE>
+
+    <DIV id="PageContent">
+      <DIV class="pageheader" style="padding: 6px 0px 0px 0px;">
+        <!-- We'll enable this once we figure out how to access (and save) the logo resource -->
+        <!--img src="/wiki/images/confluence_logo.gif" style="float: left; margin: 4px 4px 4px 10px;" border="0"-->
+        <DIV style="margin: 0px 10px 0px 10px" class="smalltext">Apache FTPServer Project</DIV>
+        <DIV style="margin: 0px 10px 8px 10px" class="pagetitle">Installing as a Windows service</DIV>
+
+        <DIV class="greynavbar" align="right" style="padding: 2px 10px; margin: 0px;">
+
+        </DIV>
+      </DIV>
+
+      <DIV class="pagecontent">
+        <DIV class="wiki-content">
+          <H1><A name="InstallingasaWindowsservice-Install"></A>Install</H1>
+<P>Apache FtpServer can be installed as a Windows service using the following command:</P>
+
+<DIV class="preformatted"><DIV class="preformattedContent">
+<PRE>&lt;install dir&gt;bin\service install
+</PRE>
+</DIV></DIV>
+
+<P>This will create a service called Apache FtpServer that can be started and stopped as a usual service. </P>
+
+<P>As a second parameter, the service identifier can be provided. This would normally be used if multiple FtpServer services should be installed, for example:</P>
+<DIV class="preformatted"><DIV class="preformattedContent">
+<PRE>&lt;install dir&gt;bin\service install ftpd2
+</PRE>
+</DIV></DIV>
+
+<P>Without any further options, this will use the default configuration. If you want to use for example an XML configuration file you should run:</P>
+
+<DIV class="preformatted"><DIV class="preformattedContent">
+<PRE>&lt;install dir&gt;bin\service install ftpd -xml &lt;path to XML configuration file&gt;
+</PRE>
+</DIV></DIV>
+
+
+<H1><A name="InstallingasaWindowsservice-ServiceadministrationGUI"></A>Service administration GUI</H1>
+
+<P>After installing the service, it can be further configured using the service GUI by running:</P>
+
+<DIV class="preformatted"><DIV class="preformattedContent">
+<PRE>&lt;install dir&gt;bin\ftpdw
+</PRE>
+</DIV></DIV>
+
+<H1><A name="InstallingasaWindowsservice-Uninstall"></A>Uninstall</H1>
+<P>To uninstall the service, use:</P>
+<DIV class="preformatted"><DIV class="preformattedContent">
+<PRE>&lt;install dir&gt;bin\service remove
+</PRE>
+</DIV></DIV>
+
+        </DIV>
+
+      </DIV>
+    </DIV>
+    <DIV class="footer">
+    </DIV>
+  </BODY>
+</HTML>

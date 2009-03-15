@@ -1,0 +1,24 @@
+-classpath
+'/media/big/home/svn/apache/ftpserver-1.0.0/target/classes:/media/big/home/svn/apache/ftpserver-1.0.0/ftplet-api/target/classes:/media/big/home/svn/apache/ftpserver-1.0.0/core/target/classes:/media/big/home/svn/apache/ftpserver-1.0.0/examples/ftpserver-example-spring-war/target/classes:/media/big/home/svn/apache/ftpserver-1.0.0/examples/ftpserver-osgi-ftplet-service/target/classes:/media/big/home/svn/apache/ftpserver-1.0.0/examples/ftpserver-osgi-spring-service/target/classes:/media/big/home/svn/apache/ftpserver-1.0.0/examples/target/classes:/media/big/home/svn/apache/ftpserver-1.0.0/distribution/target/classes:/home/niklas/.m2/repository/log4j/log4j/1.2.14/log4j-1.2.14.jar:/home/niklas/.m2/repository/org/apache/ftpserver/ftpserver-core/1.0.0/ftpserver-core-1.0.0.jar:/home/niklas/.m2/repository/org/springframework/spring-beans/2.5.5/spring-beans-2.5.5.jar:/home/niklas/.m2/repository/org/springframework/spring-web/2.5.5/spring-web-2.5.5.jar:/home/niklas/.m2/repository/org/springframework/spring-core/2.5.5/spring-core-2.5.5.jar:/home/niklas/.m2/repository/org/apache/mina/mina-core/2.0.0-M4/mina-core-2.0.0-M4.jar:/home/niklas/.m2/repository/javax/servlet/servlet-api/2.5/servlet-api-2.5.jar:/home/niklas/.m2/repository/org/slf4j/slf4j-api/1.5.2/slf4j-api-1.5.2.jar:/home/niklas/.m2/repository/aopalliance/aopalliance/1.0/aopalliance-1.0.jar:/home/niklas/.m2/repository/org/apache/ftpserver/ftplet-api/1.0.0/ftplet-api-1.0.0.jar:/home/niklas/.m2/repository/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar:/home/niklas/.m2/repository/org/osgi/osgi_R4_core/1.0/osgi_R4_core-1.0.jar:/home/niklas/.m2/repository/org/springframework/spring-context/2.5.5/spring-context-2.5.5.jar:/home/niklas/.m2/repository/org/slf4j/slf4j-log4j12/1.5.2/slf4j-log4j12-1.5.2.jar:/home/niklas/.m2/repository/org/slf4j/jcl-over-slf4j/1.5.2/jcl-over-slf4j-1.5.2.jar'
+-encoding
+'UTF-8'
+-protected
+-source
+'1.5'
+-sourcepath
+'/media/big/home/svn/apache/ftpserver-1.0.0/ftplet-api/src/main/java:/media/big/home/svn/apache/ftpserver-1.0.0/core/src/main/java:/media/big/home/svn/apache/ftpserver-1.0.0/examples/ftpserver-example-spring-war/src/main/java:/media/big/home/svn/apache/ftpserver-1.0.0/examples/ftpserver-osgi-ftplet-service/src/main/java:/media/big/home/svn/apache/ftpserver-1.0.0/examples/ftpserver-osgi-spring-service/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2003-2009 <a href="http://www.apache.org/">The Apache Software Foundation</a>. All Rights Reserved.'
+-charset
+'UTF-8'
+-d
+'/media/big/home/svn/apache/ftpserver-1.0.0/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'Apache FtpServer 1.0.0 Public API'
+-use
+-version
+-windowtitle
+'Apache FtpServer 1.0.0 Public API'

@@ -1,0 +1,307 @@
+
+<!-- 
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+ http://www.apache.org/licenses/LICENSE- 2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License. 
+-->
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+  <HEAD>
+    <LINK type="text/css" rel="stylesheet" href="resources/space.css">
+    <STYLE type="text/css">
+      .footer {
+        background-image:      url('http://cwiki.apache.org/confluence/images/border/border_bottom.gif');
+        background-repeat:     repeat-x;
+        background-position:   left top;
+        padding-top:           4px;
+        color:                 #666;
+      }
+    </STYLE>
+    <SCRIPT type="text/javascript" language="javascript">
+      var hide = null;
+      var show = null;
+      var children = null;
+
+      function init() {
+        /* Search form initialization */
+        var form = document.forms['search'];
+        if (form != null) {
+          form.elements['domains'].value = location.hostname;
+          form.elements['sitesearch'].value = location.hostname;
+        }
+
+        /* Children initialization */
+        hide = document.getElementById('hide');
+        show = document.getElementById('show');
+        children = document.all != null ?
+                   document.all['children'] :
+                   document.getElementById('children');
+        if (children != null) {
+          children.style.display = 'none';
+          show.style.display = 'inline';
+          hide.style.display = 'none';
+        }
+      }
+
+      function showChildren() {
+        children.style.display = 'block';
+        show.style.display = 'none';
+        hide.style.display = 'inline';
+      }
+
+      function hideChildren() {
+        children.style.display = 'none';
+        show.style.display = 'inline';
+        hide.style.display = 'none';
+      }
+    </SCRIPT>
+    <TITLE>FtpServer Configuration</TITLE>
+  <META http-equiv="Content-Type" content="text/html;charset=UTF-8"></HEAD>
+  <BODY onload="init()">
+    <TABLE border="0" cellpadding="2" cellspacing="0" width="100%">
+      <TR class="topBar">
+        <TD align="left" valign="middle" class="topBarDiv" nowrap="">
+          &nbsp;<A href="index.html" title="Apache MINA FtpServer">Apache MINA FtpServer</A>&nbsp;&gt;&nbsp;<A href="index.html" title="Index">Index</A>&nbsp;&gt;&nbsp;<A href="documentation.html" title="Documentation">Documentation</A>&nbsp;&gt;&nbsp;<A href="" title="FtpServer Configuration">FtpServer Configuration</A>
+        </TD>
+      </TR> 
+    </TABLE>
+
+    <DIV id="PageContent">
+      <DIV class="pageheader" style="padding: 6px 0px 0px 0px;">
+        <!-- We'll enable this once we figure out how to access (and save) the logo resource -->
+        <!--img src="/wiki/images/confluence_logo.gif" style="float: left; margin: 4px 4px 4px 10px;" border="0"-->
+        <DIV style="margin: 0px 10px 0px 10px" class="smalltext">Apache MINA FtpServer</DIV>
+        <DIV style="margin: 0px 10px 8px 10px" class="pagetitle">FtpServer Configuration</DIV>
+
+        <DIV class="greynavbar" align="right" style="padding: 2px 10px; margin: 0px;">
+
+        </DIV>
+      </DIV>
+
+      <DIV class="pagecontent">
+        <DIV class="wiki-content">
+          <H3><A name="FtpServerConfiguration-Overview"></A>Overview</H3>
+
+<P>This document explains the Apache FTP Server configuration parameters. All the configuration parameters are grouped depending on the component where it has been used. This configuration format is very much open to suite the user requirements. The server comes with two different configuration implementations - properties file based and XML file based configurations (./res/ftpd.properties and ./res/ftpd.xml). You can have your own Configuration implementation. You just need to implement <EM>org.apache.ftpserver.ftplet.Configuration</EM> interface. Most of the configuration parameters have default values. So you do not have to specify all the configuration parameters.</P>
+
+<P>The configuration parameters follow a tree hierarchy.          </P>
+<DIV class="preformatted"><DIV class="preformattedContent">
+<PRE>n1
+          |
+          |--- n2
+               |
+               |--- n3
+               |
+               |--- n4
+</PRE>
+</DIV></DIV>
+
+<P>Only the leaf nodes can have configuration values. That is in the above hierarchy only n3 and n4 can have values. If we assume that the value of n3 is v3 and the value of n4 is v4.</P>
+
+<P>The properties based configuration will look like:          </P>
+<DIV class="preformatted"><DIV class="preformattedContent">
+<PRE>n1.n2.n3=v3
+n1.n2.n4=v4
+</PRE>
+</DIV></DIV>
+
+<P>Similarly the XML based configuration will look like:          </P>
+<DIV class="code"><DIV class="codeContent">
+<PRE class="code-xml"><SPAN class="code-tag">&lt;n1&gt;</SPAN>
+    <SPAN class="code-tag">&lt;n2&gt;</SPAN>
+        <SPAN class="code-tag">&lt;n3&gt;</SPAN>v3<SPAN class="code-tag">&lt;/n3&gt;</SPAN>
+        <SPAN class="code-tag">&lt;n4&gt;</SPAN>v4<SPAN class="code-tag">&lt;/n4&gt;</SPAN>
+    <SPAN class="code-tag">&lt;/n2&gt;</SPAN>
+<SPAN class="code-tag">&lt;n1&gt;</SPAN></PRE>
+</DIV></DIV>
+
+<P>We shall use &quot;.&quot; as the configuration path separator. That is we shall use <EM>n1.n2.n3</EM> and <EM>n1.n2.n4</EM> to identify <EM>n3</EM> and <EM>n4</EM> configuration parameters.</P>
+
+<H3><A name="FtpServerConfiguration-ConfigurationStructure"></A>Configuration Structure</H3>
+
+<P>The following diagram shows the Apache FTP Server configuration structure. The values in brackets are the default values. </P>
+
+<UL>
+	<LI>config
+	<UL>
+		<LI><SPAN class="nobr"><A href="http://cwiki.apache.org/confluence/pages/createpage.action?spaceKey=FTPSERVER&title=Listeners&linkCreation=true&fromPageId=82732" title="Create Page: Listeners" class="createlink">listeners<SUP><IMG class="rendericon" src="http://cwiki.apache.org/confluence/images/icons/plus.gif" height="7" width="7" align="absmiddle" alt="" border="0"></SUP></A></SPAN></LI>
+		<LI>create-default-user (true)</LI>
+		<LI>message
+		<UL>
+			<LI>class (org.apache.ftpserver.message.MessageResourceImpl)</LI>
+			<LI>custom-message-dir (./res)</LI>
+			<LI>languages (&lt;none&gt;)</LI>
+		</UL>
+		</LI>
+		<LI>connection-manager
+		<UL>
+			<LI>max-connection (20)</LI>
+			<LI>max-login (10)</LI>
+			<LI>anonymous-login-enabled (true)</LI>
+			<LI>max-anonymous-login (10)</LI>
+			<LI>default-idle-time (60)</LI>
+			<LI>timeout-poll-inverval (60)</LI>
+			<LI>max-login-failures (3)</LI>
+			<LI>login-failure-delay (500)</LI>
+		</UL>
+		</LI>
+		<LI>command-factory
+		<UL>
+			<LI>command
+			<UL>
+				<LI>command-name</LI>
+			</UL>
+			</LI>
+		</UL>
+		</LI>
+		<LI>ip-restrictor
+		<UL>
+			<LI>class (org.apache.ftpserver.iprestrictor.FileIpRestrictor)</LI>
+			<LI>file (./res/ip.gen)</LI>
+		</UL>
+		</LI>
+		<LI>user-manager
+		<UL>
+			<LI>class (org.apache.ftpserver.usermanager.PropertiesUserManager)</LI>
+			<LI>See configuration for the <SPAN class="nobr"><A href="http://cwiki.apache.org/confluence/pages/createpage.action?spaceKey=FTPSERVER&title=FtpServer%20File%20based%20user%20manager&linkCreation=true&fromPageId=82732" title="Create Page: FtpServer File based user manager" class="createlink">file based user manager<SUP><IMG class="rendericon" src="http://cwiki.apache.org/confluence/images/icons/plus.gif" height="7" width="7" align="absmiddle" alt="" border="0"></SUP></A></SPAN></LI>
+			<LI>See configuration for the <SPAN class="nobr"><A href="http://cwiki.apache.org/confluence/pages/createpage.action?spaceKey=FTPSERVER&title=FtpServer%20Database%20user%20manager&linkCreation=true&fromPageId=82732" title="Create Page: FtpServer Database user manager" class="createlink">database based user manager<SUP><IMG class="rendericon" src="http://cwiki.apache.org/confluence/images/icons/plus.gif" height="7" width="7" align="absmiddle" alt="" border="0"></SUP></A></SPAN></LI>
+			<LI>See configuration for the <SPAN class="nobr"><A href="http://cwiki.apache.org/confluence/pages/createpage.action?spaceKey=FTPSERVER&title=FtpServer%20LDAP%20user%20manager&linkCreation=true&fromPageId=82732" title="Create Page: FtpServer LDAP user manager" class="createlink">LDAP based user manager<SUP><IMG class="rendericon" src="http://cwiki.apache.org/confluence/images/icons/plus.gif" height="7" width="7" align="absmiddle" alt="" border="0"></SUP></A></SPAN></LI>
+		</UL>
+		</LI>
+		<LI>file-system-manager
+		<UL>
+			<LI>class (org.apache.ftpserver.filesystem.NativeFileSystemManager)</LI>
+			<LI>create-home (false)</LI>
+		</UL>
+		</LI>
+		<LI>ftplets (&lt;none&gt;)</LI>
+		<LI>ftplet
+		<UL>
+			<LI>name
+			<UL>
+				<LI>class</LI>
+				<LI>param</LI>
+			</UL>
+			</LI>
+		</UL>
+		</LI>
+	</UL>
+	</LI>
+</UL>
+
+
+<TABLE class="confluenceTable"><TBODY>
+<TR>
+<TH class="confluenceTh"> Configuration Parameter </TH>
+<TH class="confluenceTh"> Description </TH>
+</TR>
+<TR>
+<TD class="confluenceTd"> config.listeners </TD>
+<TD class="confluenceTd"> <SPAN class="nobr"><A href="http://cwiki.apache.org/confluence/pages/createpage.action?spaceKey=FTPSERVER&title=Listeners&linkCreation=true&fromPageId=82732" title="Create Page: Listeners" class="createlink">See details<SUP><IMG class="rendericon" src="http://cwiki.apache.org/confluence/images/icons/plus.gif" height="7" width="7" align="absmiddle" alt="" border="0"></SUP></A></SPAN></TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> config.create-default-user </TD>
+<TD class="confluenceTd"> Flag to indicate whether the standard users (admin and anonymous) will be created by default if not found. The admin user password will be same as admin user name. The default value is true. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> config.message.class </TD>
+<TD class="confluenceTd"> org.apache.ftpserver.message.MessageResourceImpl </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> config.message.custom-message-dir </TD>
+<TD class="confluenceTd"> The directory where user defined custom FTP server replies will be stored. The default value is ./res </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> config.message.languages </TD>
+<TD class="confluenceTd"> Comma separated values of all the languages supported. The default value is null. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> config.connection-manager.max-connection </TD>
+<TD class="confluenceTd"> Maximum simultaneous connections (0 means no limit). The default value is 20. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> config.connection-manager.max-login </TD>
+<TD class="confluenceTd"> Maximum simultaneous logins (0 means no limit). The default value is 10. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> config.connection-manager.anonymous-login-enabled </TD>
+<TD class="confluenceTd"> Flag to indicate annonymous login support. By default the server allows anonymous connections. That is the default value is true. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> config.connection-manager.max-anonymous-login </TD>
+<TD class="confluenceTd"> Maximum anonymous simultaneous logins (0 means no limit). Should be less than or equal to the maximum number of simultaneous                         logins. It will not be used if the sever does not allow anonymous login. The default value is 10. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> config.connection-manager.default-idle-time </TD>
+<TD class="confluenceTd"> Default idle time in seconds. It is used to close idle data connection and non-logged-in connections. The default value is 60. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> config.connection-manager.timeout-poll-interval </TD>
+<TD class="confluenceTd"> Polling interval in seconds to disconnect idle users. The default value is 60. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> config.connection-manager.max-login-failures </TD>
+<TD class="confluenceTd"> The number of times a user can fail to login before getting disconnected. The default value is 3, set to 0 to allow infinite number of attempts. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> config.connection-manager.login-failure-delay </TD>
+<TD class="confluenceTd"> After a failed login, a delay can be added. This makes it harder to attempt to guess a users password, for example with a <SPAN class="nobr"><A href="http://en.wikipedia.org/wiki/Dictionary_attack" title="Visit page outside Confluence" rel="nofollow">dictionary attack<SUP><IMG class="rendericon" src="http://cwiki.apache.org/confluence/images/icons/linkext7.gif" height="7" width="7" align="absmiddle" alt="" border="0"></SUP></A></SPAN>.  The default value is 500 milliseconds, set to 0 to disable the delay.</TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> config.command-factory.command.command-name </TD>
+<TD class="confluenceTd"> Command name and fully qualified command implementation class name mapping. The default implementations are already set in the server. You can overwrite or add your own command implementations. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> config.ip-restrictor.class </TD>
+<TD class="confluenceTd"> IP restrictor implementation - org.apache.ftpserver.iprestrictor.FileIpRestrictor </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> config.ip-restrictor.file </TD>
+<TD class="confluenceTd"> The file where IP restriction information will be stored. The default is ./res/ip.gen </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> config.user-manager.class </TD>
+<TD class="confluenceTd"> The user manager implementation class.
+<UL>
+	<LI>org.apache.ftpserver.usermanager.PropertiesUserManager - Properties file based default user manager class.</LI>
+	<LI>org.apache.ftpserver.usermanager.DbUserManager - Database based user manager class.</LI>
+	<LI>org.apache.ftpserver.usermanager.LdapUserManager - Ldap based user manager class.</LI>
+</UL>
+</TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> <SPAN class="nobr"><A href="http://cwiki.apache.org/confluence/pages/createpage.action?spaceKey=FTPSERVER&title=FtpServer%20File%20based%20user%20manager&linkCreation=true&fromPageId=82732" title="Create Page: FtpServer File based user manager" class="createlink">Properties file based user manager<SUP><IMG class="rendericon" src="http://cwiki.apache.org/confluence/images/icons/plus.gif" height="7" width="7" align="absmiddle" alt="" border="0"></SUP></A></SPAN> </TD>
+<TD class="confluenceTd">&nbsp;</TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> <SPAN class="nobr"><A href="http://cwiki.apache.org/confluence/pages/createpage.action?spaceKey=FTPSERVER&title=FtpServer%20Database%20user%20manager&linkCreation=true&fromPageId=82732" title="Create Page: FtpServer Database user manager" class="createlink">Database based user manager<SUP><IMG class="rendericon" src="http://cwiki.apache.org/confluence/images/icons/plus.gif" height="7" width="7" align="absmiddle" alt="" border="0"></SUP></A></SPAN> </TD>
+<TD class="confluenceTd">&nbsp;</TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> <SPAN class="nobr"><A href="http://cwiki.apache.org/confluence/pages/createpage.action?spaceKey=FTPSERVER&title=FtpServer%20LDAP%20user%20manager&linkCreation=true&fromPageId=82732" title="Create Page: FtpServer LDAP user manager" class="createlink">LDAP based user manager<SUP><IMG class="rendericon" src="http://cwiki.apache.org/confluence/images/icons/plus.gif" height="7" width="7" align="absmiddle" alt="" border="0"></SUP></A></SPAN> </TD>
+<TD class="confluenceTd">&nbsp;</TD>
+</TR>
+</TBODY></TABLE>
+<HR>
+        </DIV>
+
+      </DIV>
+    </DIV>
+    <DIV class="footer">
+    </DIV>
+  </BODY>
+</HTML>

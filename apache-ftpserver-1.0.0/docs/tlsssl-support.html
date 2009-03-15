@@ -1,0 +1,176 @@
+
+<!-- 
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+ http://www.apache.org/licenses/LICENSE- 2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License. 
+-->
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+  <HEAD>
+    <LINK type="text/css" rel="stylesheet" href="resources/space.css">
+    <STYLE type="text/css">
+      .footer {
+        background-image:      url('http://cwiki.apache.org/confluence/images/border/border_bottom.gif');
+        background-repeat:     repeat-x;
+        background-position:   left top;
+        padding-top:           4px;
+        color:                 #666;
+      }
+    </STYLE>
+    <SCRIPT type="text/javascript" language="javascript">
+      var hide = null;
+      var show = null;
+      var children = null;
+
+      function init() {
+        /* Search form initialization */
+        var form = document.forms['search'];
+        if (form != null) {
+          form.elements['domains'].value = location.hostname;
+          form.elements['sitesearch'].value = location.hostname;
+        }
+
+        /* Children initialization */
+        hide = document.getElementById('hide');
+        show = document.getElementById('show');
+        children = document.all != null ?
+                   document.all['children'] :
+                   document.getElementById('children');
+        if (children != null) {
+          children.style.display = 'none';
+          show.style.display = 'inline';
+          hide.style.display = 'none';
+        }
+      }
+
+      function showChildren() {
+        children.style.display = 'block';
+        show.style.display = 'none';
+        hide.style.display = 'inline';
+      }
+
+      function hideChildren() {
+        children.style.display = 'none';
+        show.style.display = 'inline';
+        hide.style.display = 'none';
+      }
+    </SCRIPT>
+    <TITLE>TLSSSL Support</TITLE>
+  <META http-equiv="Content-Type" content="text/html;charset=UTF-8"></HEAD>
+  <BODY onload="init()">
+    <TABLE border="0" cellpadding="2" cellspacing="0" width="100%">
+      <TR class="topBar">
+        <TD align="left" valign="middle" class="topBarDiv" nowrap="">
+          &nbsp;<A href="index.html" title="Apache FTPServer Project">Apache FTPServer Project</A>&nbsp;&gt;&nbsp;<A href="index.html" title="Index">Index</A>&nbsp;&gt;&nbsp;<A href="documentation.html" title="Documentation">Documentation</A>&nbsp;&gt;&nbsp;<A href="" title="TLSSSL Support">TLSSSL Support</A>
+        </TD>
+      </TR> 
+    </TABLE>
+
+    <DIV id="PageContent">
+      <DIV class="pageheader" style="padding: 6px 0px 0px 0px;">
+        <!-- We'll enable this once we figure out how to access (and save) the logo resource -->
+        <!--img src="/wiki/images/confluence_logo.gif" style="float: left; margin: 4px 4px 4px 10px;" border="0"-->
+        <DIV style="margin: 0px 10px 0px 10px" class="smalltext">Apache FTPServer Project</DIV>
+        <DIV style="margin: 0px 10px 8px 10px" class="pagetitle">TLSSSL Support</DIV>
+
+        <DIV class="greynavbar" align="right" style="padding: 2px 10px; margin: 0px;">
+
+        </DIV>
+      </DIV>
+
+      <DIV class="pagecontent">
+        <DIV class="wiki-content">
+          <H2><A name="TLSSSLSupport-TLS%2FSSLSupport"></A>TLS/SSL Support</H2>
+
+<P>This document explains how to enable Apache FTP Server to use Transport Layer Security (TLS) for encrypted client-server communication.</P>
+
+<P>FtpServer uses the Java Secure Sockets Extension (JSSE) infrastructure to provide TLS/SSL sockets. JSSE comes packaged with several vendor Java distributions (i.e. Sun Java 1.4.x, IBM Java 1.3.x). For these distributions, please follow the vendor provided instructions for configuring the JVM to use JSSE services.</P>
+
+<H3><A name="TLSSSLSupport-ExplicitSecurity%28default%29"></A>Explicit Security (default)</H3>
+
+<P>In this mode server supports both secure and non-secure connection. Upon request from client (AUTH SSL) the server switches to the SSL/TLS mode.</P>
+
+<P>In this case, the listener should not use implicit SSL (the default value):</P>
+<DIV class="preformatted"><DIV class="preformattedContent">
+<PRE>config.listeners.default.implicit-ssl=false
+</PRE>
+</DIV></DIV>
+
+<H3><A name="TLSSSLSupport-ImplicitSecurity"></A>Implicit Security</H3>
+
+<P>If you want to use <B>implicit</B> SSL connection, that is, SSL is always enabled on the control socket. The first thing you need to do is to tell the listener to use implicit SSL mode:</P>
+<DIV class="preformatted"><DIV class="preformattedContent">
+<PRE>config.listeners.default.implicit-ssl=true
+</PRE>
+</DIV></DIV>
+
+<H3><A name="TLSSSLSupport-Controlsocketsecurity"></A>Control socket security</H3>
+<TABLE class="confluenceTable"><TBODY>
+<TR>
+<TD class="confluenceTd"> config.listeners.&lt;listener name&gt;.ssl.class  </TD>
+<TD class="confluenceTd"> Required, no default value, normally set to <TT>org.apache.ftpserver.ssl.DefaultSsl</TT> </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> config.listeners.&lt;listener name&gt;.ssl.keystore-file </TD>
+<TD class="confluenceTd"> Keystore file location. The default path is <TT>./res/.keystore</TT> </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> config.listeners.&lt;listener name&gt;.ssl.keystore-password </TD>
+<TD class="confluenceTd"> Keystore password. The default value is <TT>password</TT>. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> config.listeners.&lt;listener name&gt;.ssl.keystore-type </TD>
+<TD class="confluenceTd"> Keystore type. The default value is <TT>JKS</TT>. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> config.listeners.&lt;listener name&gt;.ssl.keystore-algorithm </TD>
+<TD class="confluenceTd"> Keystore algorithm. The default value is <TT>SunX509</TT>. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> config.listeners.&lt;listener name&gt;.ssl.key-password </TD>
+<TD class="confluenceTd"> Key password. The default value is <TT>password</TT>. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> config.listeners.&lt;listener name&gt;.ssl.enabled-cipher.suites </TD>
+<TD class="confluenceTd"> A comma seperated list of cipher suites to enable for this connection. The exact cipher suites that can be used depends on the Java version used, <SPAN class="nobr"><A href="http://java.sun.com/j2se/1.5.0/docs/guide/security/jsse/JSSERefGuide.html#AppA" title="Visit page outside Confluence" rel="nofollow">here<SUP><IMG class="rendericon" src="http://cwiki.apache.org/confluence/images/icons/linkext7.gif" height="7" width="7" align="absmiddle" alt="" border="0"></SUP></A></SPAN> are the names for Sun's JSSE provider. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> config.listeners.&lt;listener name&gt;.ssl.ssl-protocol </TD>
+<TD class="confluenceTd"> SSL protocol. The default value is <TT>TLS</TT>. </TD>
+</TR>
+<TR>
+<TD class="confluenceTd"> config.listeners.&lt;listener name&gt;.ssl.client-authentication </TD>
+<TD class="confluenceTd"> Client authentication. The default value is <TT>false</TT>. Set to <TT>true</TT> to require client authentication, or <TT>want</TT> to require client authentication. </TD>
+</TR>
+</TBODY></TABLE>
+
+<H3><A name="TLSSSLSupport-Datasocketsecurity"></A>Data socket security</H3>
+<P>Implicit secure socket does not ensure encrypted data transfer. To use SSL/TLS in data connection, client has to send &quot;PROT P&quot; command. You also need to set the keystore configuration parameters. Encrypted data transfer is supported for FTP passive (PASV) mode only.</P>
+
+<P>Data socket configuration supports the same options at the control socket, as described above. However, they are set up the data-connection parameter, for example:</P>
+<DIV class="preformatted"><DIV class="preformattedContent">
+<PRE>config.listeners.&lt;listener name&gt;.data-connection.ssl.keystore-file
+</PRE>
+</DIV></DIV>
+        </DIV>
+
+      </DIV>
+    </DIV>
+    <DIV class="footer">
+    </DIV>
+  </BODY>
+</HTML>
