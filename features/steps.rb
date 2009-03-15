@@ -22,3 +22,8 @@ When /^I sync the current folder to the ftp server$/ do
   result = system '../../bin/ruby-sync ./ ftp://localhost:2121'
   result.should == true
 end
+
+Then /^the ftp folder contents should match the current folder$/ do
+  output = `diff -r ./ ../../apache-ftpserver-1.0.0/res/features/`
+  output.should == ""
+end
