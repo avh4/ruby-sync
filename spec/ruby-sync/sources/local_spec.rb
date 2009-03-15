@@ -27,4 +27,16 @@ describe RubySync::Sources::Local do
       @source.dir_list.should == ['css', 'images']
     end
   end
+  it "should return a list of files in subfolders (example4)" do
+    Dir.chdir("test_data/4") do
+      @source = RubySync::Sources::Local.new()
+      @source.file_list.should == ['FileA.txt', 'DirA/FileB.txt', 'DirA/DirB/FileC.txt', 'DirA/DirB/DirC/FileD.txt', 'DirA/DirB/DirC/DirD/FileE.txt']
+    end
+  end
+  it "should return a list of directories (example4)" do
+    Dir.chdir("test_data/4") do
+      @source = RubySync::Sources::Local.new()
+      @source.dir_list.should == ['DirA', 'DirA/DirB', 'DirA/DirB/DirC', 'DirA/DirB/DirC/DirD', 'DirA/DirB/DirC/DirD/DirE']
+    end
+  end
 end
