@@ -17,12 +17,13 @@ Feature: Upload files
     
   Scenario: Upload files and subfolders
     Given the remote FTP folder is empty
-    And I am in a folder with files and subfolders
+    And I am in a folder with files and subfolders (example 3)
     When I sync the current folder to the ftp server
     Then the ftp folder contents should match the current folder
-  
-  
-  
-  
-  
+    
+  Scenario: Upload deeply nested subfolders
+    Given the remote FTP folder is empty
+    And I am in a folder with deeply nested subfolders (example 4)
+    When I sync the current folder to the ftp server
+    Then the ftp folder contents should match the current folder
   

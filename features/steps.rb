@@ -38,8 +38,11 @@ Given /^I am in a folder with many files$/ do
   files.size.should == 8
 end
 
-Given /^I am in a folder with files and subfolders$/ do
-  Dir.chdir('test_data/3')
+Given /^I am in a folder with .* \(example ([0-9]*)\)$/ do |example|
+  dir = "test_data/#{example}"
+  File.exist?(dir).should be_true
+  File.directory?(dir).should be_true
+  Dir.chdir(dir)
 end
 
 When /^I sync the current folder to the ftp server$/ do
