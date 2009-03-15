@@ -14,5 +14,11 @@ end
 Given /^I am in folder with a single file$/ do
   Dir.chdir('test_data/1')
   files = Dir.entries('.').select { |f| f != "." and f != '..' }
+  
   files.size.should == 1
+end
+
+When /^I sync the current folder to the ftp server$/ do
+  result = system 'sh ../../bin/ruby-sync ./ ftp://localhost:2121'
+  result.should == true
 end
